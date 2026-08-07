@@ -1,0 +1,54 @@
+---
+import SeoHead from '../components/SeoHead.astro'
+import '../styles/global.css'
+
+interface Props {
+  title: string
+  description: string
+  keywords?: string[]
+  titleSuffix?: boolean
+}
+
+const {
+  title,
+  description,
+  keywords = [],
+  titleSuffix = true,
+} = Astro.props
+const documentTitle = titleSuffix ? `${title} | Layla Help` : title
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: canonical.href,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Layla Help',
+    url: new URL('/', Astro.site ?? Astro.url.origin).href,
+  },
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{documentTitle}</title>
+    <SeoHead
+      title={documentTitle}
+      description={description}
+      canonical={canonical}
+      keywords={keywords}
+    />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

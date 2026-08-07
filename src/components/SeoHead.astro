@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string
+  description: string
+  canonical: URL
+  image?: URL
+  keywords?: string[]
+}
+
+const { title, description, canonical, image, keywords = [] } = Astro.props
+const socialImage = image ?? new URL('/og-default.svg', Astro.site ?? canonical)
+---
+
+<meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Layla Help" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={socialImage} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={socialImage} />

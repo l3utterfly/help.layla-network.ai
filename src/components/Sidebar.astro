@@ -1,0 +1,31 @@
+---
+import { docHref, getPublishedDocs } from '../lib/docs'
+
+const docs = await getPublishedDocs()
+const categories = [...new Set(docs.map((entry) => entry.data.category))]
+const currentPath = Astro.url.pathname
+---
+
+<aside class="sidebar" data-pagefind-ignore>
+  <nav aria-label="Documentation">
+    {categories.map((category) => (
+      <section class="sidebar-group">
+        <h2>{category}</h2>
+        <ul>
+          {docs
+            .filter((entry) => entry.data.category === category)
+            .map((entry) => {
+              const href = docHref(entry.id)
+              return (
+                <li>
+                  <a href={href} aria-current={currentPath === href ? 'page' : undefined}>
+                    {entry.data.title}
+                  </a>
+                </li>
+              )
+            })}
+        </ul>
+      </section>
+    ))}
+  </nav>
+</aside>

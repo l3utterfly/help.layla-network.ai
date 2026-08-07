@@ -1,32 +1,41 @@
-# React + TypeScript + Vite
+# Layla Help
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Static documentation for `help.layla-network.ai`, built with Astro, Markdown content collections, React islands, and Pagefind.
 
-Currently, two official plugins are available:
+## Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm run dev      # Start the Astro development server
+npm run check    # Validate Astro and TypeScript files
+npm run build    # Check, build static HTML, and generate the Pagefind index
+npm run preview  # Preview the most recent build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Search is generated from the static HTML during `npm run build`. It is therefore available in the production build and preview, but not from a fresh `npm run dev` session.
+
+## Adding an article
+
+Create a Markdown or MDX file under `src/content/docs/`. The folder and filename determine the public URL. For example:
+
+```text
+src/content/docs/local-models/importing.md
+→ /local-models/importing/
+```
+
+Every article must include validated frontmatter:
+
+```yaml
+---
+title: Importing a local model
+description: Add a compatible local model to Layla.
+category: Models
+order: 20
+keywords:
+  - GGUF
+draft: false
+---
+```
+
+## Deployment
+
+Use `npm run build` as the Cloudflare Pages build command and `dist` as the output directory. The project is fully static and does not require a Cloudflare runtime adapter.

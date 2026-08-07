@@ -1,0 +1,35 @@
+---
+import Header from '../components/Header.astro'
+import { docHref, getPublishedDocs } from '../lib/docs'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const docs = await getPublishedDocs()
+---
+
+<BaseLayout
+  title="Layla Help"
+  titleSuffix={false}
+  description="Guides and answers for using Layla, your private offline AI assistant."
+>
+  <Header />
+  <main class="home" data-pagefind-body>
+    <section class="home-hero">
+      <p class="eyebrow">Layla documentation</p>
+      <h1 data-pagefind-meta="title">How can we help?</h1>
+      <p>Find clear guides for setting up, using, and troubleshooting Layla.</p>
+    </section>
+
+    <section class="home-guides" aria-labelledby="popular-guides">
+      <h2 id="popular-guides">Start here</h2>
+      <div class="guide-grid">
+        {docs.slice(0, 6).map((entry) => (
+          <a class="guide-card" href={docHref(entry.id)}>
+            <span>{entry.data.category}</span>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import Header from '../components/Header.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Page not found" description="The requested Layla Help page could not be found.">
+  <Header />
+  <main class="not-found">
+    <p class="eyebrow">404</p>
+    <h1>Page not found</h1>
+    <p>The page may have moved or the address may be incorrect.</p>
+    <a class="primary-link" href="/">Return to Layla Help</a>
+  </main>
+</BaseLayout>

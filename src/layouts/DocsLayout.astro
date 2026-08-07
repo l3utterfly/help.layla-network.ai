@@ -1,0 +1,55 @@
+---
+import type { MarkdownHeading } from 'astro'
+import Header from '../components/Header.astro'
+import Sidebar from '../components/Sidebar.astro'
+import TableOfContents from '../components/TableOfContents.astro'
+import BaseLayout from './BaseLayout.astro'
+
+interface DocLink {
+  href: string
+  title: string
+}
+
+interface Props {
+  title: string
+  description: string
+  keywords?: string[]
+  headings: MarkdownHeading[]
+  previous?: DocLink
+  next?: DocLink
+}
+
+const { title, description, keywords, headings, previous, next } = Astro.props
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <Header />
+  <div class="docs-shell">
+    <Sidebar />
+    <main class="article" data-pagefind-body>
+      <nav class="breadcrumbs" aria-label="Breadcrumb" data-pagefind-ignore>
+        <a href="/">Help</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{title}</span>
+      </nav>
+
+      <article>
+        <header class="article-header">
+          <h1 data-pagefind-meta="title">{title}</h1>
+          <p>{description}</p>
+        </header>
+        <div class="article-content">
+          <slot />
+        </div>
+      </article>
+
+      {(previous || next) && (
+        <nav class="article-pagination" aria-label="Article pagination" data-pagefind-ignore>
+          {previous ? <a href={previous.href}>← {previous.title}</a> : <span />}
+          {next && <a href={next.href}>{next.title} →</a>}
+        </nav>
+      )}
+    </main>
+    <TableOfContents headings={headings} />
+  </div>
+</BaseLayout>

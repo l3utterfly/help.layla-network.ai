@@ -1,0 +1,47 @@
+---
+import { render, type CollectionEntry } from 'astro:content'
+import DocsLayout from '../layouts/DocsLayout.astro'
+import { docHref, docSlug, getPublishedDocs } from '../lib/docs'
+
+interface DocLink {
+  href: string
+  title: string
+}
+
+interface Props {
+  entry: CollectionEntry<'docs'>
+  previous?: DocLink
+  next?: DocLink
+}
+
+export async function getStaticPaths() {
+  const docs = await getPublishedDocs()
+
+  return docs.map((entry, index) => ({
+    params: { slug: docSlug(entry.id) },
+    props: {
+      entry,
+      previous: index > 0
+        ? { href: docHref(docs[index - 1].id), title: docs[index - 1].data.title }
+        : undefined,
+      next: index < docs.length - 1
+        ? { href: docHref(docs[index + 1].id), title: docs[index + 1].data.title }
+        : undefined,
+    },
+  }))
+}
+
+const { entry, previous, next } = Astro.props
+const { Content, headings } = await render(entry)
+---
+
+<DocsLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  keywords={entry.data.keywords}
+  headings={headings}
+  previous={previous}
+  next={next}
+>
+  <Content />
+</DocsLayout>
