@@ -1,0 +1,77 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Header from '../../components/Header.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { docHref, getPublishedDocs, topics } from '../../lib/docs'
+
+interface Props {
+  topic: (typeof topics)[number]
+  entries: CollectionEntry<'docs'>[]
+}
+
+export async function getStaticPaths() {
+  const docs = await getPublishedDocs()
+
+  return topics
+    .map((topic) => ({
+      topic,
+      entries: docs.filter((entry) => entry.data.category === topic.category),
+    }))
+    .filter(({ entries }) => entries.length > 0)
+    .map(({ topic, entries }) => ({
+      params: { topic: topic.slug },
+      props: { topic, entries },
+    }))
+}
+
+const { topic, entries } = Astro.props
+const countLabel = `${entries.length} ${entries.length === 1 ? 'article' : 'articles'}`
+const filters = ['All', ...new Set(entries.flatMap((entry) => entry.data.keywords).slice(0, 3))]
+---
+
+<BaseLayout title={topic.name} description={topic.description}>
+  <Header mobileBack={{ href: '/', label: 'Wiki', meta: countLabel }} />
+  <main class="category-page" data-pagefind-body>
+    <header class="category-header">
+      <span class="category-count">{countLabel}</span>
+      <h1 data-pagefind-meta="title">{topic.name}</h1>
+      <p>{topic.description}</p>
+    </header>
+
+    <div class="filter-chips" aria-label="Filter articles" data-pagefind-ignore>
+      {filters.map((filter, index) => (
+        <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} data-filter={filter.toLowerCase()}>{filter}</button>
+      ))}
+    </div>
+
+    <section class="category-articles" aria-label={`${topic.name} articles`}>
+      {entries.map((entry) => (
+        <a
+          class="category-article-card"
+          href={docHref(entry.id)}
+          data-tags={entry.data.keywords.join(' ').toLowerCase()}
+        >
+          <h2>{entry.data.title}</h2>
+          <p>{entry.data.description}</p>
+          <span>
+            Guide
+            {entry.data.lastUpdated && ` · updated ${new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short' }).format(entry.data.lastUpdated)}`}
+          </span>
+        </a>
+      ))}
+    </section>
+  </main>
+
+  <script is:inline>
+    const chips = document.querySelectorAll('[data-filter]')
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const filter = chip.getAttribute('data-filter') || 'all'
+        chips.forEach((item) => item.setAttribute('aria-pressed', String(item === chip)))
+        document.querySelectorAll('[data-tags]').forEach((card) => {
+          card.toggleAttribute('hidden', filter !== 'all' && !card.getAttribute('data-tags')?.includes(filter))
+        })
+      })
+    })
+  </script>
+</BaseLayout>

@@ -1,0 +1,63 @@
+---
+import Header from '../components/Header.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const faqs = [
+  {
+    question: 'Does Layla work with no internet connection?',
+    answer: 'Yes. Once a model is on your device, generation runs locally and no account is required. Optional features such as Layla Cloud and model downloads still need a connection.',
+  },
+  {
+    question: 'Why are replies slow on my phone?',
+    answer: 'Speed depends on model size, quantisation, context length, and your device. Try a smaller model, a more compact quant, or a lower context size.',
+  },
+  {
+    question: 'Can I move my licence to a new phone?',
+    answer: 'Use the same store account that purchased Layla, then restore your purchase from the app. Contact support if the restore does not appear.',
+  },
+  {
+    question: 'Where are my chats and characters stored?',
+    answer: 'Chats, characters, and local models stay in Layla’s app storage on your device unless you explicitly export or share them.',
+  },
+  {
+    question: 'The app says the model file is corrupt',
+    answer: 'Confirm the download completed, check that the file is a supported GGUF model, and download it again if its size does not match the source.',
+  },
+  {
+    question: 'Does image generation work offline?',
+    answer: 'Yes, when a compatible local image model and the required files are installed on your device.',
+  },
+]
+---
+
+<BaseLayout title="FAQ & troubleshooting" description="Answers to the questions that come up most often when using Layla.">
+  <Header mobileBack={{ href: '/', label: 'Wiki', meta: `${faqs.length} answers` }} />
+  <main class="faq-page" data-pagefind-body>
+    <header class="simple-page-header">
+      <span class="category-count">{faqs.length} answers</span>
+      <h1 data-pagefind-meta="title">FAQ & troubleshooting</h1>
+      <p>The questions that come up most often in the community, answered in one place.</p>
+    </header>
+
+    <div class="filter-chips" aria-label="FAQ topics" data-pagefind-ignore>
+      {['All', 'Install', 'Models', 'Speed', 'Licences'].map((filter, index) => (
+        <span class:list={{ active: index === 0 }}>{filter}</span>
+      ))}
+    </div>
+
+    <section class="faq-list">
+      {faqs.map((faq, index) => (
+        <details open={index < 2}>
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <aside class="support-callout">
+      <h2>Still stuck?</h2>
+      <p>Bug reports get answered fastest in Discord. Include your device, Layla version, and the model you were loading.</p>
+      <a href="https://discord.gg/x546YJ6nYC">Ask in Discord ↗</a>
+    </aside>
+  </main>
+</BaseLayout>

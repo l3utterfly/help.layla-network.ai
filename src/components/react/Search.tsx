@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 interface PagefindData {
   url: string
-  meta: { title?: string }
+  meta: { title?: string; category?: string }
   excerpt: string
 }
 
@@ -26,7 +26,7 @@ export default function Search() {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<PagefindData[]>([])
-  const [status, setStatus] = useState('Start typing to search the help center.')
+  const [status, setStatus] = useState('Start typing to search the wiki.')
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -38,6 +38,16 @@ export default function Search() {
 
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
+  }, [])
+
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null
+      if (target?.closest('[data-site-search-trigger]')) setIsOpen(true)
+    }
+
+    document.addEventListener('click', onClick)
+    return () => document.removeEventListener('click', onClick)
   }, [])
 
   useEffect(() => {
@@ -56,7 +66,7 @@ export default function Search() {
     const normalizedQuery = query.trim()
     if (!normalizedQuery) {
       setResults([])
-      setStatus('Start typing to search the help center.')
+      setStatus('Start typing to search the wiki.')
       return
     }
 
@@ -91,9 +101,11 @@ export default function Search() {
 
   return (
     <>
-      <button className="search-trigger" type="button" onClick={() => setIsOpen(true)}>
-        <span aria-hidden="true">⌕</span>
-        <span>Search</span>
+      <button className="search-trigger" type="button" onClick={() => setIsOpen(true)} aria-label="Search the wiki">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+          <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+        </svg>
+        <span>Search articles</span>
         <kbd>Ctrl K</kbd>
       </button>
 
@@ -108,16 +120,19 @@ export default function Search() {
         <div className="search-panel">
           <div className="search-field">
             <label className="sr-only" htmlFor="site-search">Search documentation</label>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+              <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+            </svg>
             <input
               id="site-search"
               ref={inputRef}
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search Layla Help…"
+              placeholder="Search the wiki…"
               autoComplete="off"
             />
-            <button type="button" onClick={() => setIsOpen(false)} aria-label="Close search">×</button>
+            <button type="button" onClick={() => setIsOpen(false)}>Cancel</button>
           </div>
 
           <p className="search-status" aria-live="polite">{status}</p>
@@ -127,12 +142,24 @@ export default function Search() {
               {results.map((result) => (
                 <li key={result.url}>
                   <a href={result.url}>
+                    <small>{result.meta.category ?? 'Layla Wiki'}</small>
                     <strong>{result.meta.title ?? 'Untitled page'}</strong>
                     <span dangerouslySetInnerHTML={{ __html: result.excerpt }} />
                   </a>
                 </li>
               ))}
             </ul>
+          )}
+
+          {!query.trim() && (
+            <div className="recent-searches">
+              <h2>Recent searches</h2>
+              <div>
+                {['local models', 'licence', 'characters', 'voice'].map((term) => (
+                  <button type="button" key={term} onClick={() => setQuery(term)}>{term}</button>
+                ))}
+              </div>
+            </div>
           )}
         </div>
       </dialog>

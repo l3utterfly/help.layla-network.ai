@@ -1,5 +1,6 @@
 ---
 import SeoHead from '../components/SeoHead.astro'
+import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 
 interface Props {
@@ -49,6 +50,10 @@ const structuredData = {
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
-    <slot />
+    <div class="ambient-glow" aria-hidden="true"></div>
+    <div class="site-stage">
+      <slot />
+    </div>
+    <Footer />
   </body>
 </html>

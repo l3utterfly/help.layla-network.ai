@@ -1,8 +1,10 @@
 ---
-import { docHref, getPublishedDocs } from '../lib/docs'
+import { docHref, getPublishedDocs, topicForCategory, topicHref, topics } from '../lib/docs'
 
 const docs = await getPublishedDocs()
-const categories = [...new Set(docs.map((entry) => entry.data.category))]
+const categories = topics
+  .map((topic) => topic.category)
+  .filter((category) => docs.some((entry) => entry.data.category === category))
 const currentPath = Astro.url.pathname
 ---
 
@@ -10,7 +12,7 @@ const currentPath = Astro.url.pathname
   <nav aria-label="Documentation">
     {categories.map((category) => (
       <section class="sidebar-group">
-        <h2>{category}</h2>
+        <h2><a href={topicHref(category)}>{topicForCategory(category).name}</a></h2>
         <ul>
           {docs
             .filter((entry) => entry.data.category === category)

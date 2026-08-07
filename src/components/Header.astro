@@ -1,15 +1,41 @@
 ---
 import Search from './react/Search'
+
+interface Props {
+  mobileBack?: {
+    href: string
+    label: string
+    meta?: string
+  }
+  editHref?: string
+}
+
+const { mobileBack, editHref } = Astro.props
 ---
 
-<header class="site-header" data-pagefind-ignore>
-  <a class="brand" href="/" aria-label="Layla Help home">
-    <span class="brand-mark" aria-hidden="true">L</span>
-    <span>Layla Help</span>
-  </a>
+<header class:list={{ 'site-header': true, 'has-mobile-context': Boolean(mobileBack) }} data-pagefind-ignore>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Layla Wiki home">
+      <span class="brand-name">LAYLA</span>
+      <span class="brand-section">WIKI</span>
+    </a>
 
-  <nav class="header-links" aria-label="External links">
-    <a href="https://layla-network.ai">Layla</a>
-    <Search client:idle />
-  </nav>
+    <nav class="header-links" aria-label="Primary navigation">
+      <div class="header-text-links">
+        <a href="/#guides">Guides</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Get help</a>
+      </div>
+      <Search client:idle />
+      <a class="download-link" href="https://www.layla-network.ai/">Download</a>
+    </nav>
+  </div>
+
+  {mobileBack && (
+    <div class="mobile-context-bar">
+      <a href={mobileBack.href}>← {mobileBack.label}</a>
+      {mobileBack.meta && <span>{mobileBack.meta}</span>}
+      {editHref && <a class="mobile-edit-link" href={editHref}>Edit</a>}
+    </div>
+  )}
 </header>

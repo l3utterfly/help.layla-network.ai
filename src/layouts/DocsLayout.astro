@@ -3,6 +3,7 @@ import type { MarkdownHeading } from 'astro'
 import Header from '../components/Header.astro'
 import Sidebar from '../components/Sidebar.astro'
 import TableOfContents from '../components/TableOfContents.astro'
+import { topicForCategory, topicHref } from '../lib/docs'
 import BaseLayout from './BaseLayout.astro'
 
 interface DocLink {
@@ -15,33 +16,88 @@ interface Props {
   description: string
   keywords?: string[]
   headings: MarkdownHeading[]
+  category: string
+  lastUpdated?: Date
+  sourcePath: string
+  readingMinutes: number
+  editHref: string
   previous?: DocLink
   next?: DocLink
 }
 
-const { title, description, keywords, headings, previous, next } = Astro.props
+const {
+  title,
+  description,
+  keywords,
+  headings,
+  category,
+  lastUpdated,
+  sourcePath,
+  readingMinutes,
+  editHref,
+  previous,
+  next,
+} = Astro.props
+const topic = topicForCategory(category)
+const updated = lastUpdated
+  ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(lastUpdated)
+  : undefined
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords}>
-  <Header />
+  <Header mobileBack={{ href: topicHref(category), label: topic.name }} editHref={editHref} />
   <div class="docs-shell">
     <Sidebar />
     <main class="article" data-pagefind-body>
       <nav class="breadcrumbs" aria-label="Breadcrumb" data-pagefind-ignore>
-        <a href="/">Help</a>
+        <a href="/">Wiki</a>
+        <span aria-hidden="true">/</span>
+        <a href={topicHref(category)}>{topic.name}</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">{title}</span>
       </nav>
 
       <article>
         <header class="article-header">
+          <span class="article-kind">Guide</span>
           <h1 data-pagefind-meta="title">{title}</h1>
+          <span class="sr-only" data-pagefind-meta="category">{topic.name}</span>
+          <div class="article-meta" data-pagefind-ignore>
+            {updated && <span>Updated {updated}</span>}
+            <span>{readingMinutes} min read</span>
+            <span>{sourcePath}</span>
+            <a href={editHref}>Edit on GitHub ↗</a>
+          </div>
           <p>{description}</p>
         </header>
+
+        {headings.length > 0 && (
+          <details class="mobile-table-of-contents" data-pagefind-ignore>
+            <summary>On this page</summary>
+            <ol>
+              {headings.filter((heading) => heading.depth === 2 || heading.depth === 3).map((heading) => (
+                <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+              ))}
+            </ol>
+          </details>
+        )}
         <div class="article-content">
           <slot />
         </div>
       </article>
+
+      <section class="article-feedback" aria-labelledby="feedback-title" data-pagefind-ignore>
+        <h2 id="feedback-title">Was this page helpful?</h2>
+        <div>
+          <button type="button" data-feedback="yes">Yes</button>
+          <button type="button" data-feedback="no">No</button>
+        </div>
+        <p aria-live="polite"></p>
+      </section>
+
+      <a class="article-edit-card" href={editHref} data-pagefind-ignore>
+        <span>Edit this page on GitHub</span><span aria-hidden="true">↗</span>
+      </a>
 
       {(previous || next) && (
         <nav class="article-pagination" aria-label="Article pagination" data-pagefind-ignore>
@@ -52,4 +108,15 @@ const { title, description, keywords, headings, previous, next } = Astro.props
     </main>
     <TableOfContents headings={headings} />
   </div>
+
+  <script is:inline>
+    document.querySelectorAll('[data-feedback]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const group = button.closest('.article-feedback')
+        group?.querySelectorAll('[data-feedback]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)))
+        const status = group?.querySelector('p')
+        if (status) status.textContent = 'Thanks — your feedback helps us improve the wiki.'
+      })
+    })
+  </script>
 </BaseLayout>

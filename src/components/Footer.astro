@@ -1,0 +1,17 @@
+---
+const communityLinks = [
+  { label: 'Email', href: 'mailto:info@layla-network.ai' },
+  { label: 'Discord', href: 'https://discord.gg/x546YJ6nYC' },
+  { label: 'GitHub', href: 'https://github.com/l3utterfly' },
+  { label: 'Reddit', href: 'https://www.reddit.com/r/layla_ai/' },
+]
+---
+
+<footer class="site-footer" data-pagefind-ignore>
+  <p>© {new Date().getFullYear()} Layla Network · Gold Coast, Australia</p>
+  <nav aria-label="Community and support">
+    {communityLinks.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+</footer>
