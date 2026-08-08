@@ -8,7 +8,6 @@
     "check": "astro check",
     "build": "astro check && astro build && pagefind --site dist",
     "lint": "oxlint",
-    "validate:migration": "python scripts/validate_article_migration.py",
     "preview": "astro preview"
   },
   "dependencies": {
