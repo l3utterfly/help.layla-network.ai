@@ -1,8 +1,8 @@
 ---
 title: How to enable or disable mini-apps within Layla
 description: Find, enable, and disable optional Layla features through the mini-app system.
-category: Guides
-order: 240
+category: Mini-apps & integrations
+order: 20
 keywords:
   - Layla mini-apps
   - enable features

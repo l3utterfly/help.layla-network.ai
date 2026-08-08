@@ -1,8 +1,8 @@
 ---
 title: How to enable Agents, Functions, and Tool-calling in Layla
 description: An overview of Layla's on-device Agents, functions, and tool-calling features.
-category: Guides
-order: 180
+category: Agents & tools
+order: 10
 keywords:
   - Layla Agents
   - tool calling

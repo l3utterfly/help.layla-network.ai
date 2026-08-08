@@ -1,8 +1,8 @@
 ---
 title: How Layla chat histories work across characters, personas, models, and roleplay scenarios
 description: Understand what belongs to a Layla conversation, what is restored when you reopen it, and how configuration changes affect future replies.
-category: Guides
-order: 10
+category: Chat & memory
+order: 20
 keywords:
   - chat history
   - characters

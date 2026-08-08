@@ -1,8 +1,8 @@
 ---
 title: How to replace Google Gemini with Layla as your phone's default assistant
 description: Set Layla as the default assistant on a Samsung phone and launch your selected Layla character with the power button.
-category: Guides
-order: 140
+category: Mini-apps & integrations
+order: 40
 keywords:
   - default assistant
   - replace Google Gemini

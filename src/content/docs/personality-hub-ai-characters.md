@@ -1,8 +1,8 @@
 ---
 title: "Personality Hub: Download AI Characters and Companions in Layla"
 description: Browse and download AI characters and companions in Layla, then chat offline without an account or personal information.
-category: Guides
-order: 360
+category: Characters & voice
+order: 10
 keywords:
   - Personality Hub
   - AI characters

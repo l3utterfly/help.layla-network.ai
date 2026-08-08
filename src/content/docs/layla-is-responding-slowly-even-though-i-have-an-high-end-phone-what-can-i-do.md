@@ -1,8 +1,8 @@
 ---
 title: Layla is responding slowly on a high-end phone—what can I do?
 description: Improve local Layla response speed by freeing resources, changing battery settings, and selecting a suitable base model.
-category: Guides
-order: 350
+category: Troubleshooting
+order: 40
 keywords:
   - Layla performance
   - slow responses

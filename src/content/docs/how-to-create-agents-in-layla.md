@@ -1,8 +1,8 @@
 ---
 title: How to create Agents in Layla
 description: Create a basic Layla Agent, then build a more advanced Agent that uses an LLM to format API results.
-category: Guides
-order: 170
+category: Agents & tools
+order: 20
 keywords:
   - Layla Agents
   - create an Agent

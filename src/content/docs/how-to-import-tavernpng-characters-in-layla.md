@@ -1,8 +1,8 @@
 ---
 title: How to import TavernPNG characters in Layla
 description: Import TavernPNG character images from the Personalities Hub, Chub.AI, and other compatible sites into Layla.
-category: Guides
-order: 110
+category: Characters & voice
+order: 40
 keywords:
   - TavernPNG
   - import characters

@@ -1,8 +1,8 @@
 ---
 title: How to enable Python support in Layla
 description: Enable Python code execution for Layla Agents, install packages, and build a test agent that returns Python output to the LLM.
-category: Guides
-order: 90
+category: Agents & tools
+order: 80
 keywords:
   - Python support
   - Python Interpreter

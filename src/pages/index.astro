@@ -4,7 +4,9 @@ import { docHref, getPublishedDocs, topicForCategory, topicHref, topics } from '
 import BaseLayout from '../layouts/BaseLayout.astro'
 
 const docs = await getPublishedDocs()
-const startHere = docs.slice(0, 3)
+const startHere = topics
+  .flatMap((topic) => docs.filter((entry) => entry.data.category === topic.category))
+  .slice(0, 3)
 const recent = [...docs].sort((left, right) => {
   const leftDate = left.data.lastUpdated?.getTime() ?? 0
   const rightDate = right.data.lastUpdated?.getTime() ?? 0

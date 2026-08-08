@@ -1,8 +1,8 @@
 ---
 title: Full MCP support in Layla
 description: Use full MCP tool calling in Layla and connect characters to external MCP servers.
-category: Guides
-order: 210
+category: Agents & tools
+order: 40
 keywords:
   - Model Context Protocol
   - MCP server

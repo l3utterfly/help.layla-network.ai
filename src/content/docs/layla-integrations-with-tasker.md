@@ -1,8 +1,8 @@
 ---
 title: Layla integrations with Tasker
 description: Use Layla's Tasker tasks and completion event to automate Android workflows with an LLM.
-category: Guides
-order: 260
+category: Mini-apps & integrations
+order: 50
 keywords:
   - Layla Tasker integration
   - Android automation

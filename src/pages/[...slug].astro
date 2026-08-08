@@ -17,18 +17,23 @@ interface Props {
 export async function getStaticPaths() {
   const docs = await getPublishedDocs()
 
-  return docs.map((entry, index) => ({
-    params: { slug: docSlug(entry.id) },
-    props: {
-      entry,
-      previous: index > 0
-        ? { href: docHref(docs[index - 1].id), title: docs[index - 1].data.title }
+  return docs.map((entry) => {
+    const categoryDocs = docs.filter((candidate) => candidate.data.category === entry.data.category)
+    const categoryIndex = categoryDocs.findIndex((candidate) => candidate.id === entry.id)
+
+    return {
+      params: { slug: docSlug(entry.id) },
+      props: {
+        entry,
+        previous: categoryIndex > 0
+          ? { href: docHref(categoryDocs[categoryIndex - 1].id), title: categoryDocs[categoryIndex - 1].data.title }
+          : undefined,
+        next: categoryIndex < categoryDocs.length - 1
+          ? { href: docHref(categoryDocs[categoryIndex + 1].id), title: categoryDocs[categoryIndex + 1].data.title }
         : undefined,
-      next: index < docs.length - 1
-        ? { href: docHref(docs[index + 1].id), title: docs[index + 1].data.title }
-        : undefined,
-    },
-  }))
+      },
+    }
+  })
 }
 
 const { entry, previous, next } = Astro.props

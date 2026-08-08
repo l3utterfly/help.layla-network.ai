@@ -1,8 +1,8 @@
 ---
 title: How to switch between a local LLM and Layla Cloud
 description: Switch Layla Lite or Layla paid from Layla Cloud back to an LLM running locally on your device.
-category: Guides
-order: 280
+category: Models & performance
+order: 50
 keywords:
   - local LLM
   - Layla Cloud

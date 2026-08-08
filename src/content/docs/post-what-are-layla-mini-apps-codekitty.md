@@ -1,8 +1,8 @@
 ---
 title: What are Layla mini-apps? Building one on-device with CodeKitty
 description: Learn how Layla mini-apps use the on-device model, characters, images, voice, and private storage through the host bridge.
-category: Guides
-order: 50
+category: Mini-apps & integrations
+order: 30
 keywords:
   - Layla mini-apps
   - CodeKitty

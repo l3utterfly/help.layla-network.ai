@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting
 description: Diagnose common setup, model loading, and performance problems in Layla.
-category: Support
+category: Troubleshooting
 order: 10
 keywords:
   - Layla troubleshooting

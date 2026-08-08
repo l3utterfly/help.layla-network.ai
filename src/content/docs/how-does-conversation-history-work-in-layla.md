@@ -1,8 +1,8 @@
 ---
 title: How does conversation history work in Layla?
 description: Learn how to open, search, delete, export, and protect conversations stored in Layla's History screen.
-category: Guides
-order: 20
+category: Chat & memory
+order: 10
 keywords:
   - conversation history
   - search chats

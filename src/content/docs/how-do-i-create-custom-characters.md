@@ -1,8 +1,8 @@
 ---
 title: How do I create custom characters?
 description: Create and save a custom character in Layla, then use Personality Hub characters for inspiration.
-category: Guides
-order: 340
+category: Characters & voice
+order: 20
 keywords:
   - Layla custom characters
   - Create Character

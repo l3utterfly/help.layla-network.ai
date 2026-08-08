@@ -1,8 +1,8 @@
 ---
 title: How to fix a chat error after updating Layla
 description: Clear Layla's cache to recover from model-loading or chat-start errors after an update.
-category: Guides
-order: 320
+category: Troubleshooting
+order: 30
 keywords:
   - Layla update error
   - model loading error

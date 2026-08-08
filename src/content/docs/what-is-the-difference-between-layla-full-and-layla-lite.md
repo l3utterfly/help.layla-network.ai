@@ -1,8 +1,8 @@
 ---
 title: What is the difference between Layla Full and Layla Lite?
 description: Compare Layla Lite, Q2, and Full base models, their RAM requirements, and how to switch between them.
-category: Guides
-order: 370
+category: Models & performance
+order: 20
 keywords:
   - Layla Full
   - Layla Lite

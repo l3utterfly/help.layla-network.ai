@@ -1,8 +1,8 @@
 ---
 title: How to create a Brave Search agent
 description: Create a Layla agent that searches through the Brave Search API, parses the JSON response, and provides the results to the LLM.
-category: Guides
-order: 130
+category: Agents & tools
+order: 50
 keywords:
   - Brave Search API
   - Layla Agents

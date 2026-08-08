@@ -1,8 +1,8 @@
 ---
 title: The DRY sampler and how to stop Layla from repeating herself
 description: Enable the DRY sampler in Advanced Settings to reduce repeated phrases in Layla's responses.
-category: Guides
-order: 290
+category: Models & performance
+order: 60
 keywords:
   - DRY sampler
   - repetition penalty

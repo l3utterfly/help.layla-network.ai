@@ -1,8 +1,8 @@
 ---
 title: Downloading Layla models keeps failing—what can I do?
 description: Use direct model-download links and Layla's Custom Model option when in-app model downloads repeatedly fail.
-category: Guides
-order: 300
+category: Troubleshooting
+order: 20
 keywords:
   - Layla model download
   - download failure

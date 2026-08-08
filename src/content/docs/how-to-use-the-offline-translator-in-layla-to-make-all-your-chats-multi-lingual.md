@@ -1,8 +1,8 @@
 ---
 title: How to use the Offline Translator in Layla to make all your chats multilingual
 description: Enable Layla's Offline Translator and automatically translate both sides of a chat on your phone.
-category: Guides
-order: 250
+category: Chat & memory
+order: 40
 keywords:
   - Layla Offline Translator
   - multilingual chat

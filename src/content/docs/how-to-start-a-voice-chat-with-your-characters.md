@@ -1,8 +1,8 @@
 ---
 title: How to start a voice chat with your characters
 description: Enable Voice Chat in Layla and start a spoken conversation with an animated character.
-category: Guides
-order: 220
+category: Characters & voice
+order: 50
 keywords:
   - Layla Voice Chat
   - speech to text

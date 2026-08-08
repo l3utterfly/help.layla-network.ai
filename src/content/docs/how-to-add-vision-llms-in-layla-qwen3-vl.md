@@ -1,8 +1,8 @@
 ---
 title: How to add vision LLMs in Layla (Qwen3-VL)
 description: Download a Qwen3-VL GGUF model and its mmproj file, then configure both in Layla for image recognition in chat.
-category: Guides
-order: 120
+category: Models & performance
+order: 40
 keywords:
   - vision LLM
   - Qwen3-VL

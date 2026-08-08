@@ -1,8 +1,8 @@
 ---
 title: The Mirostat sampler and how to reduce repeated responses
 description: Enable the Mirostat sampler in Layla and learn how adaptive perplexity control can reduce repetition.
-category: Guides
-order: 330
+category: Models & performance
+order: 70
 keywords:
   - Mirostat sampler
   - repeated responses

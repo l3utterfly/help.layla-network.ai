@@ -1,8 +1,8 @@
 ---
 title: Deep dive into Layla Agents
 description: A deep dive into how Agents work in Layla.
-category: Guides
-order: 160
+category: Agents & tools
+order: 30
 keywords:
   - Layla Agents
   - agent triggers

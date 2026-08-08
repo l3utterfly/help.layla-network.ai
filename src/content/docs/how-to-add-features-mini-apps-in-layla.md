@@ -1,8 +1,8 @@
 ---
 title: How to add features (mini-apps) in Layla
 description: Learn where to browse, add, and remove Layla mini-apps to customise the features available in the app.
-category: Guides
-order: 100
+category: Mini-apps & integrations
+order: 10
 keywords:
   - Layla mini-apps
   - add features

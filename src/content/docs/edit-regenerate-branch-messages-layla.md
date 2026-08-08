@@ -1,8 +1,8 @@
 ---
 title: Can you edit, regenerate, and branch messages in Layla?
 description: Use Layla's message actions to edit prompts and replies, regenerate responses, delete messages, or branch a conversation.
-category: Guides
-order: 40
+category: Chat & memory
+order: 30
 keywords:
   - edit messages
   - regenerate replies

@@ -1,8 +1,8 @@
 ---
 title: How can I make Long-Term Memory construction faster?
 description: Give Layla background permissions, use manual ingestion, and keep the app running so Long-Term Memory can process conversations.
-category: Guides
-order: 310
+category: Chat & memory
+order: 50
 keywords:
   - Layla Long-Term Memory
   - memory ingestion

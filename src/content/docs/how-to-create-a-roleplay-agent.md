@@ -1,8 +1,8 @@
 ---
 title: How to create a Roleplay Agent
 description: Create a Layla Agent that makes a character respond in action-dialogue format.
-category: Guides
-order: 200
+category: Agents & tools
+order: 70
 keywords:
   - Layla Agents
   - roleplay Agent

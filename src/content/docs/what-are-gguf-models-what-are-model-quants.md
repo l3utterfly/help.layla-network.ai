@@ -1,8 +1,8 @@
 ---
 title: What Is GGUF? A Plain-English Guide to GGUF Models
 description: Learn what GGUF models and quantization are, how to choose a quant, and how to load a custom GGUF model in Layla.
-category: Guides
-order: 270
+category: Models & performance
+order: 30
 keywords:
   - GGUF models
   - model quants

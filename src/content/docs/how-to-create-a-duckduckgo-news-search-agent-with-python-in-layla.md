@@ -1,8 +1,8 @@
 ---
 title: How to create a DuckDuckGo news search agent with Python in Layla
 description: Create a Layla agent that uses Python to search DuckDuckGo News and return the results to the LLM.
-category: Guides
-order: 80
+category: Agents & tools
+order: 60
 keywords:
   - DuckDuckGo news search
   - Layla Agents

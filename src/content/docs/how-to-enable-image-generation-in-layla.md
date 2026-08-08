@@ -1,8 +1,8 @@
 ---
 title: How to enable image generation in Layla
 description: Enable Stable Diffusion in Layla and generate images on your device, through your PC, or with Layla Cloud.
-category: Guides
-order: 230
+category: Image generation
+order: 10
 keywords:
   - Layla image generation
   - Stable Diffusion

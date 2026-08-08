@@ -1,7 +1,7 @@
 ---
 title: How to add multilingual text-to-speech for your characters in Layla
 description: How to enable multilingual text-to-speech in Layla by using SherpaTTS.
-category: Guides
+category: Characters & voice
 order: 60
 keywords:
   - multilingual text-to-speech

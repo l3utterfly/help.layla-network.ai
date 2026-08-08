@@ -1,8 +1,8 @@
 ---
 title: How to import characters from the Personalities Hub in Layla
 description: Download a character from Layla's Personalities Hub, save it in Layla, and start a new conversation.
-category: Guides
-order: 150
+category: Characters & voice
+order: 30
 keywords:
   - Personalities Hub
   - import characters

@@ -1,8 +1,8 @@
 ---
 title: Creating an image generation agent
 description: Create an Agent that uses conversation context to generate an image of the scene or character after each message.
-category: Guides
-order: 190
+category: Image generation
+order: 30
 keywords:
   - Layla Agents
   - image generation Agent

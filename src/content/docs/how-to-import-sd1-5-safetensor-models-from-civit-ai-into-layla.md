@@ -1,8 +1,8 @@
 ---
 title: How to import SD1.5 Safetensor models from Civit.ai into Layla
 description: How to import Safetensor files from Civitai into Layla for local image generation.
-category: Guides
-order: 70
+category: Image generation
+order: 20
 keywords:
   - SD 1.5
   - Safetensor

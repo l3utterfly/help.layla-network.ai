@@ -1,7 +1,7 @@
 ---
 title: Running local models
 description: Learn how Layla runs compatible language models locally on your device.
-category: Models
+category: Models & performance
 order: 10
 keywords:
   - GGUF
