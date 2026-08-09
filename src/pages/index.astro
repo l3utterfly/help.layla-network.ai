@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro'
+import TopicIcon from '../components/TopicIcon.astro'
 import { docHref, getPublishedDocs, topicForCategory, topicHref, topics } from '../lib/docs'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
@@ -55,13 +56,19 @@ const articleLabel = (count: number) => count === 1 ? '1 article' : `${count} ar
           const count = docs.filter((entry) => entry.data.category === topic.category).length
           return count > 0 ? (
             <a class="topic-card" href={topicHref(topic.category)}>
-              <strong>{topic.name}</strong>
-              <span>{articleLabel(count)}</span>
+              <TopicIcon name={topic.icon} />
+              <span class="topic-card-copy">
+                <strong>{topic.name}</strong>
+                <span>{articleLabel(count)}</span>
+              </span>
             </a>
           ) : (
             <div class="topic-card topic-card-pending">
-              <strong>{topic.name}</strong>
-              <span>Coming soon</span>
+              <TopicIcon name={topic.icon} />
+              <span class="topic-card-copy">
+                <strong>{topic.name}</strong>
+                <span>Coming soon</span>
+              </span>
             </div>
           )
         })}

@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import Header from '../../components/Header.astro'
+import TopicIcon from '../../components/TopicIcon.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { docHref, getPublishedDocs, topics } from '../../lib/docs'
 
@@ -33,8 +34,13 @@ const filters = ['All', ...new Set(entries.flatMap((entry) => entry.data.keyword
   <Header mobileBack={{ href: '/', label: 'Wiki', meta: countLabel }} />
   <main class="category-page" data-pagefind-body>
     <header class="category-header">
-      <span class="category-count">{countLabel}</span>
-      <h1 data-pagefind-meta="title">{topic.name}</h1>
+      <div class="category-heading">
+        <TopicIcon name={topic.icon} class="category-topic-icon" />
+        <div>
+          <span class="category-count">{countLabel}</span>
+          <h1 data-pagefind-meta="title">{topic.name}</h1>
+        </div>
+      </div>
       <p>{topic.description}</p>
     </header>
 

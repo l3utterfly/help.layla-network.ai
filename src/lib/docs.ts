@@ -7,6 +7,7 @@ export interface TopicDefinition {
   category: string
   slug: string
   description: string
+  icon: string
 }
 
 export const topics: TopicDefinition[] = [
@@ -15,48 +16,56 @@ export const topics: TopicDefinition[] = [
     category: 'Getting started',
     slug: 'getting-started',
     description: 'Install Layla and start using your private, offline AI assistant.',
+    icon: 'rocket',
   },
   {
     name: 'Chat & memory',
     category: 'Chat & memory',
     slug: 'chat-memory',
     description: 'Manage conversations, message actions, translation, and Long-Term Memory.',
+    icon: 'comment-discussion',
   },
   {
     name: 'Models & performance',
     category: 'Models & performance',
     slug: 'models-performance',
     description: 'Choose, configure, and tune local or cloud models for your device.',
+    icon: 'ai-model',
   },
   {
     name: 'Characters & voice',
     category: 'Characters & voice',
     slug: 'characters-voice',
     description: 'Create and import characters, then give them local voices and voice chat.',
+    icon: 'person',
   },
   {
     name: 'Agents & tools',
     category: 'Agents & tools',
     slug: 'agents-tools',
     description: 'Build on-device agents that use functions, Python, APIs, and MCP tools.',
+    icon: 'agent',
   },
   {
     name: 'Mini-apps & integrations',
     category: 'Mini-apps & integrations',
     slug: 'mini-apps-integrations',
     description: 'Add optional features, build mini-apps, and connect Layla to Android tools.',
+    icon: 'apps',
   },
   {
     name: 'Image generation',
     category: 'Image generation',
     slug: 'image-generation',
     description: 'Create images locally and connect generation to characters.',
+    icon: 'image',
   },
   {
     name: 'Troubleshooting',
     category: 'Troubleshooting',
     slug: 'troubleshooting',
     description: 'Fix model loading, performance, setup, and app issues.',
+    icon: 'tools',
   },
 ]
 
@@ -75,6 +84,7 @@ export function topicForCategory(category: string) {
     category,
     slug: category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
     description: `Guides and answers about ${category.toLowerCase()}.`,
+    icon: 'book',
   }
 }
 
