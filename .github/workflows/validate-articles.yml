@@ -1,0 +1,43 @@
+name: Validate articles
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-articles-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate-articles:
+    name: Validate newly added articles
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out pull request
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Astro content
+        run: npm run check
+
+      - name: Validate newly added articles
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: npm run validate:articles -- --base "$BASE_SHA"

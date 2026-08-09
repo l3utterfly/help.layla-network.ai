@@ -43,6 +43,16 @@ draft: false
 ---
 ```
 
+Before opening a pull request, validate a new article with:
+
+```sh
+npm run validate:articles -- src/content/docs/<article-folder>/index.md
+```
+
+Pull requests into `main` run the same validation automatically for newly added
+articles. The check requires Prettier formatting, valid frontmatter, a category
+registered in `src/lib/docs.ts`, and resolvable relative images and assets.
+
 ## Deployment
 
 The project is fully static and does not require a Cloudflare runtime adapter.

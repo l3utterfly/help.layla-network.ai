@@ -9,7 +9,8 @@
     "build": "astro check && astro build && pagefind --site dist",
     "deploy": "wrangler deploy",
     "lint": "oxlint",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "validate:articles": "node scripts/validate-articles.mjs"
   },
   "dependencies": {
     "@primer/octicons": "^19.33.0",
@@ -26,7 +27,9 @@
     "astro": "^7.2.0",
     "oxlint": "^1.75.0",
     "pagefind": "^1.5.2",
+    "prettier": "^3.9.6",
     "typescript": "~6.0.2",
-    "wrangler": "4.120.0"
+    "wrangler": "4.120.0",
+    "yaml": "^2.9.0"
   }
 }
