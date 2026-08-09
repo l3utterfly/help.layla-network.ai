@@ -16,12 +16,18 @@ Search is generated from the static HTML during `npm run build`. It is therefore
 
 ## Adding an article
 
-Create a Markdown or MDX file under `src/content/docs/`. The folder and filename determine the public URL. For example:
+Create a folder under `src/content/docs/` with an `index.md` or `index.mdx` entry. The folder name determines the public URL. Keep article images, videos, and downloads beside the entry file:
 
 ```text
-src/content/docs/local-models/importing.md
-→ /local-models/importing/
+src/content/docs/importing-a-local-model/
+├── index.md
+├── model-picker.jpg
+└── example-agent.json
+
+→ /importing-a-local-model/
 ```
+
+Reference co-located images with a relative path such as `![Model picker](./model-picker.jpg)`. Astro bundles these images for production. Other article assets remain available from `/assets/articles/<article-folder>/<filename>` so videos and downloadable files work in development and in the static distribution.
 
 Every article must include validated frontmatter:
 
