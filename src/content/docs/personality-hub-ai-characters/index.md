@@ -14,11 +14,13 @@ lastUpdated: 2024-01-01
 
 **The Personality Hub is a built-in Layla feature for browsing and downloading AI characters that the assistant can role-play as during your chats—running fully offline, with no account or personal information required.**
 
+> **Browse and download characters:** [Open the Personality Hub at chat.layla-cloud.com →](https://chat.layla-cloud.com/)
+
+[![Gallery of characters available through Layla's Personality Hub.](./personality-hub-gallery.png)](https://chat.layla-cloud.com/)
+
 The characters come from a range of backgrounds, including TV shows, books, and films, and you can add as many as you like to your own list.
 
 This article explains what the Personality Hub is, how it compares with cloud-based character apps, how to open it and download characters, and how to share your own creations.
-
-![Gallery of characters available through Layla's Personality Hub.](./personality-hub-gallery.png)
 
 ## What is the Personality Hub?
 
