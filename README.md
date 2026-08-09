@@ -8,6 +8,7 @@ Static documentation for `help.layla-network.ai`, built with Astro, Markdown con
 npm run dev      # Start the Astro development server
 npm run check    # Validate Astro and TypeScript files
 npm run build    # Check, build static HTML, and generate the Pagefind index
+npm run deploy   # Upload the current dist directory to Cloudflare Workers
 npm run preview  # Preview the most recent build
 ```
 
@@ -38,4 +39,15 @@ draft: false
 
 ## Deployment
 
-Use `npm run build` as the Cloudflare Pages build command and `dist` as the output directory. The project is fully static and does not require a Cloudflare runtime adapter.
+The project is fully static and does not require a Cloudflare runtime adapter.
+
+For Cloudflare Workers Builds, use:
+
+```text
+Build command:  npm run build
+Deploy command: npm run deploy
+```
+
+The committed `wrangler.jsonc` uploads `dist` as static assets. Do not run Wrangler's automatic Astro setup or add `@astrojs/cloudflare`; that adapter is only needed for server-rendered Astro routes.
+
+For a Cloudflare Pages project, use `npm run build` as the build command and `dist` as the output directory. Pages does not need a separate deploy command.
