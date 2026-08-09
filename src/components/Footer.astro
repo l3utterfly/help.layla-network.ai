@@ -1,9 +1,11 @@
 ---
+import octicons from '@primer/octicons'
+
 const communityLinks = [
-  { label: 'Email', href: 'mailto:info@layla-network.ai' },
-  { label: 'Discord', href: 'https://discord.gg/x546YJ6nYC' },
-  { label: 'GitHub', href: 'https://github.com/l3utterfly/layla-sdk' },
-  { label: 'Website', href: 'https://www.layla-network.ai/' },
+  { label: 'Email', href: 'mailto:info@layla-network.ai', icon: 'mail' },
+  { label: 'Discord', href: 'https://discord.gg/x546YJ6nYC', icon: 'comment-discussion' },
+  { label: 'GitHub', href: 'https://github.com/l3utterfly/layla-sdk', icon: 'mark-github' },
+  { label: 'Website', href: 'https://www.layla-network.ai/', icon: 'globe' },
 ]
 ---
 
@@ -11,7 +13,10 @@ const communityLinks = [
   <p>© {new Date().getFullYear()} Layla Network · Gold Coast, Australia</p>
   <nav aria-label="Community and support">
     {communityLinks.map((link) => (
-      <a href={link.href}>{link.label}</a>
+      <a href={link.href}>
+        <span class="footer-channel-icon" aria-hidden="true" set:html={octicons[link.icon].toSVG({ width: 16, height: 16, focusable: 'false' })} />
+        <span>{link.label}</span>
+      </a>
     ))}
   </nav>
 </footer>

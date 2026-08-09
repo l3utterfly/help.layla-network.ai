@@ -217,8 +217,12 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
 .site-footer p { margin: 0; color: var(--quiet); font: 11px/1.4 var(--mono); }
 .site-footer nav { display: flex; gap: 9px; }
 .site-footer a {
+  display: inline-flex;
   min-width: 70px;
   padding: 9px 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   color: var(--secondary-text);
   border-radius: var(--radius-pill);
   background: rgb(255 255 255 / 5%);
@@ -228,6 +232,8 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
   text-decoration: none;
   transition: color .16s ease, background .16s ease, transform .16s ease;
 }
+.footer-channel-icon { display: inline-flex; flex: 0 0 auto; }
+.footer-channel-icon svg { display: block; fill: currentColor; stroke: none; }
 .site-footer a:hover { color: white; background: rgb(255 255 255 / 9%); transform: translateY(-1px); }
 
 /* Shared */
@@ -509,7 +515,8 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
   .site-footer { position: fixed; z-index: 40; right: 0; bottom: 0; left: 0; display: block; min-height: 69px; padding: 12px 14px 16px; border-top: 1px solid var(--border-strong); background: rgb(10 12 15 / 88%); backdrop-filter: blur(20px); }
   .site-footer p { display: none; }
   .site-footer nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
-  .site-footer a { min-width: 0; padding: 10px 4px; font-size: 11px; }
+  .site-footer a { min-width: 0; padding: 10px 4px; gap: 5px; font-size: 11px; }
+  .footer-channel-icon svg { width: 14px; height: 14px; }
 
   .home { width: 100%; padding: 24px 20px 44px; }
   .home-hero { gap: 11px; }
