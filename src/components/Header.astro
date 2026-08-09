@@ -16,8 +16,11 @@ const { mobileBack, editHref } = Astro.props
 <header class:list={{ 'site-header': true, 'has-mobile-context': Boolean(mobileBack) }} data-pagefind-ignore>
   <div class="header-inner">
     <a class="brand" href="/" aria-label="Layla Wiki home">
-      <span class="brand-name">LAYLA</span>
-      <span class="brand-section">WIKI</span>
+      <img class="brand-logo" src="/butterfly.png" width="1024" height="1024" alt="" />
+      <span class="brand-copy">
+        <span class="brand-name">LAYLA</span>
+        <span class="brand-section">WIKI</span>
+      </span>
     </a>
 
     <nav class="header-links" aria-label="Primary navigation">
@@ -27,7 +30,7 @@ const { mobileBack, editHref } = Astro.props
         <a href="/contact/">Get help</a>
       </div>
       <Search client:idle />
-      <a class="download-link" href="https://www.layla-network.ai/">Download</a>
+      <a class="download-link" href="/#download">Download</a>
     </nav>
   </div>
 

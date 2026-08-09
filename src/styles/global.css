@@ -100,7 +100,14 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
   justify-content: space-between;
   gap: 28px;
 }
-.brand { display: inline-flex; align-items: baseline; gap: 8px; text-decoration: none; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgb(46 143 255 / 28%));
+}
+.brand-copy { display: inline-flex; align-items: baseline; gap: 8px; }
 .brand-name { font-size: 15px; font-weight: 750; letter-spacing: .22em; }
 .brand-section {
   color: var(--accent);
@@ -282,6 +289,18 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
 .home-search svg { color: var(--accent); }
 .home-search:hover { color: var(--secondary-text); border-color: rgb(46 143 255 / 35%); }
 .home-search:active { transform: scale(.99); }
+.home-download { padding-top: 28px; margin-top: 62px; border-top: 1px solid var(--border); scroll-margin-top: calc(var(--header-height) + 18px); }
+.home-download > .section-label { margin-bottom: 14px; }
+.download-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+.download-badges a {
+  display: inline-flex;
+  height: 42px;
+  border-radius: 7px;
+  transition: filter .16s ease, transform .16s ease;
+}
+.download-badges a:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.download-badges a:active { transform: scale(.98); }
+.download-badges img { width: auto; height: 42px; object-fit: contain; }
 .home-section { margin-top: 52px; }
 .home-section > .section-label { margin-bottom: 15px; }
 .start-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
@@ -501,6 +520,7 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
   .ambient-glow { top: -150px; left: -130px; width: 360px; height: 360px; filter: blur(90px); }
   .site-header { min-height: var(--header-height); }
   .header-inner { min-height: var(--header-height); padding: 0 20px; }
+  .brand-logo { width: 30px; height: 30px; }
   .header-text-links, .header-links > .search-trigger, .header-links astro-island .search-trigger { display: none; }
   .header-links { margin-left: auto; }
   .download-link { padding: 7px 14px; font-size: 12px; }
@@ -523,6 +543,10 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
   .home-hero h1 { font-size: 30px; line-height: 1.15; letter-spacing: -.025em; }
   .home-hero > p { font-size: 14px; line-height: 1.6; }
   .home-search { height: 46px; margin-top: 5px; font-size: 14px; }
+  .download-badges { gap: 7px; }
+  .download-badges a, .download-badges img { height: 36px; }
+  .home-download { padding-top: 22px; margin-top: 36px; }
+  .home-download > .section-label { margin-bottom: 11px; }
   .home-section { margin-top: 28px; }
   .home-section > .section-label { margin-bottom: 12px; }
   .start-list { grid-template-columns: 1fr; gap: 8px; }

@@ -32,6 +32,7 @@ const articleLabel = (count: number) => count === 1 ? '1 article' : `${count} ar
         </svg>
         <span>Search {docs.length} {docs.length === 1 ? 'article' : 'articles'}</span>
       </button>
+
     </section>
 
     <section class="home-section" id="guides" aria-labelledby="start-here">
@@ -89,6 +90,36 @@ const articleLabel = (count: number) => count === 1 ? '1 article' : `${count} ar
             </span>
           </a>
         ))}
+      </div>
+    </section>
+
+    <section class="home-download" id="download" aria-labelledby="download-title">
+      <h2 class="section-label" id="download-title">Get Layla</h2>
+      <div class="download-badges">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.layla"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Get Layla on Google Play (opens in a new tab)"
+        >
+          <img src="/google_badge.png" width="564" height="168" alt="Get it on Google Play" />
+        </a>
+        <a
+          href="https://apps.apple.com/us/app/layla/id6456886656"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Download Layla on the App Store (opens in a new tab)"
+        >
+          <img src="/apple_badge.png" width="200" height="67" alt="Download on the App Store" />
+        </a>
+        <a
+          href="https://www.layla-network.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Get the official Layla APK (opens in a new tab)"
+        >
+          <img src="/directapk.png" width="386" height="112" alt="Direct download APK file" />
+        </a>
       </div>
     </section>
   </main>
