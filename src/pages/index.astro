@@ -5,9 +5,18 @@ import { docHref, getPublishedDocs, topicForCategory, topicHref, topics } from '
 import BaseLayout from '../layouts/BaseLayout.astro'
 
 const docs = await getPublishedDocs()
-const startHere = topics
-  .flatMap((topic) => docs.filter((entry) => entry.data.category === topic.category))
-  .slice(0, 3)
+const gettingStartedSlugs = [
+  'getting-started',
+  'how-to-run-layla-on-your-pc-with-bluestacks-and-lm-studio',
+  'personality-hub-ai-characters',
+]
+const gettingStarted = gettingStartedSlugs.map((slug) => {
+  const entry = docs.find((candidate) => docHref(candidate.id) === `/${slug}/`)
+
+  if (!entry) throw new Error(`Missing getting started article: ${slug}`)
+
+  return entry
+})
 const recent = [...docs].sort((left, right) => {
   const leftDate = left.data.lastUpdated?.getTime() ?? 0
   const rightDate = right.data.lastUpdated?.getTime() ?? 0
@@ -35,10 +44,10 @@ const articleLabel = (count: number) => count === 1 ? '1 article' : `${count} ar
 
     </section>
 
-    <section class="home-section" id="guides" aria-labelledby="start-here">
-      <h2 class="section-label" id="start-here">Start here</h2>
+    <section class="home-section" id="guides" aria-labelledby="getting-started">
+      <h2 class="section-label" id="getting-started">Getting started</h2>
       <div class="start-list">
-        {startHere.map((entry, index) => (
+        {gettingStarted.map((entry, index) => (
           <a class="start-card" href={docHref(entry.id)}>
             <span class="start-number">{String(index + 1).padStart(2, '0')}</span>
             <span class="start-copy">

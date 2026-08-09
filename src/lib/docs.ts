@@ -12,13 +12,6 @@ export interface TopicDefinition {
 
 export const topics: TopicDefinition[] = [
   {
-    name: 'Getting started',
-    category: 'Getting started',
-    slug: 'getting-started',
-    description: 'Install Layla and start using your private, offline AI assistant.',
-    icon: 'rocket',
-  },
-  {
     name: 'Chat & memory',
     category: 'Chat & memory',
     slug: 'chat-memory',

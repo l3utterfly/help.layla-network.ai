@@ -1,7 +1,7 @@
 ---
 title: Getting started with Layla
 description: Set up Layla as an AI assistant, character chat, or private offline chatbot, then choose between cloud models and a local LLM on your phone.
-category: Getting started
+category: Models & performance
 order: 10
 keywords:
   - Layla setup

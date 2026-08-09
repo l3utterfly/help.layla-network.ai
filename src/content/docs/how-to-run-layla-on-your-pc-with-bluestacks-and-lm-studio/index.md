@@ -1,7 +1,7 @@
 ---
 title: How to run Layla on your PC with BlueStacks and LM Studio
 description: Install Layla in BlueStacks and connect it to an LM Studio model through a local OpenAI-compatible API.
-category: Getting started
+category: Mini-apps & integrations
 order: 20
 keywords:
   - Layla on Windows
