@@ -1,5 +1,6 @@
 ---
 import type { MarkdownHeading } from 'astro'
+import type { ImageMetadata } from 'astro'
 import Header from '../components/Header.astro'
 import Sidebar from '../components/Sidebar.astro'
 import TableOfContents from '../components/TableOfContents.astro'
@@ -23,6 +24,10 @@ interface Props {
   editHref: string
   previous?: DocLink
   next?: DocLink
+  image?: {
+    src: ImageMetadata
+    alt: string
+  }
 }
 
 const {
@@ -37,6 +42,7 @@ const {
   editHref,
   previous,
   next,
+  image,
 } = Astro.props
 const topic = topicForCategory(category)
 const updated = lastUpdated
@@ -44,7 +50,14 @@ const updated = lastUpdated
   : undefined
 ---
 
-<BaseLayout title={title} description={description} keywords={keywords}>
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+  pageType="article"
+  lastUpdated={lastUpdated}
+>
   <Header mobileBack={{ href: topicHref(category), label: topic.name }} editHref={editHref} />
   <div class="docs-shell">
     <Sidebar />

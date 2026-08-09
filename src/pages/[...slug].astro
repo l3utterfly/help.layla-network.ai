@@ -1,6 +1,7 @@
 ---
 import { render, type CollectionEntry } from 'astro:content'
 import DocsLayout from '../layouts/DocsLayout.astro'
+import { getArticleSeoImage } from '../lib/articleSeo'
 import { docHref, docSlug, estimateReadingMinutes, getPublishedDocs } from '../lib/docs'
 
 interface DocLink {
@@ -42,6 +43,7 @@ const readingMinutes = estimateReadingMinutes(entry.body ?? '')
 const sourceFile = entry.filePath ?? `src/content/docs/${entry.id}.md`
 const sourcePath = sourceFile.replace(/^src\/content\/docs\//, '')
 const editHref = `https://github.com/l3utterfly/help.layla-network.ai/edit/main/${sourceFile}`
+const image = getArticleSeoImage(entry)
 ---
 
 <DocsLayout
@@ -56,6 +58,7 @@ const editHref = `https://github.com/l3utterfly/help.layla-network.ai/edit/main/
   editHref={editHref}
   previous={previous}
   next={next}
+  image={image}
 >
   <Content />
 </DocsLayout>

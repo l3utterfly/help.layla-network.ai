@@ -1,13 +1,23 @@
 ---
+import type { ImageMetadata } from 'astro'
+import { getImage } from 'astro:assets'
 import SeoHead from '../components/SeoHead.astro'
 import Footer from '../components/Footer.astro'
 import '../styles/global.css'
+
+interface SocialImage {
+  src: ImageMetadata
+  alt: string
+}
 
 interface Props {
   title: string
   description: string
   keywords?: string[]
   titleSuffix?: boolean
+  image?: SocialImage
+  pageType?: 'website' | 'article'
+  lastUpdated?: Date
 }
 
 const {
@@ -15,15 +25,36 @@ const {
   description,
   keywords = [],
   titleSuffix = true,
+  image,
+  pageType = 'website',
+  lastUpdated,
 } = Astro.props
 const documentTitle = titleSuffix ? `${title} | Layla Help` : title
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
+const generatedImage = image ? await getImage({ src: image.src }) : undefined
+const socialImage = generatedImage
+  ? {
+      url: new URL(generatedImage.src, Astro.site ?? canonical),
+      alt: image?.alt ?? title,
+      width: Number(generatedImage.attributes.width),
+      height: Number(generatedImage.attributes.height),
+      type: `image/${generatedImage.options.format}`,
+    }
+  : {
+      url: new URL('/meta.jpg', Astro.site ?? canonical),
+      alt: 'Layla Help',
+      width: 1024,
+      height: 537,
+      type: 'image/jpeg',
+    }
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: title,
+  '@type': pageType === 'article' ? 'TechArticle' : 'WebPage',
+  ...(pageType === 'article' ? { headline: title } : { name: title }),
   description,
   url: canonical.href,
+  image: socialImage.url.href,
+  ...(lastUpdated ? { dateModified: lastUpdated.toISOString() } : {}),
   isPartOf: {
     '@type': 'WebSite',
     name: 'Layla Help',
@@ -45,7 +76,14 @@ const structuredData = {
       title={documentTitle}
       description={description}
       canonical={canonical}
+      image={socialImage.url}
+      imageAlt={socialImage.alt}
+      imageWidth={socialImage.width}
+      imageHeight={socialImage.height}
+      imageType={socialImage.type}
       keywords={keywords}
+      pageType={pageType}
+      lastUpdated={lastUpdated}
     />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>

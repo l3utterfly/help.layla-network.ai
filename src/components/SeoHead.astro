@@ -3,26 +3,52 @@ interface Props {
   title: string
   description: string
   canonical: URL
-  image?: URL
+  image: URL
+  imageAlt: string
+  imageWidth?: number
+  imageHeight?: number
+  imageType?: string
   keywords?: string[]
+  pageType?: 'website' | 'article'
+  lastUpdated?: Date
 }
 
-const { title, description, canonical, image, keywords = [] } = Astro.props
-const socialImage = image ?? new URL('/og-default.svg', Astro.site ?? canonical)
+const {
+  title,
+  description,
+  canonical,
+  image,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  imageType,
+  keywords = [],
+  pageType = 'website',
+  lastUpdated,
+} = Astro.props
 ---
 
 <meta name="description" content={description} />
 {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
 <link rel="canonical" href={canonical} />
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content={pageType} />
 <meta property="og:site_name" content="Layla Help" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
-<meta property="og:image" content={socialImage} />
+<meta property="og:image" content={image} />
+<meta property="og:image:secure_url" content={image} />
+<meta property="og:image:alt" content={imageAlt} />
+{imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+{imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
+{imageType && <meta property="og:image:type" content={imageType} />}
+{pageType === 'article' && lastUpdated && (
+  <meta property="article:modified_time" content={lastUpdated.toISOString()} />
+)}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={socialImage} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:image:alt" content={imageAlt} />
