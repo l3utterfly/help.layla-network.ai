@@ -1,8 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
 import Header from '../../components/Header.astro'
 import TopicIcon from '../../components/TopicIcon.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getArticleSeoImage } from '../../lib/articleSeo'
 import { docHref, getPublishedDocs, topics } from '../../lib/docs'
 
 interface Props {
@@ -51,20 +53,36 @@ const filters = ['All', ...new Set(entries.flatMap((entry) => entry.data.keyword
     </div>
 
     <section class="category-articles" aria-label={`${topic.name} articles`}>
-      {entries.map((entry) => (
-        <a
-          class="category-article-card"
-          href={docHref(entry.id)}
-          data-tags={entry.data.keywords.join(' ').toLowerCase()}
-        >
-          <h2>{entry.data.title}</h2>
-          <p>{entry.data.description}</p>
-          <span>
-            Guide
-            {entry.data.lastUpdated && ` · updated ${new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short' }).format(entry.data.lastUpdated)}`}
-          </span>
-        </a>
-      ))}
+      {entries.map((entry) => {
+        const image = getArticleSeoImage(entry)
+
+        return (
+          <a
+            class:list={['category-article-card', { 'has-thumbnail': image }]}
+            href={docHref(entry.id)}
+            data-tags={entry.data.keywords.join(' ').toLowerCase()}
+          >
+            {image && (
+              <Image
+                class="category-article-thumbnail"
+                src={image.src}
+                alt={image.alt}
+                width={160}
+                height={100}
+                loading="lazy"
+              />
+            )}
+            <div class="category-article-copy">
+              <h2>{entry.data.title}</h2>
+              <p>{entry.data.description}</p>
+              <span>
+                Guide
+                {entry.data.lastUpdated && ` · updated ${new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short' }).format(entry.data.lastUpdated)}`}
+              </span>
+            </div>
+          </a>
+        )
+      })}
     </section>
   </main>
 
