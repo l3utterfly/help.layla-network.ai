@@ -9,7 +9,6 @@ keywords:
   - Layla Lite
   - Inference Settings
   - model selection
-sourceUrl: https://blog.layla-network.ai/post/how-to-switch-between-local-llm-and-layla-cloud
 lastUpdated: 2024-07-18
 ---
 

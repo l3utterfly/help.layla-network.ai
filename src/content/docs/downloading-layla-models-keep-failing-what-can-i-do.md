@@ -9,7 +9,6 @@ keywords:
   - custom model
   - GGUF
   - Hugging Face
-sourceUrl: https://blog.layla-network.ai/post/downloading-layla-models-keep-failing-what-can-i-do
 lastUpdated: 2024-05-08
 ---
 

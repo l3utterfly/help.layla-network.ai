@@ -9,7 +9,6 @@ keywords:
   - Python agent
   - Execute Python
   - tool calling
-sourceUrl: https://blog.layla-network.ai/post/how-to-create-a-duckduckgo-news-search-agent-with-python-in-layla
 lastUpdated: 2026-04-02
 ---
 

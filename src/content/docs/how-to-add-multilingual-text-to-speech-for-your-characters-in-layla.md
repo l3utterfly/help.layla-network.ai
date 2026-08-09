@@ -9,7 +9,6 @@ keywords:
   - character voices
   - Android TTS
   - offline voice
-sourceUrl: https://blog.layla-network.ai/post/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla
 lastUpdated: 2026-05-11
 ---
 

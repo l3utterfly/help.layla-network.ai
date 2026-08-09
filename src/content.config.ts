@@ -13,7 +13,6 @@ const docs = defineCollection({
     category: z.string().default('Guides'),
     order: z.number().int().default(999),
     keywords: z.array(z.string()).default([]),
-    sourceUrl: z.url().optional(),
     lastUpdated: z.coerce.date().optional(),
     draft: z.boolean().default(false),
   }),

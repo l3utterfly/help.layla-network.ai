@@ -9,7 +9,6 @@ keywords:
   - Layla Agents
   - tool calling
   - remote MCP tools
-sourceUrl: https://blog.layla-network.ai/post/full-mcp-support-in-layla
 lastUpdated: 2025-10-14
 ---
 

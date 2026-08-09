@@ -9,7 +9,6 @@ keywords:
   - Civitai
   - image generation
   - Local Dream
-sourceUrl: https://blog.layla-network.ai/post/how-to-import-sd1-5-safetensor-models-from-civit-ai-into-layla
 lastUpdated: 2026-05-06
 ---
 

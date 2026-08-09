@@ -9,7 +9,6 @@ keywords:
   - disable features
   - My Apps
   - premium Layla
-sourceUrl: https://blog.layla-network.ai/post/how-to-enable-disable-mini-apps-within-layla
 lastUpdated: 2024-12-14
 ---
 

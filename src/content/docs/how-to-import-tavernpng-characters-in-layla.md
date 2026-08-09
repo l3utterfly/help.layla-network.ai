@@ -9,7 +9,6 @@ keywords:
   - character cards
   - Personalities Hub
   - Chub.AI
-sourceUrl: https://blog.layla-network.ai/post/how-to-import-tavernpng-characters-in-layla
 lastUpdated: 2025-12-07
 ---
 

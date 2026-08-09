@@ -9,7 +9,6 @@ keywords:
   - background processing
   - battery optimization
   - Android permissions
-sourceUrl: https://blog.layla-network.ai/post/my-long-term-memory-is-not-getting-constructed-fast-enough-are-there-any-ways-to-make-it-faster
 lastUpdated: 2024-03-15
 ---
 

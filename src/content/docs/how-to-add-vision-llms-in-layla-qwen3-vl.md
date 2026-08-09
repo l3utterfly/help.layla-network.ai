@@ -9,7 +9,6 @@ keywords:
   - mmproj
   - GGUF vision model
   - image recognition
-sourceUrl: https://blog.layla-network.ai/post/how-to-add-vision-llms-in-layla-qwen3-vl
 lastUpdated: 2025-11-24
 ---
 

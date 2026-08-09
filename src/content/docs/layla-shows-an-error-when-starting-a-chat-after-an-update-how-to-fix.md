@@ -9,7 +9,6 @@ keywords:
   - clear cache
   - chat error
   - troubleshooting
-sourceUrl: https://blog.layla-network.ai/post/layla-shows-an-error-when-starting-a-chat-after-an-update-how-to-fix
 lastUpdated: 2024-03-14
 ---
 

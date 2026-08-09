@@ -9,7 +9,6 @@ keywords:
   - Structured Output
   - BNF grammar
   - action dialogue
-sourceUrl: https://blog.layla-network.ai/post/how-to-create-a-roleplay-agent
 lastUpdated: 2025-10-01
 ---
 

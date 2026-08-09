@@ -9,7 +9,6 @@ keywords:
   - character creator
   - Personality Hub
   - AI characters
-sourceUrl: https://blog.layla-network.ai/post/how-do-i-create-custom-characters
 lastUpdated: 2024-01-12
 ---
 

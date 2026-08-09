@@ -9,7 +9,6 @@ keywords:
   - agent tools
   - tool calling
   - LLM parameters
-sourceUrl: https://blog.layla-network.ai/post/deep-dive-into-layla-agents
 lastUpdated: 2025-10-01
 ---
 

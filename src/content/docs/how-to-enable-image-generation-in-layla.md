@@ -9,7 +9,6 @@ keywords:
   - Automatic1111
   - Layla Cloud
   - character images
-sourceUrl: https://blog.layla-network.ai/post/how-to-enable-image-generation-in-layla
 lastUpdated: 2024-12-14
 ---
 

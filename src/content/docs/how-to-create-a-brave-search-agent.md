@@ -9,7 +9,6 @@ keywords:
   - HTTP Request
   - Eval tool
   - web search agent
-sourceUrl: https://blog.layla-network.ai/post/how-to-create-a-brave-search-agent
 lastUpdated: 2025-10-24
 ---
 

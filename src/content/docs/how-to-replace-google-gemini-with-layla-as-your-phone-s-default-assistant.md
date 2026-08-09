@@ -9,7 +9,6 @@ keywords:
   - Samsung assistant
   - Layla character
   - Android assistant
-sourceUrl: https://blog.layla-network.ai/post/how-to-replace-google-gemini-with-layla-as-your-phone-s-default-assistant
 lastUpdated: 2025-10-20
 ---
 

@@ -9,7 +9,6 @@ keywords:
   - browse mini-apps
   - customise Layla
   - install mini-apps
-sourceUrl: https://blog.layla-network.ai/post/how-to-add-features-mini-apps-in-layla
 lastUpdated: 2026-03-24
 ---
 

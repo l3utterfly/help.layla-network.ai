@@ -9,7 +9,6 @@ keywords:
   - personas
   - local AI models
   - roleplay scenarios
-sourceUrl: https://blog.layla-network.ai/post/how-layla-chat-histories-work-across-characters-personas-models-and-roleplay-scenarios
 lastUpdated: 2026-07-31
 ---
 

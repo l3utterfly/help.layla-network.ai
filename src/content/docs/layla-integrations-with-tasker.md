@@ -9,7 +9,6 @@ keywords:
   - background inference
   - Task Completed event
   - LLM automation
-sourceUrl: https://blog.layla-network.ai/post/layla-integrations-with-tasker
 lastUpdated: 2024-10-17
 ---
 

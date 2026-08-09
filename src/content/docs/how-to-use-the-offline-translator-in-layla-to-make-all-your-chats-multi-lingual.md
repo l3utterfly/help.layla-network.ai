@@ -9,7 +9,6 @@ keywords:
   - offline translation
   - local language model
   - automatic translation
-sourceUrl: https://blog.layla-network.ai/post/how-to-use-the-offline-translator-in-layla-to-make-all-your-chats-multi-lingual
 lastUpdated: 2024-11-07
 ---
 

@@ -9,7 +9,6 @@ keywords:
   - Layla Q2
   - base model
   - RAM requirements
-sourceUrl: https://blog.layla-network.ai/post/what-is-the-difference-between-layla-full-and-layla-lite
 lastUpdated: 2023-12-13
 ---
 

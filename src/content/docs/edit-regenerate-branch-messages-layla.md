@@ -9,7 +9,6 @@ keywords:
   - branch conversations
   - message actions
   - offline chat
-sourceUrl: https://blog.layla-network.ai/post/edit-regenerate-branch-messages-layla
 lastUpdated: 2026-07-25
 ---
 

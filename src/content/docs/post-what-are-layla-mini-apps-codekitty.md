@@ -9,7 +9,6 @@ keywords:
   - Layla SDK
   - WebView apps
   - on-device AI
-sourceUrl: https://blog.layla-network.ai/post/post-what-are-layla-mini-apps-codekitty
 lastUpdated: 2026-07-18
 ---
 

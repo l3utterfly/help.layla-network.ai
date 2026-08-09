@@ -9,7 +9,6 @@ keywords:
   - high-end phone
   - battery optimization
   - Q2 model
-sourceUrl: https://blog.layla-network.ai/post/layla-is-responding-slowly-even-though-i-have-an-high-end-phone-what-can-i-do
 lastUpdated: 2024-04-07
 ---
 

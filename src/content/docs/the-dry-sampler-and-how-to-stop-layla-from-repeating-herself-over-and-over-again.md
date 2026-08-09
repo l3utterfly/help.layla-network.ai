@@ -9,7 +9,6 @@ keywords:
   - Layla Advanced Settings
   - repeated responses
   - quantized LLM
-sourceUrl: https://blog.layla-network.ai/post/the-dry-sampler-and-how-to-stop-layla-from-repeating-herself-over-and-over-again
 lastUpdated: 2024-04-26
 ---
 

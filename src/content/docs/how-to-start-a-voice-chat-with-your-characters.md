@@ -9,7 +9,6 @@ keywords:
   - text to speech
   - animated characters
   - voice conversation
-sourceUrl: https://blog.layla-network.ai/post/how-to-start-a-voice-chat-with-your-characters
 lastUpdated: 2025-04-11
 ---
 

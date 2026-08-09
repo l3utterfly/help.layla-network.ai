@@ -9,7 +9,6 @@ keywords:
   - perplexity
   - text generation
   - Layla Advanced Settings
-sourceUrl: https://blog.layla-network.ai/post/the-mirostat-sampler-and-stopping-layla-from-repeating-the-same-thing-over-and-over-again
 lastUpdated: 2024-01-12
 ---
 

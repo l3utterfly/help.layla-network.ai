@@ -9,7 +9,6 @@ keywords:
   - delete conversations
   - export conversations
   - local storage
-sourceUrl: https://blog.layla-network.ai/post/how-does-conversation-history-work-in-layla
 lastUpdated: 2026-07-30
 ---
 

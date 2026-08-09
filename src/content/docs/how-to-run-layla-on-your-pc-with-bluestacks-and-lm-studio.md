@@ -9,7 +9,6 @@ keywords:
   - LM Studio
   - OpenAI-compatible API
   - local LLM
-sourceUrl: https://blog.layla-network.ai/post/how-to-run-layla-on-your-pc-with-bluestacks-and-lm-studio
 lastUpdated: 2026-07-26
 ---
 

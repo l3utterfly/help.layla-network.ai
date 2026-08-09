@@ -9,7 +9,6 @@ keywords:
   - AI companions
   - Character.AI alternative
   - offline character chat
-sourceUrl: https://blog.layla-network.ai/post/personality-hub-ai-characters
 lastUpdated: 2024-01-01
 ---
 

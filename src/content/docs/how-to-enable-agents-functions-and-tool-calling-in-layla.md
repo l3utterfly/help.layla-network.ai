@@ -9,7 +9,6 @@ keywords:
   - functions
   - Agents mini-app
   - custom characters
-sourceUrl: https://blog.layla-network.ai/post/how-to-enable-agents-functions-and-tool-calling-in-layla
 lastUpdated: 2025-10-01
 ---
 

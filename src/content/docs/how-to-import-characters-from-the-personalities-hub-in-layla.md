@@ -9,7 +9,6 @@ keywords:
   - download characters
   - Layla personalities
   - character chat
-sourceUrl: https://blog.layla-network.ai/post/how-to-import-characters-from-the-personalities-hub-in-layla
 lastUpdated: 2025-10-11
 ---
 

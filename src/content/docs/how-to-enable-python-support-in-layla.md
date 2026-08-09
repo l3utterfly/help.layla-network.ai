@@ -9,7 +9,6 @@ keywords:
   - Layla Agents
   - Execute Python
   - pip packages
-sourceUrl: https://blog.layla-network.ai/post/how-to-enable-python-support-in-layla
 lastUpdated: 2026-03-24
 ---
 

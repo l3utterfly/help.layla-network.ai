@@ -9,7 +9,6 @@ keywords:
   - Stable Diffusion prompt
   - Structured Output
   - roleplay images
-sourceUrl: https://blog.layla-network.ai/post/creating-an-image-generation-agent
 lastUpdated: 2025-10-01
 ---
 

@@ -9,7 +9,6 @@ keywords:
   - quantization
   - custom LLM
   - Hugging Face
-sourceUrl: https://blog.layla-network.ai/post/what-are-gguf-models-what-are-model-quants
 lastUpdated: 2024-08-21
 ---
 
