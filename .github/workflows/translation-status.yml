@@ -1,0 +1,63 @@
+name: Translation status
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "src/content/docs/**/index.md"
+      - "src/content/docs/**/index.mdx"
+      - src/lib/i18n.ts
+      - astro.config.mjs
+      - scripts/report-translations.mjs
+      - .github/workflows/translation-status.yml
+  push:
+    branches:
+      - main
+    paths:
+      - "src/content/docs/**/index.md"
+      - "src/content/docs/**/index.mdx"
+      - src/lib/i18n.ts
+      - astro.config.mjs
+      - scripts/report-translations.mjs
+      - .github/workflows/translation-status.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: translation-status-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  translation-status:
+    name: Report translation status
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Report translation status for pull request
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: npm run report:translations -- --base "$BASE_SHA"
+
+      - name: Report complete translation status
+        if: github.event_name != 'pull_request'
+        run: npm run report:translations

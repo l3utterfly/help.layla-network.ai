@@ -47,6 +47,7 @@ npm run lint     # Run Oxlint
 npm run build    # Check, build static HTML, and generate the Pagefind index
 npm run preview  # Preview the most recent production build
 npm run deploy   # Upload the current dist folder (run build first)
+npm run report:translations # Report missing and outdated translations
 ```
 
 Validate one new or edited article with:
@@ -60,6 +61,17 @@ Run the article validator without a path to validate every article:
 ```sh
 npm run validate:articles
 ```
+
+Report every missing or outdated article translation:
+
+```sh
+npm run report:translations
+```
+
+The translation report compares the last Git commit for each published English
+article's `index.md` with every registered language. It is informational and
+does not fail when translation work is outstanding. Pull requests run a scoped
+version of this report for English articles changed by the pull request.
 
 If validation reports a Prettier error, format the article with:
 
@@ -79,7 +91,8 @@ src/
 ├── pages/                Static routes and article asset endpoint
 └── styles/               Global styles
 scripts/
-└── validate-articles.mjs Article-specific validation
+├── report-translations.mjs Translation status reporting
+└── validate-articles.mjs   Article-specific validation
 public/                   Site-wide static assets
 dist/                     Generated production site
 ```

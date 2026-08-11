@@ -10,6 +10,7 @@
     "deploy": "wrangler deploy",
     "lint": "oxlint",
     "preview": "astro preview",
+    "report:translations": "node scripts/report-translations.mjs",
     "validate:articles": "node scripts/validate-articles.mjs"
   },
   "dependencies": {
