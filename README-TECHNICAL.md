@@ -105,6 +105,23 @@ Astro locale routing is configured in `astro.config.mjs`. A translated article
 only appears in a language's navigation and search index when its Markdown file
 exists; missing translations continue to use their original English URL.
 
+### Adding another language
+
+1. Add its BCP 47 language code to `locales` in `astro.config.mjs` and
+   `src/lib/i18n.ts`.
+2. Add its native name, short label, text direction, and Open Graph locale to
+   `localeMetadata`. Interface copy can be added to the `ui` map progressively;
+   untranslated interface strings fall back to English.
+3. Copy the small route wrappers under `src/pages/fr` into a folder named for
+   the new locale and update their `locale` values.
+4. Add translated Markdown below `src/content/docs/<locale>/`, using the same
+   `translationKey` as the English article.
+
+The language menu automatically lists every registered locale, remains
+scrollable when the list grows, and sends visitors to a language's homepage
+when the current article has not been translated. Pagefind creates a separate
+search index for every language found in the generated HTML.
+
 Articles conventionally use this layout:
 
 ```text

@@ -1,0 +1,68 @@
+---
+import {
+  defaultLocale,
+  getUi,
+  localeMetadata,
+  localePath,
+  locales,
+  type Locale,
+  type LocaleLink,
+} from '../lib/i18n'
+
+interface Props {
+  locale?: Locale
+  localeLinks?: LocaleLink[]
+  compact?: boolean
+}
+
+const {
+  locale = defaultLocale,
+  localeLinks = [],
+  compact = false,
+} = Astro.props
+const ui = getUi(locale)
+const switcherLinks = locales.map((candidate) => {
+  const matchingPage = localeLinks.find((link) => link.locale === candidate)
+
+  return {
+    locale: candidate,
+    href: matchingPage?.href ?? localePath(candidate),
+    isHomepageFallback: !matchingPage,
+  }
+})
+const currentLocale = localeMetadata[locale]
+---
+
+{switcherLinks.length > 1 && (
+  <details
+    class:list={['language-switcher', { 'language-switcher-compact': compact }]}
+  >
+    <summary aria-label={ui.selectLanguage} title={ui.selectLanguage}>
+      <span class="language-current" aria-hidden="true">{currentLocale.shortName}</span>
+    </summary>
+    <nav class="language-menu" aria-label={ui.selectLanguage}>
+      {switcherLinks.map((link) => {
+        const metadata = localeMetadata[link.locale]
+        const isCurrent = link.locale === locale
+
+        return (
+          <a
+            href={link.href}
+            lang={link.locale}
+            dir={metadata.direction}
+            hreflang={link.locale}
+            aria-current={isCurrent ? 'page' : undefined}
+          >
+            <span class="language-option-copy">
+              <strong>{metadata.name}</strong>
+              {link.isHomepageFallback && !isCurrent && <small>{ui.languageHome}</small>}
+            </span>
+            <span class="language-option-meta" aria-hidden="true">
+              {isCurrent ? '✓' : metadata.shortName}
+            </span>
+          </a>
+        )
+      })}
+    </nav>
+  </details>
+)}

@@ -3,7 +3,7 @@ import type { ImageMetadata } from 'astro'
 import { getImage } from 'astro:assets'
 import SeoHead from '../components/SeoHead.astro'
 import Footer from '../components/Footer.astro'
-import { defaultLocale, getUi, type Locale, type LocaleLink } from '../lib/i18n'
+import { defaultLocale, getUi, localeMetadata, type Locale, type LocaleLink } from '../lib/i18n'
 import '../styles/global.css'
 
 interface SocialImage {
@@ -35,6 +35,7 @@ const {
   localeLinks = [],
 } = Astro.props
 const ui = getUi(locale)
+const localeDetails = localeMetadata[locale]
 const documentTitle = titleSuffix ? `${title} | Layla Help` : title
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
 const alternateLocales = localeLinks.map((link) => ({
@@ -75,7 +76,7 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={locale} dir={localeDetails.direction}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -95,7 +96,7 @@ const structuredData = {
       keywords={keywords}
       pageType={pageType}
       lastUpdated={lastUpdated}
-      locale={locale}
+      ogLocale={localeDetails.ogLocale}
       alternateLocales={alternateLocales}
     />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />

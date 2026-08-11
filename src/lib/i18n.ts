@@ -9,14 +9,26 @@ export interface LocaleLink {
 
 export const defaultLocale: Locale = "en";
 
-export const localeNames: Record<Locale, string> = {
-  en: "English",
-  fr: "Français",
-};
+export interface LocaleMetadata {
+  name: string;
+  shortName: string;
+  direction: "ltr" | "rtl";
+  ogLocale: string;
+}
 
-export const localeShortNames: Record<Locale, string> = {
-  en: "EN",
-  fr: "FR",
+export const localeMetadata: Record<Locale, LocaleMetadata> = {
+  en: {
+    name: "English",
+    shortName: "EN",
+    direction: "ltr",
+    ogLocale: "en_GB",
+  },
+  fr: {
+    name: "Français",
+    shortName: "FR",
+    direction: "ltr",
+    ogLocale: "fr_FR",
+  },
 };
 
 export function isLocale(value: string): value is Locale {
@@ -34,14 +46,14 @@ export function homeLocaleLinks(): LocaleLink[] {
   return locales.map((locale) => ({ locale, href: localePath(locale) }));
 }
 
-const ui = {
-  en: {
+const englishUi = {
     siteHome: "Layla Wiki home",
     guides: "Guides",
     faq: "FAQ",
     getHelp: "Get help",
     download: "Download",
     selectLanguage: "Select language",
+    languageHome: "Homepage",
     documentation: "Documentation",
     topics: "Topics",
     wiki: "Wiki",
@@ -91,14 +103,16 @@ const ui = {
     resultCount: (count: number) =>
       `${count} ${count === 1 ? "result" : "results"}`,
     readingMinutes: (count: number) => `${count} min read`,
-  },
-  fr: {
+};
+
+const frenchUi: typeof englishUi = {
     siteHome: "Accueil du wiki Layla",
     guides: "Guides",
     faq: "FAQ",
     getHelp: "Obtenir de l’aide",
     download: "Télécharger",
     selectLanguage: "Choisir la langue",
+    languageHome: "Accueil",
     documentation: "Documentation",
     topics: "Sujets",
     wiki: "Wiki",
@@ -148,9 +162,13 @@ const ui = {
     resultCount: (count: number) =>
       `${count} ${count === 1 ? "résultat" : "résultats"}`,
     readingMinutes: (count: number) => `${count} min de lecture`,
-  },
+};
+
+const ui: Partial<Record<Locale, typeof englishUi>> = {
+  en: englishUi,
+  fr: frenchUi,
 };
 
 export function getUi(locale: Locale) {
-  return ui[locale];
+  return ui[locale] ?? englishUi;
 }
