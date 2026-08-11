@@ -186,6 +186,13 @@ function validateFrontmatter(parsed, categories) {
     });
   }
 
+  if ("ai_translated" in data && typeof data.ai_translated !== "boolean") {
+    errors.push({
+      line: 2,
+      message: "Optional frontmatter field `ai_translated` must be a boolean.",
+    });
+  }
+
   if (
     "translationKey" in data &&
     (typeof data.translationKey !== "string" ||

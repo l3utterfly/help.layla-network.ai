@@ -101,8 +101,8 @@ dist/                     Generated production site
 
 The `docs` content collection loads every Markdown or MDX file below
 `src/content/docs`. Its schema in `src/content.config.ts` validates `title`,
-`description`, `category`, `order`, `keywords`, `lastUpdated`, `draft`, and the
-optional `translationKey`.
+`description`, `category`, `order`, `keywords`, `lastUpdated`, `draft`,
+`ai_translated`, and the optional `translationKey`.
 
 English articles remain at the collection root so their existing URLs stay
 unchanged. Translated articles live below a registered locale folder and use a

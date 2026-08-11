@@ -75,6 +75,7 @@ keywords:
   - local model
 lastUpdated: 2026-08-09
 draft: false
+ai_translated: false
 ---
 ```
 
@@ -89,6 +90,8 @@ draft: false
 - `lastUpdated` is optional. When used, write the date as `YYYY-MM-DD`.
 - `draft` is optional. Set it to `true` to keep an unfinished article off the
   published site, or `false` to publish it after the pull request is merged.
+- `ai_translated` is optional. Set it to `true` when an article was translated
+  by AI. The published page will warn readers and link to the English version.
 
 Use one of these exact category names:
 

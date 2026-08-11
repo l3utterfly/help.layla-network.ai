@@ -119,6 +119,10 @@ const englishUi = {
   recentSearches: "Recent searches",
   cancel: "Cancel",
   untitledPage: "Untitled page",
+  aiTranslatedTitle: "AI-translated page",
+  aiTranslatedWarning:
+    "This page was translated with AI and may contain mistakes.",
+  viewEnglishVersion: "Check the English version for authoritative information",
   searchTerms: ["local models", "licence", "characters", "voice"],
   articleCount: (count: number) =>
     count === 1 ? "1 article" : `${count} articles`,
@@ -178,6 +182,10 @@ const frenchUi: typeof englishUi = {
   recentSearches: "Recherches récentes",
   cancel: "Annuler",
   untitledPage: "Page sans titre",
+  aiTranslatedTitle: "Page traduite par l’IA",
+  aiTranslatedWarning:
+    "Cette page a été traduite par une IA et peut contenir des erreurs.",
+  viewEnglishVersion: "Consulter la version anglaise comme source de référence",
   searchTerms: ["modèles locaux", "licence", "personnages", "voix"],
   articleCount: (count: number) =>
     count === 1 ? "1 article" : `${count} articles`,

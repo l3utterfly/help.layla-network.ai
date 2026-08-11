@@ -20,6 +20,7 @@ interface Props {
   headings: MarkdownHeading[]
   category: string
   lastUpdated?: Date
+  aiTranslated?: boolean
   sourcePath: string
   readingMinutes: number
   editHref: string
@@ -40,6 +41,7 @@ const {
   headings,
   category,
   lastUpdated,
+  aiTranslated = false,
   sourcePath,
   readingMinutes,
   editHref,
@@ -51,6 +53,7 @@ const {
 } = Astro.props
 const ui = getUi(locale)
 const topic = topicForCategory(category, locale)
+const englishVersion = localeLinks.find((link) => link.locale === defaultLocale)
 const updated = lastUpdated
   ? new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short', year: 'numeric' }).format(lastUpdated)
   : undefined
@@ -87,6 +90,20 @@ const updated = lastUpdated
         <header class="article-header">
           <span class="article-kind">{ui.guide}</span>
           <h1 data-pagefind-meta="title">{title}</h1>
+          {aiTranslated && (
+            <aside class="ai-translation-notice" role="note" data-pagefind-ignore>
+              <span class="ai-translation-badge" aria-hidden="true">AI</span>
+              <div>
+                <strong>{ui.aiTranslatedTitle}</strong>
+                <p>
+                  {ui.aiTranslatedWarning}
+                  {englishVersion && (
+                    <> <a href={englishVersion.href}>{ui.viewEnglishVersion} →</a></>
+                  )}
+                </p>
+              </div>
+            </aside>
+          )}
           <span class="sr-only" data-pagefind-meta="category">{topic.name}</span>
           <div class="article-meta" data-pagefind-ignore>
             {updated && <span>{ui.updated} {updated}</span>}

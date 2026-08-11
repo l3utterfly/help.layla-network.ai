@@ -15,6 +15,7 @@ const docs = defineCollection({
     keywords: z.array(z.string()).default([]),
     lastUpdated: z.coerce.date().optional(),
     draft: z.boolean().default(false),
+    ai_translated: z.boolean().default(false),
     translationKey: z.string().min(1).optional(),
   }),
 });

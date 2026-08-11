@@ -9,6 +9,7 @@ keywords:
   - IA hors ligne
 lastUpdated: 2026-08-11
 translationKey: getting-started
+ai_translated: true
 ---
 
 Layla est un assistant IA privé qui peut fonctionner directement sur votre téléphone, même sans connexion Internet.
