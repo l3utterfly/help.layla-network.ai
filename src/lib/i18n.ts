@@ -8,6 +8,7 @@ export interface LocaleLink {
 }
 
 export const defaultLocale: Locale = "en";
+export const languagePreferenceKey = "layla-help-locale";
 
 export interface LocaleMetadata {
   name: string;

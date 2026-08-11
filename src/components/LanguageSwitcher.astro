@@ -52,6 +52,7 @@ const currentLocale = localeMetadata[locale]
             dir={metadata.direction}
             hreflang={link.locale}
             aria-current={isCurrent ? 'page' : undefined}
+            data-language-locale={link.locale}
           >
             <span class="language-option-copy">
               <strong>{metadata.name}</strong>

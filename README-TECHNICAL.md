@@ -135,6 +135,12 @@ scrollable when the list grows, and sends visitors to a language's homepage
 when the current article has not been translated. Pagefind creates a separate
 search index for every language found in the generated HTML.
 
+On default-language pages, the browser's preferred languages select the first
+available localized equivalent. The homepage is available in every registered
+locale, while articles only redirect when their translation exists. A language
+chosen from the language menu is stored locally and takes precedence over
+browser detection.
+
 Articles conventionally use this layout:
 
 ```text

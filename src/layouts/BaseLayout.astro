@@ -3,7 +3,15 @@ import type { ImageMetadata } from 'astro'
 import { getImage } from 'astro:assets'
 import SeoHead from '../components/SeoHead.astro'
 import Footer from '../components/Footer.astro'
-import { defaultLocale, getUi, localeMetadata, type Locale, type LocaleLink } from '../lib/i18n'
+import {
+  defaultLocale,
+  getUi,
+  languagePreferenceKey,
+  localeMetadata,
+  locales,
+  type Locale,
+  type LocaleLink,
+} from '../lib/i18n'
 import '../styles/global.css'
 
 interface SocialImage {
@@ -42,6 +50,7 @@ const alternateLocales = localeLinks.map((link) => ({
   locale: link.locale,
   url: new URL(link.href, Astro.site ?? canonical),
 }))
+const localeRedirects = Object.fromEntries(localeLinks.map((link) => [link.locale, link.href]))
 const generatedImage = image ? await getImage({ src: image.src }) : undefined
 const socialImage = generatedImage
   ? {
@@ -81,6 +90,62 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <script
+      is:inline
+      define:vars={{
+        currentLocale: locale,
+        defaultLocale,
+        languagePreferenceKey,
+        localeRedirects,
+        locales,
+      }}
+    >
+      (() => {
+        const normalizeLocale = (value) => value?.toLowerCase().split('-')[0]
+
+        document.addEventListener('click', (event) => {
+          if (!(event.target instanceof Element)) return
+
+          const link = event.target.closest('[data-language-locale]')
+          const selectedLocale = normalizeLocale(link?.dataset.languageLocale)
+          if (!selectedLocale || !locales.includes(selectedLocale)) return
+
+          try {
+            localStorage.setItem(languagePreferenceKey, selectedLocale)
+          } catch {
+            // Language detection still works when storage is unavailable.
+          }
+        })
+
+        if (currentLocale !== defaultLocale) return
+
+        let storedLocale
+        try {
+          storedLocale = normalizeLocale(localStorage.getItem(languagePreferenceKey))
+        } catch {
+          // Fall back to browser languages when storage is unavailable.
+        }
+
+        const preferredLocale = locales.includes(storedLocale)
+          ? storedLocale
+          : (navigator.languages?.length ? navigator.languages : [navigator.language])
+              .map(normalizeLocale)
+              .find((candidate) => locales.includes(candidate))
+
+        if (!preferredLocale || preferredLocale === currentLocale) return
+
+        const redirectPath = localeRedirects[preferredLocale]
+        if (!redirectPath) return
+
+        const redirectUrl = new URL(redirectPath, window.location.origin)
+        redirectUrl.search = window.location.search
+        redirectUrl.hash = window.location.hash
+
+        if (redirectUrl.href !== window.location.href) {
+          window.location.replace(redirectUrl.href)
+        }
+      })()
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{documentTitle}</title>
