@@ -1,0 +1,92 @@
+{
+  "id": "brave-search",
+  "name": "Brave: Web Search",
+  "description": "Search the web using Brave API",
+  "version": 2,
+  "enabled": true,
+  "triggers": [
+    {
+      "type": "on_intent",
+      "data": { "intent": "cooking_query" },
+      "exclusivity": "OR"
+    },
+    {
+      "type": "on_intent",
+      "data": { "intent": "qa_currency" },
+      "exclusivity": "OR"
+    },
+    {
+      "type": "on_intent",
+      "data": { "intent": "recommendation_movies" },
+      "exclusivity": "OR"
+    },
+    {
+      "type": "on_intent",
+      "data": { "intent": "qa_stock" },
+      "exclusivity": "OR"
+    },
+    {
+      "type": "on_intent",
+      "data": { "intent": "cooking_recipe" },
+      "exclusivity": "OR"
+    },
+    {
+      "type": "on_intent",
+      "data": { "intent": "datetime_query" },
+      "exclusivity": "OR"
+    },
+    {
+      "type": "on_intent",
+      "data": { "intent": "transport_query" },
+      "exclusivity": "OR"
+    },
+    {
+      "type": "on_phrase",
+      "data": { "phrase": "search the web" },
+      "exclusivity": "OR"
+    }
+  ],
+  "toolsData": [
+    {
+      "toolId": "eval",
+      "name": "Eval",
+      "description": "Input: arbitrary JavaScript code as a string; this tool will evaluate the code and return the result.",
+      "icon": 150,
+      "ai_decides_input": false,
+      "parameters": { "code": "encodeURIComponent(\"{{input}}\")" }
+    },
+    {
+      "toolId": "http-request",
+      "name": "HTTP Request",
+      "description": "Input: HTTP request body; this tool will make an HTTP request to the specified URL and return the raw response as text.",
+      "icon": 158,
+      "ai_decides_input": false,
+      "parameters": {
+        "url": "https://api.search.brave.com/res/v1/web/search?q={{input}}",
+        "method": "GET",
+        "headers": "{\"X-Subscription-Token\": \"[your api key here]\"}",
+        "body": ""
+      }
+    },
+    {
+      "toolId": "eval",
+      "name": "Eval",
+      "description": "Input: arbitrary JavaScript code as a string; this tool will evaluate the code and return the result.",
+      "icon": 158,
+      "ai_decides_input": false,
+      "parameters": {
+        "code": "let i = String.raw`{{input}}`;\nlet r = JSON.parse(i);\n\nr.web.results.map(t => `- ${t.title} (${t.url}): ${t.description})`).slice(0,3).join('\\n')"
+      }
+    },
+    {
+      "toolId": "provide-context",
+      "name": "Provide Context",
+      "description": "Input: text, this tool will inject this text as context before the next message.",
+      "icon": 150,
+      "ai_decides_input": false,
+      "parameters": {
+        "context": "Relevant results after searching using Brave API:\n{{input}}\n\n{{char}} should tell these results to {{user}}."
+      }
+    }
+  ]
+}
