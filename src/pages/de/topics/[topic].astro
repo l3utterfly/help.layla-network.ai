@@ -1,0 +1,23 @@
+---
+import TopicPage from '../../../components/pages/TopicPage.astro'
+import { getPublishedDocs, topics } from '../../../lib/docs'
+
+export async function getStaticPaths() {
+  const docs = await getPublishedDocs('de')
+
+  return topics
+    .map((topic) => ({
+      topic,
+      entries: docs.filter((entry) => entry.data.category === topic.category),
+    }))
+    .filter(({ entries }) => entries.length > 0)
+    .map(({ topic, entries }) => ({
+      params: { topic: topic.slug },
+      props: { category: topic.category, entries },
+    }))
+}
+
+const { category, entries } = Astro.props
+---
+
+<TopicPage category={category} entries={entries} locale="de" />
