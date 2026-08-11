@@ -187,6 +187,18 @@ function validateFrontmatter(parsed, categories) {
   }
 
   if (
+    "translationKey" in data &&
+    (typeof data.translationKey !== "string" ||
+      data.translationKey.trim() === "")
+  ) {
+    errors.push({
+      line: 2,
+      message:
+        "Optional frontmatter field `translationKey` must be a non-empty string.",
+    });
+  }
+
+  if (
     "lastUpdated" in data &&
     (typeof data.lastUpdated !== "string" ||
       !/^\d{4}-\d{2}-\d{2}$/.test(data.lastUpdated))

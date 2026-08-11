@@ -88,7 +88,22 @@ dist/                     Generated production site
 
 The `docs` content collection loads every Markdown or MDX file below
 `src/content/docs`. Its schema in `src/content.config.ts` validates `title`,
-`description`, `category`, `order`, `keywords`, `lastUpdated`, and `draft`.
+`description`, `category`, `order`, `keywords`, `lastUpdated`, `draft`, and the
+optional `translationKey`.
+
+English articles remain at the collection root so their existing URLs stay
+unchanged. Translated articles live below a registered locale folder and use a
+shared `translationKey` to connect language versions:
+
+```text
+src/content/docs/getting-started/index.md     -> /getting-started/
+src/content/docs/fr/getting-started/index.md  -> /fr/getting-started/
+```
+
+Site interface translations and locale helpers live in `src/lib/i18n.ts`.
+Astro locale routing is configured in `astro.config.mjs`. A translated article
+only appears in a language's navigation and search index when its Markdown file
+exists; missing translations continue to use their original English URL.
 
 Articles conventionally use this layout:
 

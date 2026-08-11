@@ -1,0 +1,95 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import Header from '../Header.astro'
+import TopicIcon from '../TopicIcon.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getArticleSeoImage } from '../../lib/articleSeo'
+import { docHref, getTopicLocaleLinks, topicForCategory } from '../../lib/docs'
+import { getUi, localePath, type Locale } from '../../lib/i18n'
+
+interface Props {
+  category: string
+  entries: CollectionEntry<'docs'>[]
+  locale: Locale
+}
+
+const { category, entries, locale } = Astro.props
+const ui = getUi(locale)
+const topic = topicForCategory(category, locale)
+const countLabel = ui.articleCount(entries.length)
+const filters = [ui.all, ...new Set(entries.flatMap((entry) => entry.data.keywords).slice(0, 3))]
+const localeLinks = await getTopicLocaleLinks(category)
+---
+
+<BaseLayout title={topic.name} description={topic.description} locale={locale} localeLinks={localeLinks}>
+  <Header
+    mobileBack={{ href: localePath(locale), label: ui.wiki, meta: countLabel }}
+    locale={locale}
+    localeLinks={localeLinks}
+  />
+  <main class="category-page" data-pagefind-body>
+    <header class="category-header">
+      <div class="category-heading">
+        <TopicIcon name={topic.icon} class="category-topic-icon" />
+        <div>
+          <span class="category-count">{countLabel}</span>
+          <h1 data-pagefind-meta="title">{topic.name}</h1>
+        </div>
+      </div>
+      <p>{topic.description}</p>
+    </header>
+
+    <div class="filter-chips" aria-label={ui.filterArticles} data-pagefind-ignore>
+      {filters.map((filter, index) => (
+        <button type="button" aria-pressed={index === 0 ? 'true' : 'false'} data-filter={index === 0 ? 'all' : filter.toLowerCase()}>{filter}</button>
+      ))}
+    </div>
+
+    <section class="category-articles" aria-label={`${topic.name} · ${countLabel}`}>
+      {entries.map((entry) => {
+        const image = getArticleSeoImage(entry)
+
+        return (
+          <a
+            class:list={['category-article-card', { 'has-thumbnail': image }]}
+            href={docHref(entry.id, locale)}
+            data-tags={entry.data.keywords.join(' ').toLowerCase()}
+          >
+            {image && (
+              <Image
+                class="category-article-thumbnail"
+                src={image.src}
+                alt={image.alt}
+                width={160}
+                height={100}
+                loading="lazy"
+              />
+            )}
+            <div class="category-article-copy">
+              <h2>{entry.data.title}</h2>
+              <p>{entry.data.description}</p>
+              <span>
+                {ui.guide}
+                {entry.data.lastUpdated && ` · ${ui.updated.toLowerCase()} ${new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short' }).format(entry.data.lastUpdated)}`}
+              </span>
+            </div>
+          </a>
+        )
+      })}
+    </section>
+  </main>
+
+  <script is:inline>
+    const chips = document.querySelectorAll('[data-filter]')
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const filter = chip.getAttribute('data-filter') || 'all'
+        chips.forEach((item) => item.setAttribute('aria-pressed', String(item === chip)))
+        document.querySelectorAll('[data-tags]').forEach((card) => {
+          card.toggleAttribute('hidden', filter !== 'all' && !card.getAttribute('data-tags')?.includes(filter))
+        })
+      })
+    })
+  </script>
+</BaseLayout>

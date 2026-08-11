@@ -1,0 +1,145 @@
+---
+import Header from '../Header.astro'
+import TopicIcon from '../TopicIcon.astro'
+import { docHref, docSlug, getPublishedDocs, topicForCategory, topicHref, topics } from '../../lib/docs'
+import { getUi, homeLocaleLinks, type Locale } from '../../lib/i18n'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const ui = getUi(locale)
+const docs = await getPublishedDocs(locale)
+const gettingStartedSlugs = [
+  'getting-started',
+  'how-to-run-layla-on-your-pc-with-bluestacks-and-lm-studio',
+  'personality-hub-ai-characters',
+]
+const gettingStarted = gettingStartedSlugs.flatMap((slug) => {
+  const entry = docs.find((candidate) => docSlug(candidate.id) === slug)
+  return entry ? [entry] : []
+})
+const recent = [...docs].sort((left, right) => {
+  const leftDate = left.data.lastUpdated?.getTime() ?? 0
+  const rightDate = right.data.lastUpdated?.getTime() ?? 0
+  return rightDate - leftDate
+}).slice(0, 3)
+const localeLinks = homeLocaleLinks()
+---
+
+<BaseLayout
+  title={locale === 'en' ? 'Layla Help' : ui.homeTitle}
+  titleSuffix={locale !== 'en'}
+  description={ui.homeDescription}
+  locale={locale}
+  localeLinks={localeLinks}
+>
+  <Header locale={locale} localeLinks={localeLinks} />
+  <main class="home" data-pagefind-body>
+    <section class="home-hero">
+      <h1 data-pagefind-meta="title">{ui.homeTitle}</h1>
+      <p>{ui.homeIntro}</p>
+      <button class="home-search" type="button" data-site-search-trigger>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17">
+          <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+        </svg>
+        <span>{ui.searchCount(docs.length)}</span>
+      </button>
+    </section>
+
+    {gettingStarted.length > 0 && (
+      <section class="home-section" id="guides" aria-labelledby="getting-started">
+        <h2 class="section-label" id="getting-started">{ui.gettingStarted}</h2>
+        <div class="start-list">
+          {gettingStarted.map((entry, index) => (
+            <a class="start-card" href={docHref(entry.id, locale)}>
+              <span class="start-number">{String(index + 1).padStart(2, '0')}</span>
+              <span class="start-copy">
+                <strong>{entry.data.title}</strong>
+                <small>{topicForCategory(entry.data.category, locale).name} · {ui.guide}</small>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="home-section" aria-labelledby="browse-topics">
+      <h2 class="section-label" id="browse-topics">{ui.browseTopics}</h2>
+      <div class="topic-grid">
+        {topics.map((topic) => {
+          const count = docs.filter((entry) => entry.data.category === topic.category).length
+          const localizedTopic = topicForCategory(topic.category, locale)
+          return count > 0 ? (
+            <a class="topic-card" href={topicHref(topic.category, locale)}>
+              <TopicIcon name={topic.icon} />
+              <span class="topic-card-copy">
+                <strong>{localizedTopic.name}</strong>
+                <span>{ui.articleCount(count)}</span>
+              </span>
+            </a>
+          ) : (
+            <div class="topic-card topic-card-pending">
+              <TopicIcon name={topic.icon} />
+              <span class="topic-card-copy">
+                <strong>{localizedTopic.name}</strong>
+                <span>{ui.comingSoon}</span>
+              </span>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+
+    {recent.length > 0 && (
+      <section class="home-section recent-section" aria-labelledby="recently-updated">
+        <h2 class="section-label" id="recently-updated">{ui.recentlyUpdated}</h2>
+        <div class="recent-list">
+          {recent.map((entry) => (
+            <a href={docHref(entry.id, locale)}>
+              <strong>{entry.data.title}</strong>
+              <span>
+                {entry.data.lastUpdated
+                  ? new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short' }).format(entry.data.lastUpdated)
+                  : ui.recently}
+                {' · '}{docSlug(entry.id)}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="home-download" id="download" aria-labelledby="download-title">
+      <h2 class="section-label" id="download-title">{ui.getLayla}</h2>
+      <div class="download-badges">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.layla"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Google Play"
+        >
+          <img src="/google_badge.png" width="564" height="168" alt="Google Play" />
+        </a>
+        <a
+          href="https://apps.apple.com/us/app/layla/id6456886656"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="App Store"
+        >
+          <img src="/apple_badge.png" width="200" height="67" alt="App Store" />
+        </a>
+        <a
+          href="https://www.layla-network.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Layla APK"
+        >
+          <img src="/directapk.png" width="386" height="112" alt="Layla APK" />
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

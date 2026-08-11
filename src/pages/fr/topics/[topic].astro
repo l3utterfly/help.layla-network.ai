@@ -1,9 +1,9 @@
 ---
-import TopicPage from '../../components/pages/TopicPage.astro'
-import { getPublishedDocs, topics } from '../../lib/docs'
+import TopicPage from '../../../components/pages/TopicPage.astro'
+import { getPublishedDocs, topics } from '../../../lib/docs'
 
 export async function getStaticPaths() {
-  const docs = await getPublishedDocs('en')
+  const docs = await getPublishedDocs('fr')
 
   return topics
     .map((topic) => ({
@@ -20,4 +20,4 @@ export async function getStaticPaths() {
 const { category, entries } = Astro.props
 ---
 
-<TopicPage category={category} entries={entries} locale="en" />
+<TopicPage category={category} entries={entries} locale="fr" />

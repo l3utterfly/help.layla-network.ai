@@ -11,6 +11,8 @@ interface Props {
   keywords?: string[]
   pageType?: 'website' | 'article'
   lastUpdated?: Date
+  locale: string
+  alternateLocales?: { locale: string; url: URL }[]
 }
 
 const {
@@ -25,15 +27,23 @@ const {
   keywords = [],
   pageType = 'website',
   lastUpdated,
+  locale,
+  alternateLocales = [],
 } = Astro.props
+const defaultAlternate = alternateLocales.find((alternate) => alternate.locale === 'en')
 ---
 
 <meta name="description" content={description} />
 {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
 <link rel="canonical" href={canonical} />
+{alternateLocales.map((alternate) => (
+  <link rel="alternate" hreflang={alternate.locale} href={alternate.url} />
+))}
+{defaultAlternate && <link rel="alternate" hreflang="x-default" href={defaultAlternate.url} />}
 
 <meta property="og:type" content={pageType} />
 <meta property="og:site_name" content="Layla Help" />
+<meta property="og:locale" content={locale.replace('-', '_')} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />

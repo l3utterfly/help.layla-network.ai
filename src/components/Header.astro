@@ -1,5 +1,16 @@
 ---
 import Search from './react/Search'
+import {
+  defaultLocale,
+  getUi,
+  homeLocaleLinks,
+  locales,
+  localeNames,
+  localePath,
+  localeShortNames,
+  type Locale,
+  type LocaleLink,
+} from '../lib/i18n'
 
 interface Props {
   mobileBack?: {
@@ -8,14 +19,27 @@ interface Props {
     meta?: string
   }
   editHref?: string
+  locale?: Locale
+  localeLinks?: LocaleLink[]
 }
 
-const { mobileBack, editHref } = Astro.props
+const {
+  mobileBack,
+  editHref,
+  locale = defaultLocale,
+  localeLinks = homeLocaleLinks(),
+} = Astro.props
+const ui = getUi(locale)
+const homeHref = localePath(locale)
+const switcherLinks = locales.map((candidate) => (
+  localeLinks.find((link) => link.locale === candidate)
+  ?? { locale: candidate, href: localePath(candidate) }
+))
 ---
 
 <header class:list={{ 'site-header': true, 'has-mobile-context': Boolean(mobileBack) }} data-pagefind-ignore>
   <div class="header-inner">
-    <a class="brand" href="/" aria-label="Layla Wiki home">
+    <a class="brand" href={homeHref} aria-label={ui.siteHome}>
       <img class="brand-logo" src="/butterfly.png" width="1024" height="1024" alt="" />
       <span class="brand-copy">
         <span class="brand-name">LAYLA</span>
@@ -23,14 +47,34 @@ const { mobileBack, editHref } = Astro.props
       </span>
     </a>
 
-    <nav class="header-links" aria-label="Primary navigation">
+    <nav class="header-links" aria-label={ui.documentation}>
       <div class="header-text-links">
-        <a href="/#guides">Guides</a>
-        <a href="/faq/">FAQ</a>
-        <a href="/contact/">Get help</a>
+        <a href={`${homeHref}#guides`}>{ui.guides}</a>
+        <a href="/faq/" hreflang="en">{ui.faq}</a>
+        <a href="/contact/" hreflang="en">{ui.getHelp}</a>
       </div>
-      <Search client:idle />
-      <a class="download-link" href="/#download">Download</a>
+      <Search locale={locale} client:idle />
+      {switcherLinks.length > 1 && (
+        <details class="language-switcher">
+          <summary aria-label={ui.selectLanguage} title={ui.selectLanguage}>
+            <span aria-hidden="true">{localeShortNames[locale]}</span>
+          </summary>
+          <div>
+            {switcherLinks.map((link) => (
+              <a
+                href={link.href}
+                lang={link.locale}
+                hreflang={link.locale}
+                aria-current={link.locale === locale ? 'page' : undefined}
+              >
+                <span>{localeNames[link.locale]}</span>
+                <small>{localeShortNames[link.locale]}</small>
+              </a>
+            ))}
+          </div>
+        </details>
+      )}
+      <a class="download-link" href={`${homeHref}#download`}>{ui.download}</a>
     </nav>
   </div>
 
@@ -38,7 +82,12 @@ const { mobileBack, editHref } = Astro.props
     <div class="mobile-context-bar">
       <a href={mobileBack.href}>← {mobileBack.label}</a>
       {mobileBack.meta && <span>{mobileBack.meta}</span>}
-      {editHref && <a class="mobile-edit-link" href={editHref}>Edit</a>}
+      {editHref && <a class="mobile-edit-link" href={editHref}>{ui.edit}</a>}
+      {switcherLinks.filter((link) => link.locale !== locale).slice(0, 1).map((link) => (
+        <a class="mobile-locale-link" href={link.href} lang={link.locale} hreflang={link.locale}>
+          {localeShortNames[link.locale]}
+        </a>
+      ))}
     </div>
   )}
 </header>

@@ -1,7 +1,14 @@
 ---
 import { docHref, getPublishedDocs, topicForCategory, topicHref, topics } from '../lib/docs'
+import { defaultLocale, getUi, type Locale } from '../lib/i18n'
 
-const docs = await getPublishedDocs()
+interface Props {
+  locale?: Locale
+}
+
+const { locale = defaultLocale } = Astro.props
+const ui = getUi(locale)
+const docs = await getPublishedDocs(locale)
 const categories = topics
   .map((topic) => topic.category)
   .filter((category) => docs.some((entry) => entry.data.category === category))
@@ -9,15 +16,16 @@ const currentPath = Astro.url.pathname
 ---
 
 <aside class="sidebar" data-pagefind-ignore>
-  <nav aria-label="Documentation">
+  <nav aria-label={ui.documentation}>
+    <span class="sidebar-label">{ui.topics}</span>
     {categories.map((category) => (
       <section class="sidebar-group">
-        <h2><a href={topicHref(category)}>{topicForCategory(category).name}</a></h2>
+        <h2><a href={topicHref(category, locale)}>{topicForCategory(category, locale).name}</a></h2>
         <ul>
           {docs
             .filter((entry) => entry.data.category === category)
             .map((entry) => {
-              const href = docHref(entry.id)
+              const href = docHref(entry.id, locale)
               return (
                 <li>
                   <a href={href} aria-current={currentPath === href ? 'page' : undefined}>

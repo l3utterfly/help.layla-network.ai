@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import ArticlePage from '../components/pages/ArticlePage.astro'
-import { docHref, docSlug, getPublishedDocs } from '../lib/docs'
+import ArticlePage from '../../components/pages/ArticlePage.astro'
+import { docHref, docSlug, getPublishedDocs } from '../../lib/docs'
 
 interface DocLink {
   href: string
@@ -15,7 +15,7 @@ interface Props {
 }
 
 export async function getStaticPaths() {
-  const docs = await getPublishedDocs('en')
+  const docs = await getPublishedDocs('fr')
 
   return docs.map((entry) => {
     const categoryDocs = docs.filter((candidate) => candidate.data.category === entry.data.category)
@@ -26,11 +26,11 @@ export async function getStaticPaths() {
       props: {
         entry,
         previous: categoryIndex > 0
-          ? { href: docHref(categoryDocs[categoryIndex - 1].id, 'en'), title: categoryDocs[categoryIndex - 1].data.title }
+          ? { href: docHref(categoryDocs[categoryIndex - 1].id, 'fr'), title: categoryDocs[categoryIndex - 1].data.title }
           : undefined,
         next: categoryIndex < categoryDocs.length - 1
-          ? { href: docHref(categoryDocs[categoryIndex + 1].id, 'en'), title: categoryDocs[categoryIndex + 1].data.title }
-        : undefined,
+          ? { href: docHref(categoryDocs[categoryIndex + 1].id, 'fr'), title: categoryDocs[categoryIndex + 1].data.title }
+          : undefined,
       },
     }
   })
@@ -39,4 +39,4 @@ export async function getStaticPaths() {
 const { entry, previous, next } = Astro.props
 ---
 
-<ArticlePage entry={entry} locale="en" previous={previous} next={next} />
+<ArticlePage entry={entry} locale="fr" previous={previous} next={next} />

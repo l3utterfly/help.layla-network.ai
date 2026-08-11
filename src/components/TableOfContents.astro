@@ -1,16 +1,19 @@
 ---
 import type { MarkdownHeading } from 'astro'
+import { defaultLocale, getUi, type Locale } from '../lib/i18n'
 
 interface Props {
   headings: MarkdownHeading[]
+  locale?: Locale
 }
 
 const headings = Astro.props.headings.filter((heading) => heading.depth === 2 || heading.depth === 3)
+const ui = getUi(Astro.props.locale ?? defaultLocale)
 ---
 
 {headings.length > 0 && (
   <aside class="table-of-contents" data-pagefind-ignore>
-    <h2>On this page</h2>
+    <h2>{ui.onThisPage}</h2>
     <ol>
       {headings.map((heading) => (
         <li class:list={{ nested: heading.depth === 3 }}>
