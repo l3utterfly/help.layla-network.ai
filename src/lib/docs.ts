@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import {
   defaultLocale,
+  getUi,
   isLocale,
   localePath,
   locales,
@@ -33,6 +34,24 @@ export const topics: TopicDefinition[] = [
         description:
           "Gérez les conversations, les messages, la traduction et la mémoire à long terme.",
       },
+      de: {
+        name: "Chat und Gedächtnis",
+        description:
+          "Verwalte Unterhaltungen, Nachrichtenaktionen, Übersetzungen und das Langzeitgedächtnis.",
+      },
+      it: {
+        name: "Chat e memoria",
+        description:
+          "Gestisci conversazioni, azioni sui messaggi, traduzioni e memoria a lungo termine.",
+      },
+      ja: {
+        name: "チャットとメモリ",
+        description: "会話、メッセージ操作、翻訳、長期記憶を管理します。",
+      },
+      ko: {
+        name: "채팅 및 메모리",
+        description: "대화, 메시지 작업, 번역 및 장기 메모리를 관리합니다.",
+      },
     },
   },
   {
@@ -47,6 +66,26 @@ export const topics: TopicDefinition[] = [
         name: "Modèles et performances",
         description:
           "Choisissez, configurez et optimisez les modèles locaux ou cloud pour votre appareil.",
+      },
+      de: {
+        name: "Modelle und Leistung",
+        description:
+          "Wähle, konfiguriere und optimiere lokale oder Cloud-Modelle für dein Gerät.",
+      },
+      it: {
+        name: "Modelli e prestazioni",
+        description:
+          "Scegli, configura e ottimizza modelli locali o cloud per il tuo dispositivo.",
+      },
+      ja: {
+        name: "モデルとパフォーマンス",
+        description:
+          "デバイスに合わせてローカルモデルやクラウドモデルを選択、設定、調整します。",
+      },
+      ko: {
+        name: "모델 및 성능",
+        description:
+          "기기에 맞는 로컬 또는 클라우드 모델을 선택하고 설정하고 최적화합니다.",
       },
     },
   },
@@ -63,6 +102,26 @@ export const topics: TopicDefinition[] = [
         description:
           "Créez et importez des personnages, puis ajoutez des voix locales et le chat vocal.",
       },
+      de: {
+        name: "Charaktere und Stimme",
+        description:
+          "Erstelle und importiere Charaktere und statte sie mit lokalen Stimmen und Sprachchat aus.",
+      },
+      it: {
+        name: "Personaggi e voce",
+        description:
+          "Crea e importa personaggi, quindi aggiungi voci locali e chat vocale.",
+      },
+      ja: {
+        name: "キャラクターと音声",
+        description:
+          "キャラクターを作成、インポートし、ローカル音声やボイスチャットを設定します。",
+      },
+      ko: {
+        name: "캐릭터 및 음성",
+        description:
+          "캐릭터를 만들고 가져온 다음 로컬 음성과 음성 채팅을 설정합니다.",
+      },
     },
   },
   {
@@ -77,6 +136,26 @@ export const topics: TopicDefinition[] = [
         name: "Agents et outils",
         description:
           "Créez des agents sur l’appareil utilisant des fonctions, Python, des API et des outils MCP.",
+      },
+      de: {
+        name: "Agenten und Werkzeuge",
+        description:
+          "Erstelle Agenten auf dem Gerät, die Funktionen, Python, APIs und MCP-Werkzeuge verwenden.",
+      },
+      it: {
+        name: "Agenti e strumenti",
+        description:
+          "Crea agenti sul dispositivo che usano funzioni, Python, API e strumenti MCP.",
+      },
+      ja: {
+        name: "エージェントとツール",
+        description:
+          "関数、Python、API、MCPツールを使用するオンデバイスエージェントを構築します。",
+      },
+      ko: {
+        name: "에이전트 및 도구",
+        description:
+          "함수, Python, API 및 MCP 도구를 사용하는 온디바이스 에이전트를 구축합니다.",
       },
     },
   },
@@ -93,6 +172,26 @@ export const topics: TopicDefinition[] = [
         description:
           "Ajoutez des fonctions, créez des mini-apps et connectez Layla aux outils Android.",
       },
+      de: {
+        name: "Mini-Apps und Integrationen",
+        description:
+          "Füge optionale Funktionen hinzu, erstelle Mini-Apps und verbinde Layla mit Android-Werkzeugen.",
+      },
+      it: {
+        name: "Mini-app e integrazioni",
+        description:
+          "Aggiungi funzionalità opzionali, crea mini-app e collega Layla agli strumenti Android.",
+      },
+      ja: {
+        name: "ミニアプリと連携",
+        description:
+          "オプション機能やミニアプリを追加し、LaylaをAndroidツールと連携させます。",
+      },
+      ko: {
+        name: "미니 앱 및 연동",
+        description:
+          "선택 기능과 미니 앱을 추가하고 Layla를 Android 도구와 연결합니다.",
+      },
     },
   },
   {
@@ -107,6 +206,26 @@ export const topics: TopicDefinition[] = [
         description:
           "Créez des images localement et reliez leur génération aux personnages.",
       },
+      de: {
+        name: "Bilderzeugung",
+        description:
+          "Erstelle Bilder lokal und verknüpfe die Bilderzeugung mit Charakteren.",
+      },
+      it: {
+        name: "Generazione di immagini",
+        description:
+          "Crea immagini in locale e collega la generazione ai personaggi.",
+      },
+      ja: {
+        name: "画像生成",
+        description:
+          "ローカルで画像を生成し、キャラクターと画像生成を連携させます。",
+      },
+      ko: {
+        name: "이미지 생성",
+        description:
+          "로컬에서 이미지를 만들고 이미지 생성을 캐릭터와 연결합니다.",
+      },
     },
   },
   {
@@ -120,6 +239,25 @@ export const topics: TopicDefinition[] = [
         name: "Dépannage",
         description:
           "Résolvez les problèmes de chargement, de performances, de configuration et d’application.",
+      },
+      de: {
+        name: "Fehlerbehebung",
+        description:
+          "Behebe Probleme beim Laden von Modellen sowie Leistungs-, Einrichtungs- und App-Probleme.",
+      },
+      it: {
+        name: "Risoluzione dei problemi",
+        description:
+          "Risolvi problemi di caricamento dei modelli, prestazioni, configurazione e app.",
+      },
+      ja: {
+        name: "トラブルシューティング",
+        description:
+          "モデルの読み込み、パフォーマンス、セットアップ、アプリの問題を解決します。",
+      },
+      ko: {
+        name: "문제 해결",
+        description: "모델 로딩, 성능, 설정 및 앱 문제를 해결합니다.",
       },
     },
   },
@@ -172,10 +310,7 @@ export function topicForCategory(
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)/g, ""),
-    description:
-      locale === "fr"
-        ? `Guides et réponses sur ${category.toLowerCase()}.`
-        : `Guides and answers about ${category.toLowerCase()}.`,
+    description: getUi(locale).topicFallback(category),
     icon: "book",
   };
 }

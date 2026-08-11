@@ -10,15 +10,24 @@ const communityLinks = [
 
 interface Props {
   ariaLabel?: string
+  websiteLabel?: string
+  location?: string
 }
 
-const { ariaLabel = 'Community and support' } = Astro.props
+const {
+  ariaLabel = 'Community and support',
+  websiteLabel = 'Website',
+  location = 'Gold Coast, Australia',
+} = Astro.props
+const localizedCommunityLinks = communityLinks.map((link) =>
+  link.label === 'Website' ? { ...link, label: websiteLabel } : link
+)
 ---
 
 <footer class="site-footer" data-pagefind-ignore>
-  <p>© {new Date().getFullYear()} Layla Network · Gold Coast, Australia</p>
+  <p>© {new Date().getFullYear()} Layla Network · {location}</p>
   <nav aria-label={ariaLabel}>
-    {communityLinks.map((link) => (
+    {localizedCommunityLinks.map((link) => (
       <a href={link.href}>
         <span class="footer-channel-icon" aria-hidden="true" set:html={octicons[link.icon].toSVG({ width: 16, height: 16, focusable: 'false' })} />
         <span>{link.label}</span>
