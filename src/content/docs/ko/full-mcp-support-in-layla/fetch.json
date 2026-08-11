@@ -1,0 +1,30 @@
+{
+  "id": "fetch",
+  "name": "Fetch: Read Webpage",
+  "description": "Read the contents of a webpage by using the external \"Fetch\" MCP server",
+  "version": 1,
+  "enabled": false,
+  "triggers": [
+    {
+      "type": "on_mcp_tool",
+      "data": {
+        "tool_json": "{\"name\":\"fetch\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"max_length\":{\"type\":\"number\",\"default\":5000},\"start_index\":{\"type\":\"number\",\"default\":0},\"raw\":{\"type\":\"boolean\",\"default\":false}},\"required\":[\"url\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}"
+      },
+      "exclusivity": "OR"
+    }
+  ],
+  "toolsData": [
+    {
+      "toolId": "mcp-tool-call",
+      "name": "MCP Tool Call",
+      "description": "Call MCP tools",
+      "icon": 20,
+      "ai_decides_input": false,
+      "parameters": {
+        "url": "https://remote.mcpservers.org/fetch/mcp",
+        "bearer_token": "",
+        "tool_json": "{{match$1}}"
+      }
+    }
+  ]
+}
