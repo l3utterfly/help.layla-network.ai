@@ -2,6 +2,7 @@
 import type { ImageMetadata } from 'astro'
 import { getImage } from 'astro:assets'
 import SeoHead from '../components/SeoHead.astro'
+import GoogleAnalytics from '../components/GoogleAnalytics.astro'
 import Footer from '../components/Footer.astro'
 import {
   defaultLocale,
@@ -165,6 +166,7 @@ const structuredData = {
       alternateLocales={alternateLocales}
     />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <GoogleAnalytics />
   </head>
   <body>
     <div class="ambient-glow" aria-hidden="true"></div>

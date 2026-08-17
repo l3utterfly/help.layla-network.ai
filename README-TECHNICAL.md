@@ -245,3 +245,13 @@ adapter is only required for server-rendered Astro routes.
 
 For a Cloudflare Pages project, use `npm run build` as the build command and
 `dist` as the output directory. Pages does not need a separate deploy command.
+
+### Google Analytics
+
+Every page loads the Google Analytics 4 tag from `GoogleAnalytics.astro`. It
+uses measurement ID `G-FFRFYBV7GF`, shared with `www.layla-network.ai` so the
+main site and help subdomain are measured in one web data stream.
+
+This integration loads the Google tag immediately; it does not include a cookie
+consent banner or consent-mode controls. Add an appropriate consent solution
+if your privacy requirements call for one.
