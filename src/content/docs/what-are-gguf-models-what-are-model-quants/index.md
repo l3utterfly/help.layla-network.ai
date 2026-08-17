@@ -102,7 +102,7 @@ In the file picker, choose the model you just downloaded.
 
 ### Step 6 — Set the correct prompt format
 
-This is the step people forget. Every model family expects prompts wrapped in a specific format: Llama 3 uses one, Mistral uses another, ChatML is a third, and so on. The model's Hugging Face page will tell you which format it expects. Set it in Layla's prompt-format settings, and you're done—your custom GGUF model is now running fully offline on your phone.
+This is the step people forget. Every model family expects prompts wrapped in a specific format: Llama 3 uses one, Mistral uses another, ChatML is a third, and so on. The model's Hugging Face page will tell you which format it expects. Set it in Layla's prompt-format settings, and you're done—your custom GGUF model is now running fully offline on your phone. For a field-by-field walkthrough, see [How to set up custom prompt templates for models in Layla](/how-to-set-up-custom-prompt-templates-for-models/).
 
 ![Prompt-format selector for a custom model in Layla.](./prompt-format.png)
 

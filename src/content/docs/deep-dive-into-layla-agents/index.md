@@ -83,7 +83,7 @@ Note the use of templates here: the double curly brackets such as `{{input}}`. T
 
 In the example above, the output of the HTTP request is the input of the *Provide Context* tool, so the output after replacement will be: `{{user}}'s current IP address is xx.xx.xx.xx`.
 
-When injected into the conversation, the `{{user}}` template is further replaced by your selected persona. This operates in the same way as custom prompts.
+When injected into the conversation, the `{{user}}` template is further replaced by your selected persona. This operates in the same way as the placeholders described in [How to set up custom prompt templates for models in Layla](/how-to-set-up-custom-prompt-templates-for-models/).
 
 **LLM Generated Parameters**
 
