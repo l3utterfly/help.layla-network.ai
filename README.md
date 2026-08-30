@@ -100,6 +100,7 @@ Use one of these exact category names:
 - `Characters & voice`
 - `Agents & tools`
 - `Mini-apps & integrations`
+- `Layla SDK`
 - `Image generation`
 - `Troubleshooting`
 

@@ -195,6 +195,41 @@ export const topics: TopicDefinition[] = [
     },
   },
   {
+    name: "Layla SDK",
+    category: "Layla SDK",
+    slug: "layla-sdk",
+    description:
+      "Build mini-apps and integrations with Layla's chat, character, media, and device APIs.",
+    icon: "code-square",
+    translations: {
+      fr: {
+        name: "Layla SDK",
+        description:
+          "Créez des mini-apps et des intégrations avec les API de chat, de personnages, de médias et d’appareil de Layla.",
+      },
+      de: {
+        name: "Layla SDK",
+        description:
+          "Erstelle Mini-Apps und Integrationen mit Laylas APIs für Chat, Charaktere, Medien und Gerätefunktionen.",
+      },
+      it: {
+        name: "Layla SDK",
+        description:
+          "Crea mini-app e integrazioni con le API di Layla per chat, personaggi, contenuti multimediali e dispositivo.",
+      },
+      ja: {
+        name: "Layla SDK",
+        description:
+          "Laylaのチャット、キャラクター、メディア、デバイスAPIを使用してミニアプリや連携機能を構築します。",
+      },
+      ko: {
+        name: "Layla SDK",
+        description:
+          "Layla의 채팅, 캐릭터, 미디어 및 기기 API로 미니 앱과 연동 기능을 구축합니다.",
+      },
+    },
+  },
+  {
     name: "Image generation",
     category: "Image generation",
     slug: "image-generation",
