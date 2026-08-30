@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 import Header from '../Header.astro'
 import TopicIcon from '../TopicIcon.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { getArticleSeoImage } from '../../lib/articleSeo'
+import { getArticleFeatureMedia } from '../../lib/articleSeo'
 import { docHref, getTopicLocaleLinks, topicForCategory } from '../../lib/docs'
 import { getUi, localePath, type Locale } from '../../lib/i18n'
 
@@ -48,23 +48,49 @@ const localeLinks = await getTopicLocaleLinks(category)
 
     <section class="category-articles" aria-label={`${topic.name} · ${countLabel}`}>
       {entries.map((entry) => {
-        const image = getArticleSeoImage(entry)
+        const media = getArticleFeatureMedia(entry)
 
         return (
           <a
-            class:list={['category-article-card', { 'has-thumbnail': image }]}
+            class:list={['category-article-card', { 'has-thumbnail': media }]}
             href={docHref(entry.id, locale)}
             data-tags={entry.data.keywords.join(' ').toLowerCase()}
           >
-            {image && (
+            {media?.type === 'image' && (
               <Image
                 class="category-article-thumbnail"
-                src={image.src}
-                alt={image.alt}
+                src={media.src}
+                alt={media.alt}
                 width={160}
                 height={100}
                 loading="lazy"
               />
+            )}
+            {media?.type === 'video' && media.embed && (
+              <iframe
+                class="category-article-thumbnail category-article-video"
+                src={media.src}
+                title={media.title}
+                width="160"
+                height="100"
+                loading="lazy"
+                tabindex="-1"
+                aria-hidden="true"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            )}
+            {media?.type === 'video' && !media.embed && (
+              <video
+                class="category-article-thumbnail category-article-video"
+                src={media.src}
+                width="160"
+                height="100"
+                preload="metadata"
+                muted
+                playsinline
+                tabindex="-1"
+                aria-hidden="true"
+              ></video>
             )}
             <div class="category-article-copy">
               <h2>{entry.data.title}</h2>
