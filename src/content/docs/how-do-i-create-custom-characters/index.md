@@ -99,7 +99,7 @@ Tap **Voice** to browse the voices available through your phone and any text-to-
 
 ![The voice selector with search, filters, sample text, and voice previews.](./choose-voice.jpg)
 
-Once a voice is selected, you can start a voice chat and hear the character respond with that voice. See [how to add multilingual text-to-speech voices](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) or [how to start a voice chat with your characters](/how-to-start-a-voice-chat-with-your-characters/) for more help.
+Once a voice is selected, you can start a voice chat and hear the character respond with that voice. See [how to add multilingual text-to-speech voices](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) or [how to hear your characters speak](/how-to-hear-your-characters-speak-in-layla/) for more help.
 
 ### Let your character generate images
 

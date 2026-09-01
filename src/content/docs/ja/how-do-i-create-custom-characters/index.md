@@ -92,7 +92,7 @@ TavernPNGはキャラクターカードのデータを含む画像です。イ�
 
 ![検索、フィルター、サンプル文、プレビューがある音声選択画面。](./choose-voice.jpg)
 
-選択後は音声チャットでその声を聞けます。[多言語TTS音声の追加](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/)または[キャラクターとの音声チャット](/how-to-start-a-voice-chat-with-your-characters/)も参照してください。
+選択後は音声チャットでその声を聞けます。[多言語TTS音声の追加](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/)または[キャラクターとの音声チャット](/how-to-hear-your-characters-speak-in-layla/)も参照してください。
 
 ### キャラクターに画像を生成させる
 

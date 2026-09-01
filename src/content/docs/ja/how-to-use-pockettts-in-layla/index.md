@@ -102,7 +102,7 @@ PocketTTSには**16ビットPCM WAV**が必要です。MP3、AACなどは読み�
 
 ### 1人のAIキャラクターに設定する
 
-キャラクター編集画面で **Voice** をタップし、名前またはタグで選びます。[カスタムAIキャラクターの作成](/how-do-i-create-custom-characters/)と[音声チャットの開始](/how-to-start-a-voice-chat-with-your-characters/)も参照してください。
+キャラクター編集画面で **Voice** をタップし、名前またはタグで選びます。[カスタムAIキャラクターの作成](/how-do-i-create-custom-characters/)と[音声チャットの開始](/how-to-hear-your-characters-speak-in-layla/)も参照してください。
 
 ## 音声を管理または削除する
 

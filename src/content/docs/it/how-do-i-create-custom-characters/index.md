@@ -92,7 +92,7 @@ Tocca **Voice** per esplorare le voci del telefono e delle mini-app TTS installa
 
 ![Selettore di voce con ricerca, filtri, testo di esempio e anteprime.](./choose-voice.jpg)
 
-Dopo la selezione puoi avviare una chat vocale. Consulta [come aggiungere voci TTS multilingue](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) o [come avviare una chat vocale](/how-to-start-a-voice-chat-with-your-characters/).
+Dopo la selezione puoi avviare una chat vocale. Consulta [come aggiungere voci TTS multilingue](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) o [come avviare una chat vocale](/how-to-hear-your-characters-speak-in-layla/).
 
 ### Consenti al personaggio di generare immagini
 

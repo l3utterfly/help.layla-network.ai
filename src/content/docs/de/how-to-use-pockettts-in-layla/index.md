@@ -122,7 +122,7 @@ Die Stimme erscheint unter **Existing Voices** und in Laylas Stimmenauswahl. Lay
 
 Öffne den Charaktereditor, tippe auf **Voice** und wähle die Stimme nach Name oder Tags. Sie ersetzt für diesen Charakter den globalen Standard. Siehe [einen eigenen KI-Charakter erstellen](/how-do-i-create-custom-characters/).
 
-Die Stimme kann Nachrichten vorlesen und in gesprochenen Unterhaltungen verwendet werden. Siehe [Sprachchat mit Charakteren starten](/how-to-start-a-voice-chat-with-your-characters/).
+Die Stimme kann Nachrichten vorlesen und in gesprochenen Unterhaltungen verwendet werden. Siehe [Sprachchat mit Charakteren starten](/how-to-hear-your-characters-speak-in-layla/).
 
 ## Stimmen verwalten oder löschen
 

@@ -101,7 +101,7 @@ Touchez **Voice** pour parcourir les voix du téléphone et des mini-application
 
 ![Sélecteur de voix avec recherche, filtres, exemple de texte et aperçus.](./choose-voice.jpg)
 
-Après la sélection, vous pouvez démarrer un chat vocal et entendre le personnage répondre avec cette voix. Consultez [comment ajouter des voix de synthèse vocale multilingues](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) ou [comment démarrer un chat vocal](/how-to-start-a-voice-chat-with-your-characters/).
+Après la sélection, vous pouvez démarrer un chat vocal et entendre le personnage répondre avec cette voix. Consultez [comment ajouter des voix de synthèse vocale multilingues](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) ou [comment démarrer un chat vocal](/how-to-hear-your-characters-speak-in-layla/).
 
 ### Permettre au personnage de générer des images
 

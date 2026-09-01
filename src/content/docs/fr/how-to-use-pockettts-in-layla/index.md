@@ -122,7 +122,7 @@ Ouvrez **Settings** → **Text-to-speech Settings** → **Default Voice**, puis 
 
 Ouvrez l’éditeur du personnage, touchez **Voice** et choisissez la voix par son nom ou ses étiquettes. Pour la configuration complète, consultez [comment créer un personnage IA personnalisé](/how-do-i-create-custom-characters/).
 
-La voix peut lire les messages et servir dans une conversation parlée. Consultez [comment démarrer un chat vocal avec vos personnages](/how-to-start-a-voice-chat-with-your-characters/).
+La voix peut lire les messages et servir dans une conversation parlée. Consultez [comment démarrer un chat vocal avec vos personnages](/how-to-hear-your-characters-speak-in-layla/).
 
 ## Gérer ou supprimer les voix
 

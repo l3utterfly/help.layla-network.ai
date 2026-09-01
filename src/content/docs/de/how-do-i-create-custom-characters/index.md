@@ -101,7 +101,7 @@ Tippe auf **Voice**, um die Stimmen deines Smartphones und installierter Text-zu
 
 ![Stimmenauswahl mit Suche, Filtern, Beispieltext und Vorschauen.](./choose-voice.jpg)
 
-Nach der Auswahl kannst du einen Sprachchat beginnen und den Charakter mit dieser Stimme hören. Weitere Hilfe: [Mehrsprachige Text-zu-Sprache-Stimmen hinzufügen](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) und [einen Sprachchat mit Charakteren beginnen](/how-to-start-a-voice-chat-with-your-characters/).
+Nach der Auswahl kannst du einen Sprachchat beginnen und den Charakter mit dieser Stimme hören. Weitere Hilfe: [Mehrsprachige Text-zu-Sprache-Stimmen hinzufügen](/how-to-add-multilingual-text-to-speech-for-your-characters-in-layla/) und [einen Sprachchat mit Charakteren beginnen](/how-to-hear-your-characters-speak-in-layla/).
 
 ### Den Charakter Bilder erzeugen lassen
 

@@ -102,7 +102,7 @@ Apri **Settings** → **Text-to-speech Settings** → **Default Voice** e scegli
 
 ### Assegnala a un personaggio
 
-Apri l’editor, tocca **Voice** e selezionala per nome o tag. Consulta [come creare un personaggio IA personalizzato](/how-do-i-create-custom-characters/) e [come avviare una chat vocale](/how-to-start-a-voice-chat-with-your-characters/).
+Apri l’editor, tocca **Voice** e selezionala per nome o tag. Consulta [come creare un personaggio IA personalizzato](/how-do-i-create-custom-characters/) e [come avviare una chat vocale](/how-to-hear-your-characters-speak-in-layla/).
 
 ## Gestisci o elimina le voci
 

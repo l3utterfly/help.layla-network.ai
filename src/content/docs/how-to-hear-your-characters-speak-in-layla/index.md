@@ -4,11 +4,14 @@ description: Three ways to hear a character's voice in Layla - full voice chat, 
 category: Characters & voice
 order: 55
 keywords:
-  - Layla text to speech
-  - speak responses
+  - Layla Voice Chat
   - voice chat
+  - voice conversation
+  - speech to text
+  - text to speech
+  - speak responses
   - read message aloud
-  - character voice
+  - animated characters
 lastUpdated: 2026-09-01
 ---
 
@@ -29,8 +32,6 @@ Once the microphone button turns green, start speaking. When you stop, give Layl
 - **Pause and resume** — pause the conversation, then resume when you are ready to continue.
 - **Hold to continue speaking** — press and hold if you need more time to finish a thought before Layla responds.
 - **Stop Voice Chatting** — the red button ends voice chat mode and returns you to the normal text view.
-
-For a step-by-step walkthrough with a video, see [How to start a voice chat with your characters](/how-to-start-a-voice-chat-with-your-characters/).
 
 For the best recognition, speak clearly and use a quiet room. Background noise can interfere with the speech-to-text step.
 

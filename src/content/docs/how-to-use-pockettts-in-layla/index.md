@@ -122,7 +122,7 @@ Open **Settings**, select **Text-to-speech Settings**, then tap **Default Voice*
 
 Open the character editor, tap **Voice**, and select the PocketTTS voice by its name or tags. That character will use the custom voice instead of the global default. For the complete character setup flow, see [how to create a custom AI character in Layla](/how-do-i-create-custom-characters/).
 
-Once assigned, the voice can read chat messages aloud and can be used during a spoken character conversation. See [how to start a voice chat with your characters](/how-to-start-a-voice-chat-with-your-characters/) for the voice-chat controls.
+Once assigned, the voice can read chat messages aloud and can be used during a spoken character conversation. See [how to hear your characters speak](/how-to-hear-your-characters-speak-in-layla/) for the voice-chat controls.
 
 ## Manage or delete custom voices
 
