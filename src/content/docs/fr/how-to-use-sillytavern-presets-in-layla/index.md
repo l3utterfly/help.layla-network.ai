@@ -12,7 +12,7 @@ keywords:
   - invites de personnages IA
   - IA hors ligne pour Android
   - chat IA sans censure
-lastUpdated: 2026-09-03
+lastUpdated: 2026-09-09
 translationKey: how-to-use-sillytavern-presets-in-layla
 ai_translated: true
 ---
@@ -20,6 +20,8 @@ ai_translated: true
 **Un preset SillyTavern est un fichier JSON qui définit les invites envoyées à un modèle, leur ordre d'envoi et celles qui sont activées. Layla peut importer ces fichiers et les utiliser pour construire l'invite de n'importe quel personnage auquel vous les associez.** Tout se déroule sur votre appareil ; importer un preset ne l'envoie nulle part.
 
 Ce guide couvre l'installation de la mini-application Presets SillyTavern, l'export d'un preset depuis SillyTavern, son import dans Layla, la lecture des informations d'une fiche de preset, l'association des presets aux personnages, ainsi que les parties d'un preset que Layla n'exécute délibérément pas.
+
+![L'icône de la mini-application Presets SillyTavern dans Layla.](./st.png)
 
 ## Ce que contient réellement un preset SillyTavern
 
@@ -67,6 +69,8 @@ Si vous importez un preset dont le nom de fichier existe déjà, Layla conserve 
 
 Chaque preset importé reçoit une fiche. Le grand nom est le nom interne du preset ; la ligne plus petite en dessous est le nom de fichier sous lequel Layla l'a enregistré. La fiche mérite d'être lue, car les presets varient énormément et c'est ainsi que vous saurez d'un coup d'œil ce que vous venez d'importer.
 
+![La mini-application Presets SillyTavern affichant la fiche d'un preset importé, avec ses compteurs, ses étiquettes, son badge d'avertissement et son personnage associé.](./manage.jpg)
+
 Les trois chiffres de synthèse sont :
 
 - **Invites activées** — combien d'invites du preset sont activées, sur le total. Un preset comptant 40 invites dont 12 activées est normal ; l'auteur a désactivé le reste.
@@ -96,6 +100,10 @@ Deux règles découlent de ce mode de stockage :
 - Seuls les personnages **que vous avez créés ou importés** peuvent être associés. Les personnages intégrés par défaut de Layla n'apparaissent pas dans le sélecteur. Si vous souhaitez utiliser un preset avec une personnalité intégrée, copiez-la d'abord dans un personnage personnalisé — consultez [comment créer un personnage IA personnalisé dans Layla](/how-do-i-create-custom-characters/) et [comment importer des personnages TavernPNG dans Layla](/how-to-import-tavernpng-characters-in-layla/).
 
 Une fois qu'un personnage est associé à un preset, Layla construit l'invite de ce personnage à partir du preset chaque fois que vous discutez avec lui. Les invites activées sont assemblées dans l'ordre du preset, les invites marqueurs sont remplies avec la description, la personnalité, le scénario, les exemples de dialogue du personnage et la description de votre persona, l'historique de conversation est placé là où le preset le prévoit, et les invites injectées en profondeur sont insérées à la profondeur configurée dans la conversation. Les macros sont évaluées comme dans SillyTavern, notamment `{{char}}`, `{{user}}`, `{{persona}}`, `{{description}}`, `{{personality}}`, `{{scenario}}` et `{{lastmessage}}`, les macros de date et d'heure, les tirages de dés et sélections aléatoires, ainsi que les macros de variables locales et globales. Une macro que Layla ne reconnaît pas est laissée telle quelle plutôt que supprimée silencieusement.
+
+Appuyez sur la barre d'en-tête pendant une discussion pour ouvrir **Infos de discussion**, qui affiche l'invite brute construite par Layla : c'est le moyen le plus rapide de vérifier qu'un preset est appliqué comme vous l'attendez.
+
+![Le panneau Infos de discussion affichant l'invite brute que Layla a construite à partir du preset.](./prompt.jpg)
 
 ## Ce qu'un preset ne change pas
 

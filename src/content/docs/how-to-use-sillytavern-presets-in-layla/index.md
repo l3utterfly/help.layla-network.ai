@@ -12,12 +12,14 @@ keywords:
   - AI character prompts
   - offline AI for Android
   - uncensored AI chat
-lastUpdated: 2026-09-03
+lastUpdated: 2026-09-09
 ---
 
 **A SillyTavern preset is a JSON file that defines the prompts sent to a model, the order they are sent in, and which of them are switched on. Layla can import these files and use them to build the prompt for any character you attach them to.** Everything runs on your device; importing a preset does not send it anywhere.
 
 This guide covers installing the SillyTavern Presets mini-app, exporting a preset from SillyTavern, importing it into Layla, reading the information on a preset card, attaching presets to characters, and the parts of a preset that Layla deliberately does not run.
+
+![The SillyTavern Presets mini-app icon in Layla.](./st.png)
 
 ## What a SillyTavern preset actually contains
 
@@ -65,6 +67,8 @@ If you import a preset with a filename you already have, Layla keeps both and ad
 
 Each imported preset gets a card. The large name is the preset's own internal name; the smaller line beneath it is the filename Layla stored it under. The card is worth reading, because presets vary enormously and this is how you tell at a glance what you just imported.
 
+![The SillyTavern Presets mini-app showing an imported preset card with its counts, chips, warnings badge and attached character.](./manage.jpg)
+
 The three summary figures are:
 
 - **Prompts enabled** — how many of the preset's prompts are switched on, out of the total. A preset with 40 prompts and 12 enabled is normal; the author disabled the rest.
@@ -94,6 +98,10 @@ Two rules follow from how this is stored:
 - Only characters **you created or imported** can be attached. Layla's built-in default characters are not in the picker. If you want to use a preset with a built-in personality, copy it into a custom character first — see [how to create a custom AI character in Layla](/how-do-i-create-custom-characters/) and [how to import TavernPNG characters in Layla](/how-to-import-tavernpng-characters-in-layla/).
 
 Once a character has a preset attached, Layla builds that character's prompt from the preset every time you chat with them. Enabled prompts are assembled in the preset's order, marker prompts are filled with the character's description, personality, scenario, dialogue examples and your persona description, chat history is placed where the preset puts it, and depth-injected prompts are inserted at their configured depth in the conversation. Macros are evaluated as they are in SillyTavern, including `{{char}}`, `{{user}}`, `{{persona}}`, `{{description}}`, `{{personality}}`, `{{scenario}}` and `{{lastmessage}}`, the date and time macros, the dice and random pickers, and the local and global variable macros. A macro Layla does not recognise is left in place unchanged rather than silently deleted.
+
+Tap the header bar during a chat to open **Chat Info**, which shows the raw prompt Layla assembled — the quickest way to confirm a preset is being applied the way you expect.
+
+![The Chat Info panel showing the raw prompt Layla assembled from the preset.](./prompt.jpg)
 
 ## What a preset does not change
 

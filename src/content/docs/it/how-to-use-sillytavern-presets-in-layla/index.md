@@ -12,7 +12,7 @@ keywords:
   - prompt per personaggi IA
   - IA offline per Android
   - chat IA senza censura
-lastUpdated: 2026-09-03
+lastUpdated: 2026-09-09
 translationKey: how-to-use-sillytavern-presets-in-layla
 ai_translated: true
 ---
@@ -20,6 +20,8 @@ ai_translated: true
 **Un preset SillyTavern è un file JSON che definisce i prompt inviati a un modello, l'ordine in cui vengono inviati e quali di essi sono attivi. Layla può importare questi file e usarli per costruire il prompt di qualsiasi personaggio a cui li colleghi.** Tutto avviene sul tuo dispositivo: importare un preset non lo invia da nessuna parte.
 
 Questa guida spiega come installare la mini-app Preset SillyTavern, esportare un preset da SillyTavern, importarlo in Layla, leggere le informazioni sulla scheda di un preset, collegare i preset ai personaggi e quali parti di un preset Layla deliberatamente non esegue.
+
+![L'icona della mini-app Preset SillyTavern in Layla.](./st.png)
 
 ## Che cosa contiene davvero un preset SillyTavern
 
@@ -67,6 +69,8 @@ Se importi un preset con un nome di file già presente, Layla li conserva entram
 
 Ogni preset importato ha una sua scheda. Il nome grande è il nome interno del preset; la riga più piccola sotto è il nome del file con cui Layla lo ha salvato. Vale la pena leggere la scheda, perché i preset variano moltissimo ed è così che capisci a colpo d'occhio che cosa hai appena importato.
 
+![La mini-app Preset SillyTavern con la scheda di un preset importato: conteggi, etichette, badge di avviso e personaggio collegato.](./manage.jpg)
+
 I tre valori riepilogativi sono:
 
 - **Prompt attivi** — quanti prompt del preset sono attivi, sul totale. Un preset con 40 prompt di cui 12 attivi è normale: l'autore ha disattivato gli altri.
@@ -96,6 +100,10 @@ Da come questo viene memorizzato derivano due regole:
 - Si possono collegare solo i personaggi **che hai creato o importato**. I personaggi predefiniti integrati in Layla non compaiono nel selettore. Se vuoi usare un preset con una personalità integrata, copiala prima in un personaggio personalizzato — consulta [come creare un personaggio IA personalizzato in Layla](/how-do-i-create-custom-characters/) e [come importare personaggi TavernPNG in Layla](/how-to-import-tavernpng-characters-in-layla/).
 
 Una volta che un personaggio ha un preset collegato, Layla costruisce il prompt di quel personaggio a partire dal preset ogni volta che ci chatti. I prompt attivi vengono assemblati nell'ordine del preset, i prompt marcatori vengono riempiti con la descrizione, la personalità, lo scenario e gli esempi di dialogo del personaggio e con la descrizione del tuo persona, la cronologia della chat viene collocata dove la mette il preset e i prompt a iniezione in profondità vengono inseriti alla profondità configurata nella conversazione. Le macro vengono valutate come in SillyTavern, incluse `{{char}}`, `{{user}}`, `{{persona}}`, `{{description}}`, `{{personality}}`, `{{scenario}}` e `{{lastmessage}}`, le macro di data e ora, i tiri di dado e le scelte casuali, e le macro delle variabili locali e globali. Una macro che Layla non riconosce viene lasciata invariata anziché eliminata in silenzio.
+
+Tocca la barra dell'intestazione durante una chat per aprire **Info chat**, che mostra il prompt grezzo costruito da Layla: è il modo più rapido per verificare che un preset venga applicato come ti aspetti.
+
+![Il pannello Info chat che mostra il prompt grezzo costruito da Layla a partire dal preset.](./prompt.jpg)
 
 ## Che cosa un preset non cambia
 

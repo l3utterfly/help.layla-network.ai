@@ -12,7 +12,7 @@ keywords:
   - KI-Charakter-Prompts
   - Offline-KI für Android
   - unzensierter KI-Chat
-lastUpdated: 2026-09-03
+lastUpdated: 2026-09-09
 translationKey: how-to-use-sillytavern-presets-in-layla
 ai_translated: true
 ---
@@ -20,6 +20,8 @@ ai_translated: true
 **Ein SillyTavern-Preset ist eine JSON-Datei, die festlegt, welche Prompts an ein Modell gesendet werden, in welcher Reihenfolge das geschieht und welche davon aktiv sind. Layla kann diese Dateien importieren und daraus den Prompt für jeden Charakter aufbauen, dem Sie sie zuweisen.** Alles läuft auf Ihrem Gerät; der Import eines Presets sendet es nirgendwohin.
 
 Dieser Leitfaden behandelt die Installation der Mini-App SillyTavern-Presets, den Export eines Presets aus SillyTavern, den Import in Layla, das Lesen der Angaben auf einer Preset-Karte, das Zuweisen von Presets an Charaktere sowie die Teile eines Presets, die Layla bewusst nicht ausführt.
+
+![Das Symbol der Mini-App SillyTavern-Presets in Layla.](./st.png)
 
 ## Was ein SillyTavern-Preset tatsächlich enthält
 
@@ -67,6 +69,8 @@ Wenn Sie ein Preset mit einem bereits vorhandenen Dateinamen importieren, behäl
 
 Jedes importierte Preset erhält eine Karte. Der große Name ist der interne Name des Presets; die kleinere Zeile darunter ist der Dateiname, unter dem Layla es gespeichert hat. Die Karte lohnt sich zu lesen, denn Presets unterscheiden sich enorm, und so erkennen Sie auf einen Blick, was Sie gerade importiert haben.
 
+![Die Mini-App SillyTavern-Presets mit einer importierten Preset-Karte samt Kennzahlen, Chips, Warnhinweis und zugewiesenem Charakter.](./manage.jpg)
+
 Die drei zusammenfassenden Zahlen sind:
 
 - **Aktivierte Prompts** — wie viele Prompts des Presets von insgesamt wie vielen eingeschaltet sind. Ein Preset mit 40 Prompts, von denen 12 aktiv sind, ist normal; den Rest hat der Autor deaktiviert.
@@ -96,6 +100,10 @@ Aus der Art der Speicherung folgen zwei Regeln:
 - Nur Charaktere, die **Sie erstellt oder importiert haben**, lassen sich zuweisen. Laylas eingebaute Standardcharaktere erscheinen nicht in der Auswahl. Wenn Sie ein Preset mit einer eingebauten Persönlichkeit nutzen möchten, kopieren Sie diese zuerst in einen eigenen Charakter — siehe [wie Sie einen eigenen KI-Charakter in Layla erstellen](/how-do-i-create-custom-characters/) und [wie Sie TavernPNG-Charaktere in Layla importieren](/how-to-import-tavernpng-characters-in-layla/).
 
 Sobald einem Charakter ein Preset zugewiesen ist, baut Layla den Prompt dieses Charakters bei jedem Chat aus dem Preset auf. Aktivierte Prompts werden in der Reihenfolge des Presets zusammengesetzt, Marker-Prompts mit Beschreibung, Persönlichkeit, Szenario und Dialogbeispielen des Charakters sowie Ihrer Persona-Beschreibung gefüllt, der Chatverlauf wird dort eingesetzt, wo das Preset ihn vorsieht, und tiefeninjizierte Prompts werden an der konfigurierten Tiefe der Unterhaltung eingefügt. Makros werden wie in SillyTavern ausgewertet, darunter `{{char}}`, `{{user}}`, `{{persona}}`, `{{description}}`, `{{personality}}`, `{{scenario}}` und `{{lastmessage}}`, die Datums- und Zeitmakros, die Würfel- und Zufallsauswahlen sowie die Makros für lokale und globale Variablen. Ein Makro, das Layla nicht kennt, bleibt unverändert stehen, statt stillschweigend entfernt zu werden.
+
+Tippen Sie während eines Chats auf die Kopfzeile, um **Chat-Info** zu öffnen. Dort sehen Sie den Roh-Prompt, den Layla zusammengesetzt hat — der schnellste Weg, um zu prüfen, ob ein Preset so angewendet wird, wie Sie es erwarten.
+
+![Das Fenster Chat-Info mit dem Roh-Prompt, den Layla aus dem Preset zusammengesetzt hat.](./prompt.jpg)
 
 ## Was ein Preset nicht ändert
 
