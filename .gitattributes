@@ -1,0 +1,25 @@
+# Normalise line endings.
+#
+# Every text blob in this repository is stored with LF. Without this file a
+# contributor with `core.autocrlf=true` (Git for Windows' default) gets CRLF in
+# the working tree. Git hides the drift, because it normalises on read, so
+# `git status` stays clean -- but tools that read raw bytes do not. Prettier,
+# via `npm run validate:articles`, reports every affected article as
+# "not formatted" for reasons unrelated to its content.
+#
+# `eol=lf` pins the working tree to LF regardless of a contributor's local
+# autocrlf setting.
+* text=auto eol=lf
+
+# Binary assets. `text=auto` detects these on its own; listing them makes the
+# intent explicit and stops Git from ever sniffing them as text.
+*.avif binary
+*.gif  binary
+*.ico  binary
+*.jpeg binary
+*.jpg  binary
+*.mp4  binary
+*.png  binary
+*.webp binary
+*.woff binary
+*.woff2 binary
