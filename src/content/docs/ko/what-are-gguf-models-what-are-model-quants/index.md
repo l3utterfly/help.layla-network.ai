@@ -104,7 +104,7 @@ Layla를 열고 **Inference Settings** → **Add a custom model** → **Local fi
 
 ### 6단계 — 올바른 프롬프트 형식 설정하기
 
-사람들이 자주 잊는 단계입니다. 각 모델 제품군은 특정 형식으로 감싼 프롬프트를 기대합니다. Llama 3, Mistral, ChatML은 각각 다른 형식을 사용합니다. 모델의 Hugging Face 페이지에서 필요한 형식을 확인하고 Layla의 프롬프트 형식 설정에서 선택하세요. 이제 사용자 지정 GGUF 모델이 휴대전화에서 완전히 오프라인으로 실행됩니다.
+사람들이 자주 잊는 단계입니다. 각 모델 제품군은 특정 형식으로 감싼 프롬프트를 기대합니다. Llama 3, Mistral, ChatML은 각각 다른 형식을 사용합니다. 모델의 Hugging Face 페이지에서 필요한 형식을 확인하고 Layla의 프롬프트 형식 설정에서 선택하세요. 이제 사용자 지정 GGUF 모델이 휴대전화에서 완전히 오프라인으로 실행됩니다. 항목별 자세한 안내는 [Layla에서 모델용 사용자 지정 프롬프트 템플릿 설정하기](/ko/how-to-set-up-custom-prompt-templates-for-models/)를 참고하세요.
 
 ![Layla 사용자 지정 모델의 프롬프트 형식 선택기.](./prompt-format.png)
 

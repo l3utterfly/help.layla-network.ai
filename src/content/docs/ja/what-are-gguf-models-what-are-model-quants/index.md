@@ -104,7 +104,7 @@ Laylaを開き、**Inference Settings** → **Add a custom model** → **Local f
 
 ### 手順6 — 正しいプロンプト形式を設定する
 
-この手順は忘れられがちです。モデルファミリーごとに、プロンプトを特定の形式で囲む必要があります。Llama 3、Mistral、ChatMLではそれぞれ異なります。必要な形式はモデルのHugging Faceページに記載されています。Laylaのプロンプト形式設定で選択すれば、カスタムGGUFモデルがスマートフォン上で完全にオフライン動作します。
+この手順は忘れられがちです。モデルファミリーごとに、プロンプトを特定の形式で囲む必要があります。Llama 3、Mistral、ChatMLではそれぞれ異なります。必要な形式はモデルのHugging Faceページに記載されています。Laylaのプロンプト形式設定で選択すれば、カスタムGGUFモデルがスマートフォン上で完全にオフライン動作します。各項目の詳しい手順は[Laylaでモデル用のカスタムプロンプトテンプレートを設定する方法](/ja/how-to-set-up-custom-prompt-templates-for-models/)をご覧ください。
 
 ![Laylaのカスタムモデル用プロンプト形式選択画面。](./prompt-format.png)
 

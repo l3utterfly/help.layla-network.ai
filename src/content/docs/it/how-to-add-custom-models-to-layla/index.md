@@ -70,6 +70,8 @@ L’API Claude e l’API compatibile con OpenAI utilizzano formati di richiesta 
 
 Salva le impostazioni del modello o della connessione, quindi torna a Layla e avvia una chat con qualsiasi personaggio. Layla utilizzerà la configurazione del modello selezionata in **Impostazioni di inferenza**.
 
+Se hai importato un modello locale, verifica anche che Layla utilizzi il template di prompt richiesto da quel modello. Il formato del prompt determina il modo in cui il modello riceve le istruzioni di sistema, i messaggi dell’utente e le risposte. Consulta [Come configurare template di prompt personalizzati per i modelli in Layla](/it/how-to-set-up-custom-prompt-templates-for-models/).
+
 Puoi tornare in **I miei modelli** in qualsiasi momento per aggiungere un altro LLM locale, cambiare provider API o passare da un modello offline a Layla Server o a un modello cloud.
 
 ## Domande frequenti

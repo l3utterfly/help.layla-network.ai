@@ -85,7 +85,7 @@ Beachte die Vorlagen in doppelten geschweiften Klammern, etwa `{{input}}`. `{{in
 
 Im Beispiel ist die HTTP-Ausgabe die Eingabe von _Provide Context_. Nach der Ersetzung lautet die Ausgabe: `{{user}}'s current IP address is xx.xx.xx.xx`.
 
-Beim Einfügen in die Unterhaltung wird `{{user}}` zusätzlich durch die ausgewählte Persona ersetzt. Das funktioniert wie bei eigenen Prompts.
+Beim Einfügen in die Unterhaltung wird `{{user}}` zusätzlich durch die ausgewählte Persona ersetzt. Das funktioniert genauso wie die Platzhalter, die unter [Benutzerdefinierte Prompt-Vorlagen für Modelle in Layla einrichten](/de/how-to-set-up-custom-prompt-templates-for-models/) beschrieben sind.
 
 **Vom LLM generierte Parameter**
 

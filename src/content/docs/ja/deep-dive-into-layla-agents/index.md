@@ -85,7 +85,7 @@ HTTP Requestの出力として、IPアドレスがプレーンテキストで表
 
 この例ではHTTPリクエストの出力が _Provide Context_ の入力になるため、置換後の出力は `{{user}}'s current IP address is xx.xx.xx.xx` です。
 
-会話に挿入されると、`{{user}}` は選択中のペルソナにさらに置き換えられます。カスタムプロンプトと同じ仕組みです。
+会話に挿入されると、`{{user}}` は選択中のペルソナにさらに置き換えられます。これは[Laylaでモデル用のカスタムプロンプトテンプレートを設定する方法](/ja/how-to-set-up-custom-prompt-templates-for-models/)で説明しているプレースホルダーと同じ仕組みです。
 
 **LLMが生成するパラメーター**
 

@@ -85,7 +85,7 @@ HTTP Request의 출력인 IP 주소가 일반 텍스트로 표시됩니다.
 
 위 예에서는 HTTP 요청의 출력이 _Provide Context_ 도구의 입력이므로 대체 후 출력은 `{{user}}'s current IP address is xx.xx.xx.xx`가 됩니다.
 
-대화에 삽입될 때 `{{user}}` 템플릿은 선택한 페르소나로 다시 대체됩니다. 사용자 지정 프롬프트와 같은 방식으로 작동합니다.
+대화에 삽입될 때 `{{user}}` 템플릿은 선택한 페르소나로 다시 대체됩니다. 이는 [Layla에서 모델용 사용자 지정 프롬프트 템플릿 설정하기](/ko/how-to-set-up-custom-prompt-templates-for-models/)에서 설명한 자리표시자와 같은 방식으로 작동합니다.
 
 **LLM이 생성하는 매개변수**
 

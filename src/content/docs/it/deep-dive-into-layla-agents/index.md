@@ -85,7 +85,7 @@ Nota i modelli tra doppie parentesi graffe, come `{{input}}`. `{{input}}` viene 
 
 Nell’esempio, l’output della richiesta HTTP è l’input di _Provide Context_. Dopo la sostituzione, l’output sarà: `{{user}}'s current IP address is xx.xx.xx.xx`.
 
-Quando viene inserito nella conversazione, `{{user}}` viene ulteriormente sostituito dalla persona selezionata. Funziona come i prompt personalizzati.
+Quando viene inserito nella conversazione, `{{user}}` viene ulteriormente sostituito dalla persona selezionata. Funziona allo stesso modo dei segnaposto descritti in [Come configurare template di prompt personalizzati per i modelli in Layla](/it/how-to-set-up-custom-prompt-templates-for-models/).
 
 **Parametri generati dall’LLM**
 

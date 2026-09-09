@@ -85,7 +85,7 @@ Remarquez les modèles entre doubles accolades, comme `{{input}}`. Le modèle `{
 
 Dans l’exemple, la sortie de la requête HTTP est l’entrée de _Provide Context_. Après substitution, la sortie devient : `{{user}}'s current IP address is xx.xx.xx.xx`.
 
-Lors de l’injection dans la conversation, `{{user}}` est ensuite remplacé par la persona sélectionnée. Ce mécanisme fonctionne comme les prompts personnalisés.
+Lors de l’injection dans la conversation, `{{user}}` est ensuite remplacé par la persona sélectionnée. Ce mécanisme fonctionne de la même manière que les variables décrites dans [Configurer des modèles de prompt personnalisés dans Layla](/fr/how-to-set-up-custom-prompt-templates-for-models/).
 
 **Paramètres générés par le LLM**
 

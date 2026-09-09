@@ -104,7 +104,7 @@ Dans le sélecteur de fichiers, choisissez le modèle téléchargé.
 
 ### Étape 6 — Définir le bon format de prompt
 
-Cette étape est souvent oubliée. Chaque famille de modèles attend un format de prompt précis : Llama 3 en utilise un, Mistral un autre, ChatML un troisième, etc. La page Hugging Face du modèle indique le format attendu. Sélectionnez-le dans les paramètres de format de prompt de Layla. Votre modèle GGUF personnalisé fonctionne maintenant entièrement hors ligne sur le téléphone.
+Cette étape est souvent oubliée. Chaque famille de modèles attend un format de prompt précis : Llama 3 en utilise un, Mistral un autre, ChatML un troisième, etc. La page Hugging Face du modèle indique le format attendu. Sélectionnez-le dans les paramètres de format de prompt de Layla. Votre modèle GGUF personnalisé fonctionne maintenant entièrement hors ligne sur le téléphone. Pour un guide champ par champ, consultez [Configurer des modèles de prompt personnalisés dans Layla](/fr/how-to-set-up-custom-prompt-templates-for-models/).
 
 ![Sélecteur de format de prompt d’un modèle personnalisé dans Layla.](./prompt-format.png)
 

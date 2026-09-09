@@ -70,6 +70,8 @@ L’API Claude et l’API compatible OpenAI utilisent des formats de requête di
 
 Enregistrez les paramètres du modèle ou de la connexion, puis revenez dans Layla et commencez une conversation avec n’importe quel personnage. Layla utilisera la configuration de modèle sélectionnée dans **Paramètres d’inférence**.
 
+Si vous avez importé un modèle local, vérifiez aussi que Layla utilise le modèle de prompt requis par ce modèle. Le format de prompt détermine la manière dont le modèle reçoit les instructions système, les messages de l’utilisateur et les réponses. Consultez [Configurer des modèles de prompt personnalisés dans Layla](/fr/how-to-set-up-custom-prompt-templates-for-models/).
+
 Vous pouvez revenir dans **Mes modèles** à tout moment pour ajouter un autre LLM local, changer de fournisseur d’API ou basculer entre un modèle hors ligne, Layla Server et un modèle cloud.
 
 ## Questions fréquentes
