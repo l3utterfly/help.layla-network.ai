@@ -43,7 +43,7 @@ Layla runs ACE-Step through [acestep.cpp](https://github.com/ServeurpersoCom/ace
 
 Music generation is an optional feature, so it is not enabled by default. Open _My Apps_, tap the plus sign in the top-right corner to browse all available features, and enable **Music Generation (Ace Step)**.
 
-If you have not used the mini-app system before, see [how to enable or disable mini-apps within Layla](/docs/how-to-enable-disable-mini-apps-within-layla/).
+If you have not used the mini-app system before, see [how to enable or disable mini-apps within Layla](/how-to-enable-disable-mini-apps-within-layla/).
 
 Once enabled, the app appears in your app list and opens onto two tabs: **Create** and **Library**.
 
@@ -62,7 +62,7 @@ Bundles differ along two axes.
 | Turbo Continuous        | Turbo tuned for continuous or seamless-loop material.                                |
 | Turbo Shift-1 / Shift-3 | Turbo with alternative sampling schedules. Different timbre feel.                    |
 
-**Quantisation** — the size and quality trade-off, the same concept as [GGUF quants for text models](/docs/what-are-gguf-models-what-are-model-quants/):
+**Quantisation** — the size and quality trade-off, the same concept as [GGUF quants for text models](/what-are-gguf-models-what-are-model-quants/):
 
 | Quant  | Notes                               |
 | ------ | ----------------------------------- |
@@ -204,4 +204,4 @@ The model has to be loaded into memory before the first track. Subsequent runs i
 
 ---
 
-Music generation joins [image generation](/docs/how-to-enable-image-generation-in-layla/) and offline text chat as things Layla does on the device itself. No account, no upload, no connection required.
+Music generation joins [image generation](/how-to-enable-image-generation-in-layla/) and offline text chat as things Layla does on the device itself. No account, no upload, no connection required.
