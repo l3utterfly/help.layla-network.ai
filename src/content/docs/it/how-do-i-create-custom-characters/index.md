@@ -46,6 +46,8 @@ Puoi usare `{{char}}` e `{{user}}` in descrizione, personalità e scenario. Layl
 
 ![Saluti, tag, riepilogo e stima del tempo di caricamento nella scheda Core Info.](./create-character-2.jpg)
 
+### Come Layla combina i campi di Core Info
+
 I campi sono separati solo per comodità. Layla combina descrizione, personalità e scenario in un unico blocco per il prompt di sistema; all’avvio di una chat aggiunge il saluto scelto.
 
 Il **Summary** in basso mostra un’anteprima del testo combinato e Layla ne stima il tempo di caricamento, utile per personaggi molto dettagliati.
@@ -57,6 +59,8 @@ Apri **Appearance** per controllare le immagini del personaggio e della chat.
 ![Scheda Appearance con le impostazioni delle immagini del personaggio e dello sfondo chat.](./character-appearance.jpg)
 
 L’immagine profilo di **Core Info** è il piccolo cerchio accanto ai messaggi. **Character Background** è l’immagine statica principale; **Chat Background** riempie lo sfondo della conversazione.
+
+### Scegli uno sfondo animato
 
 Puoi scegliere anche uno sfondo animato:
 

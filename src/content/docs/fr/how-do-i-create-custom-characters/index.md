@@ -55,6 +55,8 @@ Les espaces réservés `{{char}}` et `{{user}}` peuvent être employés dans la 
 
 ![Greetings, tags, résumé et estimation du temps de chargement dans l’onglet Core Info.](./create-character-2.jpg)
 
+### Comment Layla combine les champs Core Info
+
 Les champs sont séparés pour faciliter la rédaction. Ils ne constituent pas des instructions indépendantes envoyées à différentes parties de l’IA. Layla réunit la description, la personnalité et le scénario dans un long bloc du prompt système. Un message d’accueil sélectionné est ensuite ajouté au début d’un nouveau chat.
 
 Le **Summary** en bas donne un aperçu de ce texte combiné. Layla estime également son temps de chargement, ce qui est utile pour les personnages très détaillés.
@@ -66,6 +68,8 @@ Ouvrez l’onglet **Appearance** pour choisir les images du personnage et du cha
 ![Onglet Appearance avec les paramètres d’image du personnage et d’arrière-plan du chat.](./character-appearance.jpg)
 
 La photo de profil choisie dans **Core Info** est le petit cercle affiché près des messages. Le **Character Background** est l’image statique principale du personnage, tandis que le **Chat Background** remplit l’arrière-plan de la conversation.
+
+### Choisir un arrière-plan animé
 
 Vous pouvez aussi choisir un arrière-plan animé. Layla propose :
 

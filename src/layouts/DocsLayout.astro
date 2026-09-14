@@ -162,4 +162,29 @@ const updated = lastUpdated
       })
     })
   </script>
+
+  <script is:inline define:vars={{ copyLabel: ui.copyLinkToSection, copiedLabel: ui.linkCopied }}>
+    document.querySelectorAll('[data-heading-anchor]').forEach((anchor) => {
+      anchor.title = copyLabel
+      const label = anchor.querySelector('[data-heading-anchor-label]')
+      if (label) label.textContent = copyLabel
+
+      anchor.addEventListener('click', (event) => {
+        const url = new URL(anchor.getAttribute('href'), window.location.href).href
+        if (!navigator.clipboard?.writeText) return
+        event.preventDefault()
+        navigator.clipboard.writeText(url).then(() => {
+          history.replaceState(null, '', anchor.getAttribute('href'))
+          anchor.dataset.copied = 'true'
+          anchor.title = copiedLabel
+          if (label) label.textContent = copiedLabel
+          window.setTimeout(() => {
+            delete anchor.dataset.copied
+            anchor.title = copyLabel
+            if (label) label.textContent = copyLabel
+          }, 1600)
+        })
+      })
+    })
+  </script>
 </BaseLayout>

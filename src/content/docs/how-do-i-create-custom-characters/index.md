@@ -53,6 +53,8 @@ The `{{char}}` and `{{user}}` placeholders can be used in the description, perso
 
 ![The greetings, tags, summary, and loading-time estimate in the Core Info tab.](./create-character-2.jpg)
 
+### How Layla combines the Core Info fields
+
 The fields are separated for convenience while you write. They are not independent instructions sent to separate parts of the AI. Layla combines the description, personality, and scenario into one long block of text for the character's system prompt. A selected greeting is then added when a new chat starts.
 
 The **Summary** at the bottom previews the combined character text. Layla also estimates how long the information may take to load, which is useful if you have written a particularly detailed custom AI character.
@@ -64,6 +66,8 @@ Open the **Appearance** tab to control the images shown for your character and d
 ![The Appearance tab with character and chat background image settings.](./character-appearance.jpg)
 
 The profile picture selected in **Core Info** is the small circular image shown beside the character's chat messages. The **Character Background** is the character's main static image, while the **Chat Background** fills the main background of the conversation.
+
+### Choose an animated background
 
 You can also choose an animated background. Layla provides three options:
 

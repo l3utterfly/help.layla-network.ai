@@ -55,6 +55,8 @@ Die Platzhalter `{{char}}` und `{{user}}` funktionieren in Beschreibung, Persön
 
 ![Greetings, Tags, Zusammenfassung und Ladezeitschätzung im Core-Info-Tab.](./create-character-2.jpg)
 
+### Wie Layla die Core-Info-Felder kombiniert
+
 Die Felder sind nur zur leichteren Eingabe getrennt. Sie werden nicht als unabhängige Anweisungen an verschiedene Teile der KI gesendet. Layla kombiniert Beschreibung, Persönlichkeit und Szenario zu einem langen Textblock für den System-Prompt. Beim Start eines Chats wird zusätzlich eine ausgewählte Begrüßung eingefügt.
 
 Die **Summary** unten zeigt eine Vorschau des kombinierten Texts. Layla schätzt auch die Ladezeit, was bei besonders detaillierten Charakteren hilfreich ist.
@@ -66,6 +68,8 @@ Im Tab **Appearance** legst du die Bilder des Charakters und des Chats fest.
 ![Appearance-Tab mit Einstellungen für Charakter- und Chathintergrundbilder.](./character-appearance.jpg)
 
 Das unter **Core Info** gewählte Profilbild ist der kleine Kreis neben Nachrichten. **Character Background** ist das statische Hauptbild, während **Chat Background** den Hintergrund der Unterhaltung füllt.
+
+### Einen animierten Hintergrund auswählen
 
 Du kannst außerdem einen animierten Hintergrund auswählen:
 
