@@ -25,16 +25,71 @@ Tasker is a popular Android app for automation. It lets you create tasks that ru
 
 The Tasker integration is available on Android only.
 
-## Adding a Layla action to a Tasker task
+## Step by step: create your first Layla task
 
-1. Open Tasker and create or edit a task.
-2. Tap **+** to add an action and choose **Plugin**.
-3. Select **Layla**, then pick the action you want from the list.
-4. Fill in the fields and tap **Save**. Tapping **Cancel** discards your changes.
+This walkthrough creates a Tasker task that sends a message to Layla and shows the reply on screen. Once you have done this, adding any other Layla action works the same way.
 
-Every text field accepts Tasker variables, so you can pass the output of one action into the next. For example, you can set a variable to the text of a notification, then use it as the prompt for **Ask Layla**.
+### Step 1: Create a task and add an action
 
-Each action returns its results as Tasker variables, which you can use in any action that follows. Layla actions start Layla in the background if it is not already running, so you do not need to open the app first.
+Open Tasker, create a new task, and tap **+** to add an action. Tasker asks you to select an action category. Choose **Plugin**.
+
+![Tasker's action category list with Plugin available.](./select-plugins.jpg)
+
+### Step 2: Choose Layla
+
+Tasker lists the apps that provide plugin actions. Tap **Layla**.
+
+![The Action Plugin list showing Layla.](./layla-plugin.jpg)
+
+If Layla is not listed, make sure Layla is installed on the same device and is up to date.
+
+### Step 3: Choose an action
+
+Layla shows all of its Tasker actions. For this walkthrough, choose **Chat Completions**. See [Available actions](#available-actions) below for what each action does.
+
+![The list of Layla actions in Tasker.](./choose-action.jpg)
+
+Tasker may drop "Layla" from an action's name in this list, so **Ask Layla** can appear as **Ask**.
+
+### Step 4: Open the configuration
+
+On the action's page, tap the pencil icon next to **Configuration**. This opens Layla's own screen for setting up the action.
+
+![Tapping the pencil icon next to Configuration.](./edit-config.jpg)
+
+### Step 5: Enter your request and save
+
+Enter the message you want to send to Layla. For example:
+
+```
+{"messages":[{"role":"user","content":"Hello, how are you?"}]}
+```
+
+You can also use a Tasker variable in place of the text, such as `%prompt`. Keep **JSON-escape variable values** turned on so that quotes and line breaks in your variables do not cause problems. Then tap **Save** to return to Tasker.
+
+![The Chat Completions configuration screen in Layla.](./config-options.jpg)
+
+The timeout is set to **None** by default. This lets Layla take as long as it needs to respond.
+
+### Step 6: Show the result
+
+Layla returns its reply in the variable `%layla_text`. To see it, add another action after Chat Completions: choose the **Alert** category, then **Popup**, and enter `%layla_text` as the **Text**.
+
+![The Popup action with %layla_text as its text.](./output.jpg)
+
+### Step 7: Run the task
+
+Tap the play button at the bottom of the task screen. Layla generates a reply and Tasker shows it in the popup.
+
+![The popup showing Layla's reply.](./alert-result.jpg)
+
+The first run can take longer, because Layla needs to load its model.
+
+## Using variables and outputs
+
+Every text field in a Layla action accepts Tasker variables, so you can pass the output of one action into the next. For example, you can set a variable to the text of a notification, then use it as the prompt for **Ask Layla**.
+
+Each action returns its results as Tasker variables, which you can use in any action that follows, as the popup did in the walkthrough above. Layla actions start Layla in the background if it is not already running, so you do not need to open the app first.
 
 ## Available actions
 
@@ -135,7 +190,7 @@ The delivery time is a Unix timestamp in milliseconds. In Tasker, you can calcul
 
 If an action fails, Tasker sets `%err` and `%errmsg`. Turn on **Continue Task After Error** for the action if you want your task to carry on and read the message.
 
-Layla actions wait for as long as the work takes, which can be a while for image and music generation. New actions use a Tasker timeout of **Never** by default. If you set a time limit instead, Layla honours it.
+Layla actions wait for as long as the work takes, which can be a while for image and music generation. New actions use a Tasker timeout of **None** by default, which means no time limit. If you set a time limit instead, Layla honours it.
 
 ## Example: reply to a notification
 
