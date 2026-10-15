@@ -1,29 +1,47 @@
 ---
-title: Layla integrations with Tasker
-description: Use Layla's Tasker actions to chat, generate images, speech and music, manage memories and schedule character messages in your Android automations.
+title: Layla integrations with Tasker for on-device AI automation
+description: Add an on-device AI to your Tasker automations. Use Layla's Tasker plugin to chat, generate images, speech and music, and manage memories offline.
 category: Mini-apps & integrations
 order: 50
 keywords:
   - Layla Tasker integration
-  - Android automation
-  - Tasker plugin
-  - Tasker actions
-  - LLM automation
+  - Tasker AI plugin
+  - Tasker LLM
+  - Tasker local LLM
+  - Tasker offline AI
   - AI automation on Android
+  - on-device AI automation
+  - offline AI automation
+  - Android automation with AI
   - Tasker image generation
-  - Tasker text to speech
+  - Tasker text to speech AI
+  - Tasker AI music generation
+  - Tasker sentiment analysis
 lastUpdated: 2026-10-15
 ---
 
-Layla is integrated with Tasker. Your automations can ask Layla a question, generate images, speech and music, read and write chat history, store memories, and schedule messages from your characters, all running on your device.
+Layla includes a Tasker plugin that adds on-device AI to your Android automations. A Tasker task can send a prompt to a local LLM, generate images, speech and music, read and write chat history, store memories, and schedule messages from your characters. When you use models on your device, none of this is sent to an online service.
 
 ## What is Tasker?
 
 Tasker is a popular Android app for automation. It lets you create tasks that run when a condition on your device is met. For example, you can ask Layla to summarise a new email when it arrives, or have a character send you a reminder in an hour.
 
+Because Layla runs models locally, these automations can work without an internet connection and without a per-request fee. Layla uses whichever inference engine you have set as your default, so tasks follow the same setup as your chats.
+
 *Note: Tasker is a separate app and requires a purchase from [Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en). Layla is not affiliated with Tasker.*
 
 The Tasker integration is available on Android only.
+
+## What can you automate with Layla and Tasker?
+
+Any Tasker trigger can start a Layla action, and the result can feed into the next action in the task. Some examples:
+
+- **Summarise notifications or emails.** Pass the text of a new notification to **Ask Layla** and have a local LLM write a one-sentence summary.
+- **Read messages aloud.** Send incoming text to **Speak Text** so Layla reads it in your chosen voice.
+- **Check the tone of a message.** Run text through **Analyze Sentiment** and branch your task on the strongest emotion.
+- **Generate images or music on a trigger.** Use **Generate Image** or **Generate Music** with a description built from Tasker variables, such as the time of day or a calendar event.
+- **Schedule reminders from a character.** Use **Schedule Character Message** to have one of your characters send you a message at a set time.
+- **Keep notes as memories.** Use **Remember Text** to store text in a character's long-term memory.
 
 ## Step by step: create your first Layla task
 
@@ -101,7 +119,7 @@ Each action returns its results as Tasker variables, which you can use in any ac
 | **Analyze Sentiment** | Analyses the emotions in a piece of text. |
 | **Chat Completions** | An advanced action that accepts a full chat request with several messages, for when you want to supply the whole conversation yourself. |
 
-Ask Layla and Chat Completions use the inference engine you have set as your default in Layla.
+Ask Layla and Chat Completions are the actions to use when you want to run an LLM prompt from Tasker. They use the inference engine you have set as your default in Layla, so a local model on your device works without any extra setup in Tasker.
 
 **Ask Layla** returns:
 
@@ -114,6 +132,8 @@ Ask Layla and Chat Completions use the inference engine you have set as your def
 - A score for each individual emotion, such as `%layla_sentiment_joy` or `%layla_sentiment_sadness`.
 
 ### Voice, images and music
+
+These actions bring AI text-to-speech, image generation and music generation into Tasker. See [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/), [How to hear your characters speak in Layla](/how-to-hear-your-characters-speak-in-layla/) and [How to generate music offline in Layla with ACE-Step](/how-to-generate-music-offline-in-layla-with-ace-step/) for setting up the models these actions use.
 
 | Action | What it does |
 | --- | --- |
@@ -203,3 +223,29 @@ Layla actions wait for as long as the work takes, which can be a while for image
 - Android's background restrictions still apply. If actions fail when your phone is idle, check that battery optimisation is not restricting Layla.
 - Make sure the models an action needs are downloaded in Layla first, such as an image model, a music model or the long-term memory model.
 - Variables can contain quotes, line breaks and other special characters. Layla handles them for you in the standard fields.
+
+## Frequently asked questions
+
+### Can I use an LLM in Tasker without an internet connection?
+
+Yes. If your default inference engine in Layla is a model downloaded to your device, Tasker actions such as **Ask Layla** run entirely on the phone. If you have set a cloud or remote engine as your default, requests go through that engine instead.
+
+### Do I need an API key to use Layla with Tasker?
+
+No. Layla's Tasker actions do not ask for an API key. They use the inference engine already configured in Layla.
+
+### Does Layla need to be open for a Tasker action to run?
+
+No. Layla starts in the background when an action runs. Android's background restrictions still apply, so if actions fail when your phone is idle, check the battery settings for Layla.
+
+### Can Tasker generate images with Layla?
+
+Yes. Use the **Generate Image** action with a prompt and, optionally, an image model. Tasker receives the image as a file you can copy, share or use in later actions. See [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/) to set up a model first.
+
+### Can Tasker make Layla speak or create music?
+
+Yes. **Speak Text** plays speech through Layla's voice, **Generate Speech File** saves speech as an audio file, and **Generate Music** creates a song from a description and optional lyrics.
+
+### Where do the generated images and audio files go?
+
+They are stored in Layla's cache and stay there until you clear the cache or Android removes them. Use Tasker's **Copy File** action to keep them permanently.
