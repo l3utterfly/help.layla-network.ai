@@ -125,19 +125,20 @@ Das Bild wird jedes Mal unter demselben Dateinamen gespeichert, sodass eine neue
 - Layla ist darauf ausgelegt, offline zu funktionieren, aber dieser Agent ist die Ausnahme. Ohne Internetverbindung kann er die Seite nicht laden.
 - Der Agent hängt vom Aufbau einer Website eines Drittanbieters ab. Gestaltet Perchance den Generator um, findet das Skript die richtigen Elemente möglicherweise nicht mehr, und der Agent muss aktualisiert werden.
 - Schlägt die Erzeugung fehl oder läuft in eine Zeitüberschreitung, gibt der Agent statt eines Bildes eine Fehlermeldung zurück. Versuche es erneut oder prüfe, ob Perchance mit deiner Verbindung lädt.
+- Der Agent nutzt den Automatisierungsbrowser des Chats. Er funktioniert daher in Chats, aber nicht in geplanten Ausführungen.
 
 ## Mit anderen Agenten für die Bilderzeugung kombinieren
 
-Dem Agenten ist nur eines wichtig: dass in der Ausgabe des Modells ein Tag `<stable_diffusion_prompt>` auftaucht. Wie das Tag dorthin gelangt, spielt keine Rolle. Daher funktioniert jeder andere Agent, der den Inhalt dieses Tags erzeugt oder verändert, mit ihm zusammen, und du kannst aus einzelnen Agenten eine kleine Pipeline bauen.
+Dem Agenten ist nur eines wichtig: dass in der Ausgabe des Modells ein Tag `<stable_diffusion_prompt>` auftaucht. Wie das Tag dorthin gelangt, spielt keine Rolle. Alles, was beeinflusst, was das Modell in dieses Tag schreibt, verbessert daher das Ergebnis, ohne den Agenten selbst zu ändern.
 
 Einige Ideen:
 
-- **Einen Charakter einheitlich aussehen lassen.** Nutze einen Agenten mit dem Tool _Provide Context_, um dem Modell eine Beschreibung des Aussehens deines Charakters mitzugeben, und weise es an, diese Beschreibung in jeden Bildprompt aufzunehmen.
-- **Einen Stil hinzufügen.** Nutze einen Agenten, der dem Inhalt des Tags einen festen Stil anhängt, etwa „watercolor, soft lighting“. Das kannst du auch in den _Szenario_-Anweisungen des Charakters verlangen.
+- **Einen Charakter einheitlich aussehen lassen.** Nutze einen weiteren Agenten mit dem Tool _Provide Context_, um dem Modell eine Beschreibung des Aussehens deines Charakters mitzugeben, und weise es an, diese Beschreibung in jeden Bildprompt aufzunehmen.
+- **Einen Stil hinzufügen.** Verlange einen festen Stil, etwa „watercolor, soft lighting“, in den _Szenario_-Anweisungen des Charakters oder im Kontext eines Agenten, damit das Modell ihn in jeden Prompt aufnimmt.
 - **Nach jeder Nachricht ein Bild erzeugen.** Füge dem _Szenario_ deines Charakters die Anweisung hinzu, jede Antwort mit einem Tag `<stable_diffusion_prompt>` zu beenden, wie in [Einen Agenten für die Bilderzeugung erstellen](/creating-an-image-generation-agent/) beschrieben. Der Perchance-Agent läuft dann nach jeder Nachricht, nicht nur, wenn du darum bittest.
 - **Einen anderen Generator verwenden.** Die Tools des Agenten sind ein gewöhnliches Python-Skript, gefolgt von _Display Image_. Du kannst den Agenten duplizieren und das Skript so ändern, dass es eine andere Website automatisiert, während System-Prompt und Auslöser gleich bleiben.
 
-Wenn du mehrere Agenten baust, die dasselbe Tag verarbeiten, bedenke, dass jeder von ihnen läuft, sobald das Tag erscheint. Aktiviere nur diejenigen, die auf eine bestimmte Antwort reagieren sollen.
+Pro Antwort läuft nur ein Agent, der auf die Ausgabe des Modells reagiert (der am besten passende), und keiner läuft, wenn die Antwort zusätzlich einen Tool-Aufruf enthält. Aktiviere daher nicht zwei Agenten, die auf dasselbe Tag reagieren, gleichzeitig. Wenn du diesen Agenten duplizierst, um den Generator zu ändern, deaktiviere das Original.
 
 ## Häufig gestellte Fragen
 

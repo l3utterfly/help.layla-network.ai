@@ -125,19 +125,20 @@ L'image est enregistrée à chaque fois sous le même nom de fichier ; une nouve
 - Layla est conçue pour fonctionner hors ligne, mais cet Agent fait exception. Sans connexion Internet, il ne peut pas charger la page.
 - L'Agent dépend de la mise en page d'un site tiers. Si Perchance refond le générateur, le script risque de ne plus trouver les bons éléments et l'Agent devra être mis à jour.
 - Si la génération échoue ou dépasse le délai, l'Agent renvoie une erreur au lieu d'une image. Réessayez ou vérifiez que Perchance se charge avec votre connexion.
+- L'Agent utilise le navigateur d'automatisation du chat : il fonctionne dans les chats, mais pas dans les exécutions planifiées.
 
 ## Combiner l'Agent avec d'autres Agents de génération d'images
 
-L'Agent ne se soucie que d'une chose : qu'une balise `<stable_diffusion_prompt>` apparaisse dans la sortie du modèle. Peu importe comment elle y est arrivée. Tout autre Agent qui crée ou modifie le contenu de cette balise fonctionne donc avec lui, et vous pouvez construire une petite chaîne à partir d'Agents distincts.
+L'Agent ne se soucie que d'une chose : qu'une balise `<stable_diffusion_prompt>` apparaisse dans la sortie du modèle. Peu importe comment elle y est arrivée. Tout ce qui influence ce que le modèle écrit dans cette balise améliore donc le résultat, sans modifier l'Agent lui-même.
 
 Quelques idées :
 
-- **Garder un personnage cohérent.** Utilisez un Agent avec l'outil _Provide Context_ pour donner au modèle une description de l'apparence de votre personnage, et demandez-lui d'inclure cette description dans chaque prompt d'image.
-- **Ajouter un style.** Utilisez un Agent qui ajoute un style fixe, comme « watercolor, soft lighting », au contenu de la balise. Vous pouvez aussi le demander dans les instructions de _Scénario_ du personnage.
+- **Garder un personnage cohérent.** Utilisez un autre Agent avec l'outil _Provide Context_ pour donner au modèle une description de l'apparence de votre personnage, et demandez-lui d'inclure cette description dans chaque prompt d'image.
+- **Ajouter un style.** Demandez un style fixe, comme « watercolor, soft lighting », dans les instructions de _Scénario_ du personnage ou dans le contexte d'un Agent, afin que le modèle l'inclue dans chaque prompt.
 - **Générer une image après chaque message.** Ajoutez au _Scénario_ de votre personnage une instruction lui demandant de terminer chaque réponse par une balise `<stable_diffusion_prompt>`, comme décrit dans [Créer un Agent de génération d'images](/creating-an-image-generation-agent/). L'Agent Perchance s'exécutera alors après chaque message, et pas seulement quand vous le demandez.
 - **Utiliser un autre générateur.** Les outils de l'Agent sont un script Python ordinaire suivi de _Display Image_. Vous pouvez dupliquer l'Agent et modifier le script pour automatiser un autre site, en conservant le même prompt système et le même déclencheur.
 
-Si vous créez plusieurs Agents qui traitent la même balise, gardez à l'esprit que chacun s'exécutera dès que la balise apparaît. N'activez que ceux que vous voulez voir agir sur une réponse donnée.
+Un seul Agent déclenché par la sortie du modèle s'exécute par réponse (le plus pertinent), et aucun ne s'exécute si la réponse contient aussi un appel d'outil. N'activez donc pas en même temps deux Agents qui se déclenchent sur la même balise. Si vous dupliquez cet Agent pour changer de générateur, désactivez l'original.
 
 ## Questions fréquentes
 

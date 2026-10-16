@@ -123,19 +123,20 @@ The image is saved under the same file name each time, so a new generation repla
 - Layla is built to work offline, but this Agent is the exception. Without an internet connection, it cannot load the page.
 - The Agent depends on the layout of a third-party website. If Perchance redesigns the generator, the script may stop finding the right elements, and the Agent will need updating.
 - If generation fails or times out, the Agent returns an error instead of an image. Try again, or check that Perchance loads on your connection.
+- The Agent uses the chat's automation browser, so it works in chats but not in scheduled runs.
 
 ## Combine it with other image generation Agents
 
-The Agent only cares about one thing: a `<stable_diffusion_prompt>` tag appearing in the model's output. It does not matter how the tag got there. This means any other Agent that creates or changes the contents of that tag works with it, and you can build a small pipeline from separate Agents.
+The Agent only cares about one thing: a `<stable_diffusion_prompt>` tag appearing in the model's output. It does not matter how the tag got there. This means anything that shapes what the model writes inside that tag improves the result without changing the Agent itself.
 
 Some ideas:
 
-- **Keep a character looking consistent.** Use an Agent with the _Provide Context_ tool to give the model a description of your character's appearance, and tell it to include that description in every image prompt.
-- **Add a style.** Use an Agent that appends a fixed style, such as "watercolor, soft lighting", to the contents of the tag. You can also ask for this in the character's _Scenario_ instructions.
+- **Keep a character looking consistent.** Use another Agent with the _Provide Context_ tool to give the model a description of your character's appearance, and tell it to include that description in every image prompt.
+- **Add a style.** Ask for a fixed style, such as "watercolor, soft lighting", in the character's _Scenario_ instructions or in an Agent's context, so the model includes it in every prompt.
 - **Generate an image after every message.** Add an instruction to your character's _Scenario_ telling it to finish each reply with a `<stable_diffusion_prompt>` tag, as described in [Creating an image generation Agent](/creating-an-image-generation-agent/). The Perchance Agent will then run after each message instead of only when you ask.
 - **Use a different generator.** The Agent's tools are a normal Python script followed by _Display Image_. You can duplicate the Agent and change the script to automate a different website, while keeping the same system prompt and trigger.
 
-If you build several Agents that handle the same tag, keep in mind that each one will run when the tag appears. Only enable the ones you want to act on a given reply.
+Only one Agent that triggers on the model's output runs per reply (the best match), and none runs if the reply also contains a tool call. Do not enable two Agents that trigger on the same tag at the same time. If you duplicate this Agent to change the generator, disable the original.
 
 ## Frequently asked questions
 
