@@ -1,0 +1,35 @@
+{
+  "id": "google-nano-banana-generate-image",
+  "name": "Google Nano Banana: generate image",
+  "description": "Generate an image by calling Google's Nano Banana API.",
+  "systemPrompt": "When the user asks you to generate, draw or create an image, write a detailed description of the image (subject, setting, style, lighting, composition) inside <stable_diffusion_prompt></stable_diffusion_prompt> tags, e.g. <stable_diffusion_prompt>a lighthouse on a cliff at dusk, oil painting, warm light</stable_diffusion_prompt>. The image is generated from the text inside the tags and shown in the chat. Use the tags only when an image is requested, and never put backticks inside them.",
+  "version": 3,
+  "enabled": true,
+  "auto_triggered": false,
+  "triggers": [
+    {
+      "type": "on_regex",
+      "data": {
+        "regex": "/<stable_diffusion_prompt>(.*?)<\\/stable_diffusion_prompt>/s",
+        "trigger_on_output": true
+      },
+      "exclusivity": "AND"
+    }
+  ],
+  "toolsData": [
+    {
+      "toolId": "eval",
+      "ai_decides_input": false,
+      "parameters": {
+        "code": "// Google Nano Banana: generate an image, then hand its path to the next step.\n// Runs in Layla's QuickJS `eval` runtime (fetch + the Layla SDK as `layla`).\n// Returns the image path relative to the character workspace, which display-image resolves.\n\nconst API_KEY = 'PUT YOUR API KEY HERE';\n// The prompt is pasted in by Layla before this code runs. A backtick or `${` in it would end the literal.\nconst PROMPT = String.raw`{{match$1}}`.trim();\n\nconst MODEL_ID = 'gemini-3-pro-image';\nconst API_METHOD = 'streamGenerateContent';\nconst API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:${API_METHOD}`;\nconst TIMEOUT_MS = 60000;\n\nasync function generateImage(prompt) {\n  if (!prompt) throw new Error('The stable diffusion prompt was empty.');\n  if (!API_KEY || API_KEY === 'PUT YOUR API KEY HERE') throw new Error('Set API_KEY in this agent first.');\n\n  // Empty values make the API answer 400, so only send the settings that are set.\n  const imageConfig = { imageSize: '1K' };\n\n  const payload = {\n    contents: [{ role: 'user', parts: [{ text: prompt }] }],\n    generationConfig: {\n      responseModalities: ['IMAGE', 'TEXT'],\n      imageConfig,\n    },\n    tools: [{ googleSearch: {} }],\n  };\n\n  const controller = new AbortController();\n  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);\n  let response;\n  let body;\n  try {\n    response = await fetch(API_URL, {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': API_KEY },\n      body: JSON.stringify(payload),\n      signal: controller.signal,\n    });\n    body = await response.text();\n  } catch (error) {\n    if (controller.signal.aborted) throw new Error(`Image generation timed out after ${TIMEOUT_MS / 1000} s.`);\n    throw new Error(`Image generation request failed: ${error.message}`);\n  } finally {\n    clearTimeout(timer);\n  }\n\n  if (!response.ok) {\n    throw new Error(`HTTP error ${response.status} ${response.statusText}. Response body: ${body.slice(0, 500)}`);\n  }\n\n  // streamGenerateContent answers with a JSON array of chunks.\n  const data = JSON.parse(body);\n  const chunks = Array.isArray(data) ? data : [data];\n\n  // Take the first image and ignore any text parts.\n  for (const chunk of chunks) {\n    for (const candidate of chunk.candidates || []) {\n      for (const part of (candidate.content && candidate.content.parts) || []) {\n        const inline = part.inlineData;\n        if (!inline || !inline.data || !String(inline.mimeType || '').startsWith('image/')) continue;\n\n        const extension = inline.mimeType.split('/').pop().replace(/[^a-z0-9]/gi, '') || 'png';\n        const id = Math.random().toString(16).slice(2, 10).padEnd(8, '0');\n        const path = `generated-images/output_image_${id}.${extension}`;\n\n        // The API already returns base64, so it goes to the workspace as is.\n        await layla.utils.saveFile(path, inline.data);\n        return path;\n      }\n    }\n  }\n\n  const keys = chunks.length && typeof chunks[0] === 'object' ? Object.keys(chunks[0]).join(', ') : 'Unknown error';\n  throw new Error(`No image was found in the response. Full API Response Keys: ${keys}`);\n}\n\ngenerateImage(PROMPT);\n"
+      }
+    },
+    {
+      "toolId": "display-image",
+      "ai_decides_input": false,
+      "parameters": {
+        "imagePath": "{{input}}"
+      }
+    }
+  ]
+}
