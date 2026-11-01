@@ -1,4 +1,4 @@
----
+f---
 title: How to set up custom prompt templates for models in Layla
 description: Configure system prompts, input prefixes and suffixes, stop phrases, context, and instruction templates for a custom AI model in Layla.
 category: Models & performance
