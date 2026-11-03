@@ -17,7 +17,7 @@ keywords:
   - Tasker AI 음성 합성
   - Tasker AI 음악 생성
   - Tasker 감정 분석
-lastUpdated: 2026-10-15
+lastUpdated: 2026-11-04
 translationKey: layla-integrations-with-tasker
 ai_translated: true
 ---
@@ -30,7 +30,7 @@ Tasker는 Android용으로 널리 쓰이는 자동화 앱입니다. 기기에서
 
 Layla는 모델을 로컬에서 실행하므로 이러한 자동화는 인터넷 연결 없이, 요청당 비용 없이 동작할 수 있습니다. Layla는 기본값으로 설정한 추론 엔진을 사용하므로, 작업은 채팅과 같은 설정을 따릅니다.
 
-*참고: Tasker는 별도의 앱이며 [Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=ko)에서 구매해야 합니다. Layla는 Tasker와 제휴 관계가 아닙니다.*
+_참고: Tasker는 별도의 앱이며 [Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=ko)에서 구매해야 합니다. Layla는 Tasker와 제휴 관계가 아닙니다._
 
 Tasker 연동은 Android에서만 사용할 수 있습니다.
 
@@ -115,11 +115,11 @@ Layla 액션의 모든 텍스트 입력란은 Tasker 변수를 지원하므로, 
 
 ### 채팅과 텍스트
 
-| 액션 | 기능 |
-| --- | --- |
-| **Ask Layla** | Layla에 프롬프트(선택 사항으로 시스템 지침 포함)를 보내고 답변을 반환합니다. 각 요청은 독립적이며 채팅 기록을 읽거나 변경하지 않습니다. |
-| **Analyze Sentiment** | 텍스트에 담긴 감정을 분석합니다. |
-| **Chat Completions** | 여러 메시지로 이루어진 전체 채팅 요청을 받는 고급 액션으로, 대화 전체를 직접 지정하고 싶을 때 사용합니다. |
+| 액션                  | 기능                                                                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ask Layla**         | Layla에 프롬프트(선택 사항으로 시스템 지침 포함)를 보내고 답변을 반환합니다. 각 요청은 독립적이며 채팅 기록을 읽거나 변경하지 않습니다. |
+| **Analyze Sentiment** | 텍스트에 담긴 감정을 분석합니다.                                                                                                        |
+| **Chat Completions**  | 여러 메시지로 이루어진 전체 채팅 요청을 받는 고급 액션으로, 대화 전체를 직접 지정하고 싶을 때 사용합니다.                               |
 
 Tasker에서 LLM 프롬프트를 실행하려면 Ask Layla와 Chat Completions를 사용하세요. 이 액션들은 Layla에서 기본값으로 설정한 추론 엔진을 사용하므로, 기기의 로컬 모델을 Tasker에서 별도 설정 없이 사용할 수 있습니다.
 
@@ -137,12 +137,12 @@ Tasker에서 LLM 프롬프트를 실행하려면 Ask Layla와 Chat Completions�
 
 이 액션들은 AI 음성 합성, 이미지 생성, 음악 생성을 Tasker로 가져옵니다. 이 액션이 사용하는 모델을 설정하는 방법은 [Layla에서 이미지 생성을 활성화하는 방법](/ko/how-to-enable-image-generation-in-layla/), [Layla에서 캐릭터의 목소리를 듣는 방법](/ko/how-to-hear-your-characters-speak-in-layla/), [Layla에서 ACE-Step으로 오프라인 음악을 생성하는 방법](/ko/how-to-generate-music-offline-in-layla-with-ace-step/)을 참고하세요.
 
-| 액션 | 기능 |
-| --- | --- |
-| **Speak Text** | Layla의 음성으로 텍스트를 소리 내어 읽고, 읽기가 끝날 때까지 기다립니다. 음성을 비워 두면 기본 음성을 사용합니다. |
-| **Generate Speech File** | 텍스트를 재생하지 않고 오디오 파일로 변환합니다. 음성은 선택 사항입니다. |
-| **Generate Image** | 프롬프트로 이미지를 생성합니다. 이미지 모델은 선택 사항이며, 비워 두면 기본 모델을 사용합니다. |
-| **Generate Music** | 스타일 설명으로 노래를 생성합니다. 가사, 초 단위 길이, 음악 모델은 선택 사항입니다. |
+| 액션                     | 기능                                                                                                              |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| **Speak Text**           | Layla의 음성으로 텍스트를 소리 내어 읽고, 읽기가 끝날 때까지 기다립니다. 음성을 비워 두면 기본 음성을 사용합니다. |
+| **Generate Speech File** | 텍스트를 재생하지 않고 오디오 파일로 변환합니다. 음성은 선택 사항입니다.                                          |
+| **Generate Image**       | 프롬프트로 이미지를 생성합니다. 이미지 모델은 선택 사항이며, 비워 두면 기본 모델을 사용합니다.                    |
+| **Generate Music**       | 스타일 설명으로 노래를 생성합니다. 가사, 초 단위 길이, 음악 모델은 선택 사항입니다.                               |
 
 생성된 이미지와 오디오는 Tasker가 읽을 수 있는 파일로 반환됩니다.
 
@@ -155,15 +155,15 @@ Tasker에서 LLM 프롬프트를 실행하려면 Ask Layla와 Chat Completions�
 
 ### 캐릭터, 채팅, 기억
 
-| 액션 | 기능 |
-| --- | --- |
-| **List Characters** | 캐릭터의 이름과 ID를 반환합니다. |
-| **List Chat Sessions** | 캐릭터의 채팅을 각 채팅의 최신 메시지와 함께 반환합니다. |
-| **Get Chat History** | 채팅의 메시지를 반환합니다. 반환할 개수와 건너뛸 개수를 지정할 수 있습니다. |
-| **Save Chat Message** | 사용자 또는 캐릭터의 메시지를 채팅에 추가합니다. 답변은 생성되지 않습니다. |
-| **Remember Text** | 캐릭터에 새 기억을 추가합니다. 장기 기억 모델이 다운로드되어 있어야 합니다. |
-| **Get Memories** | 캐릭터의 최근 기억 또는 상위 기억을 반환합니다. |
-| **List Voices** | 사용 가능한 음성의 이름과 ID를 반환합니다. |
+| 액션                   | 기능                                                                        |
+| ---------------------- | --------------------------------------------------------------------------- |
+| **List Characters**    | 캐릭터의 이름과 ID를 반환합니다.                                            |
+| **List Chat Sessions** | 캐릭터의 채팅을 각 채팅의 최신 메시지와 함께 반환합니다.                    |
+| **Get Chat History**   | 채팅의 메시지를 반환합니다. 반환할 개수와 건너뛸 개수를 지정할 수 있습니다. |
+| **Save Chat Message**  | 사용자 또는 캐릭터의 메시지를 채팅에 추가합니다. 답변은 생성되지 않습니다.  |
+| **Remember Text**      | 캐릭터에 새 기억을 추가합니다. 장기 기억 모델이 다운로드되어 있어야 합니다. |
+| **Get Memories**       | 캐릭터의 최근 기억 또는 상위 기억을 반환합니다.                             |
+| **List Voices**        | 사용 가능한 음성의 이름과 ID를 반환합니다.                                  |
 
 목록 액션은 결과를 서로 대응하는 배열로 반환합니다. 이름 배열의 1번째 항목은 ID 배열의 1번째 항목에 해당하며, 나머지도 마찬가지입니다.
 
@@ -189,11 +189,11 @@ Tasker에서 LLM 프롬프트를 실행하려면 Ask Layla와 Chat Completions�
 
 ### 예약된 캐릭터 메시지
 
-| 액션 | 기능 |
-| --- | --- |
-| **Schedule Character Message** | 캐릭터의 메시지가 미래의 지정한 시각에 전달되도록 예약합니다. |
-| **List Scheduled Character Messages** | Tasker로 만들지 않은 것을 포함해, 예약되었거나 읽지 않은 캐릭터 메시지를 모두 나열합니다. |
-| **Cancel Scheduled Character Message** | ID로 예약된 메시지를 취소합니다. |
+| 액션                                   | 기능                                                                                      |
+| -------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Schedule Character Message**         | 캐릭터의 메시지가 미래의 지정한 시각에 전달되도록 예약합니다.                             |
+| **List Scheduled Character Messages**  | Tasker로 만들지 않은 것을 포함해, 예약되었거나 읽지 않은 캐릭터 메시지를 모두 나열합니다. |
+| **Cancel Scheduled Character Message** | ID로 예약된 메시지를 취소합니다.                                                          |
 
 예약하면 입력한 텍스트가 지정한 시각에 그대로 전달됩니다. 전달 시점에 Layla가 새 답변을 작성하지는 않습니다. 예약된 메시지를 전달하려면 Layla에 알림 권한이 필요합니다.
 
@@ -203,9 +203,9 @@ Tasker에서 LLM 프롬프트를 실행하려면 Ask Layla와 Chat Completions�
 
 ### 고급
 
-| 액션 | 기능 |
-| --- | --- |
-| **Get Execution Context** | 기기에 설치된 Layla의 버전을 `%layla_app_version`으로 반환합니다. Tasker가 Layla에 연결할 수 있는지 확인할 때 유용합니다. |
+| 액션                      | 기능                                                                                                                              |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Get Execution Context** | 기기에 설치된 Layla의 버전을 `%layla_app_version`으로 반환합니다. Tasker가 Layla에 연결할 수 있는지 확인할 때 유용합니다.         |
 | **Raw Layla API Request** | 개발자를 위해 Layla에 요청을 직접 보냅니다. 사용 가능한 내용은 [Layla SDK](https://github.com/l3utterfly/layla-sdk)를 참고하세요. |
 
 ## 오류와 타임아웃 처리

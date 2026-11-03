@@ -27,14 +27,14 @@ There are two ways to reach the actions for a single message:
 
 The menu is context-aware. Long-pressing one of your own messages surfaces actions that make sense for input, such as edit, copy, delete, quote, pin, and branch. Long-pressing one of Layla's replies adds generation actions such as regenerate and retry. If an action does not appear on a particular message, it is not available for that message type.
 
-| Action | What it does | Applies to |
-| --- | --- | --- |
-| Edit | Change the text of a message in place | Your messages and Layla's replies |
-| Regenerate | Produce a new version of a reply | Layla's replies |
-| Continue | Continue a message that may have been cut off | Layla's replies |
-| Copy | Copy the message text to the clipboard | Any message |
-| Delete | Remove the message from the conversation | Any message |
-| Speak | Use your current text-to-speech voice to speak the message aloud | Any message |
+| Action     | What it does                                                     | Applies to                        |
+| ---------- | ---------------------------------------------------------------- | --------------------------------- |
+| Edit       | Change the text of a message in place                            | Your messages and Layla's replies |
+| Regenerate | Produce a new version of a reply                                 | Layla's replies                   |
+| Continue   | Continue a message that may have been cut off                    | Layla's replies                   |
+| Copy       | Copy the message text to the clipboard                           | Any message                       |
+| Delete     | Remove the message from the conversation                         | Any message                       |
+| Speak      | Use your current text-to-speech voice to speak the message aloud | Any message                       |
 
 ## Editing a message
 

@@ -9,7 +9,7 @@ keywords:
   - Layla-Agenten
   - Python ausführen
   - pip-Pakete
-lastUpdated: 2026-03-24
+lastUpdated: 2026-11-04
 translationKey: how-to-enable-python-support-in-layla
 ai_translated: true
 ---

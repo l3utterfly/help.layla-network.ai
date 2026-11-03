@@ -9,7 +9,7 @@ keywords:
   - Impostazioni avanzate di Layla
   - risposte ripetute
   - LLM quantizzato
-lastUpdated: 2024-04-26
+lastUpdated: 2026-11-04
 translationKey: the-dry-sampler-and-how-to-stop-layla-from-repeating-herself-over-and-over-again
 ai_translated: true
 ---

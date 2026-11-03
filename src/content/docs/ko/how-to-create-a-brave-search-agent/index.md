@@ -9,7 +9,7 @@ keywords:
   - HTTP Request
   - Eval 도구
   - 웹 검색 Agent
-lastUpdated: 2025-10-24
+lastUpdated: 2026-11-04
 translationKey: how-to-create-a-brave-search-agent
 ai_translated: true
 ---

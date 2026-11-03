@@ -17,7 +17,7 @@ keywords:
   - Tasker Text-to-Speech mit KI
   - Tasker KI-Musikerzeugung
   - Tasker-Sentimentanalyse
-lastUpdated: 2026-10-15
+lastUpdated: 2026-11-04
 translationKey: layla-integrations-with-tasker
 ai_translated: true
 ---
@@ -30,7 +30,7 @@ Tasker ist eine beliebte Android-App zur Automatisierung. Mit ihr erstellst du A
 
 Da Layla Modelle lokal ausführt, funktionieren diese Automatisierungen ohne Internetverbindung und ohne Kosten pro Anfrage. Layla verwendet die Inferenz-Engine, die du als Standard festgelegt hast, sodass Aufgaben dieselbe Einrichtung nutzen wie deine Chats.
 
-*Hinweis: Tasker ist eine separate App und kostet etwas ([Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=de)). Layla steht in keiner Verbindung zu Tasker.*
+_Hinweis: Tasker ist eine separate App und kostet etwas ([Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=de)). Layla steht in keiner Verbindung zu Tasker._
 
 Die Tasker-Integration ist nur für Android verfügbar.
 
@@ -115,11 +115,11 @@ Jede Aktion gibt ihre Ergebnisse als Tasker-Variablen zurück, die du in jeder n
 
 ### Chat und Text
 
-| Aktion | Was sie tut |
-| --- | --- |
-| **Ask Layla** | Sendet einen Prompt, optional mit Systemanweisungen, an Layla und gibt die Antwort zurück. Jede Anfrage steht für sich und liest oder verändert keinen Chatverlauf. |
-| **Analyze Sentiment** | Analysiert die Emotionen in einem Text. |
-| **Chat Completions** | Eine erweiterte Aktion, die eine vollständige Chat-Anfrage mit mehreren Nachrichten akzeptiert, wenn du die gesamte Unterhaltung selbst vorgeben möchtest. |
+| Aktion                | Was sie tut                                                                                                                                                         |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ask Layla**         | Sendet einen Prompt, optional mit Systemanweisungen, an Layla und gibt die Antwort zurück. Jede Anfrage steht für sich und liest oder verändert keinen Chatverlauf. |
+| **Analyze Sentiment** | Analysiert die Emotionen in einem Text.                                                                                                                             |
+| **Chat Completions**  | Eine erweiterte Aktion, die eine vollständige Chat-Anfrage mit mehreren Nachrichten akzeptiert, wenn du die gesamte Unterhaltung selbst vorgeben möchtest.          |
 
 Ask Layla und Chat Completions sind die Aktionen, mit denen du einen LLM-Prompt aus Tasker ausführst. Sie verwenden die Inferenz-Engine, die du in Layla als Standard festgelegt hast, sodass ein lokales Modell auf deinem Gerät ohne zusätzliche Einrichtung in Tasker funktioniert.
 
@@ -137,12 +137,12 @@ Ask Layla und Chat Completions sind die Aktionen, mit denen du einen LLM-Prompt 
 
 Diese Aktionen bringen KI-Text-to-Speech, Bilderzeugung und Musikerzeugung in Tasker. Wie du die Modelle für diese Aktionen einrichtest, steht in [So aktivierst du die Bilderzeugung in Layla](/de/how-to-enable-image-generation-in-layla/), [So hören Sie Ihre Charaktere in Layla sprechen](/de/how-to-hear-your-characters-speak-in-layla/) und [So erzeugst du mit ACE-Step Musik offline in Layla](/de/how-to-generate-music-offline-in-layla-with-ace-step/).
 
-| Aktion | Was sie tut |
-| --- | --- |
-| **Speak Text** | Liest Text mit Laylas Stimme vor und wartet, bis das Sprechen beendet ist. Lass die Stimme leer, um deine Standardstimme zu verwenden. |
-| **Generate Speech File** | Wandelt Text in eine Audiodatei um, ohne sie abzuspielen. Die Stimme ist optional. |
-| **Generate Image** | Erzeugt ein Bild aus einem Prompt. Das Bildmodell ist optional; lass es leer, um dein Standardmodell zu verwenden. |
-| **Generate Music** | Erzeugt einen Song aus einer Stilbeschreibung. Songtext, Dauer in Sekunden und Musikmodell sind optional. |
+| Aktion                   | Was sie tut                                                                                                                            |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Speak Text**           | Liest Text mit Laylas Stimme vor und wartet, bis das Sprechen beendet ist. Lass die Stimme leer, um deine Standardstimme zu verwenden. |
+| **Generate Speech File** | Wandelt Text in eine Audiodatei um, ohne sie abzuspielen. Die Stimme ist optional.                                                     |
+| **Generate Image**       | Erzeugt ein Bild aus einem Prompt. Das Bildmodell ist optional; lass es leer, um dein Standardmodell zu verwenden.                     |
+| **Generate Music**       | Erzeugt einen Song aus einer Stilbeschreibung. Songtext, Dauer in Sekunden und Musikmodell sind optional.                              |
 
 Erzeugte Bilder und Audiodaten werden als Dateien zurückgegeben, die Tasker lesen kann:
 
@@ -155,15 +155,15 @@ Zum Erzeugen von Sprachdateien ist eine Text-to-Speech-Stimme nötig, die Audiod
 
 ### Charaktere, Chats und Erinnerungen
 
-| Aktion | Was sie tut |
-| --- | --- |
-| **List Characters** | Gibt die Namen und IDs deiner Charaktere zurück. |
-| **List Chat Sessions** | Gibt die Chats eines Charakters zurück, jeweils mit der letzten Nachricht. |
-| **Get Chat History** | Gibt die Nachrichten eines Chats zurück. Du kannst festlegen, wie viele zurückgegeben und wie viele übersprungen werden. |
-| **Save Chat Message** | Fügt einem Chat eine Nachricht hinzu, entweder von dir oder von einem Charakter. Dabei wird keine Antwort erzeugt. |
-| **Remember Text** | Fügt einem Charakter eine neue Erinnerung hinzu. Dafür muss das Langzeitgedächtnis-Modell heruntergeladen sein. |
-| **Get Memories** | Gibt die neuesten Erinnerungen eines Charakters oder seine wichtigsten Erinnerungen zurück. |
-| **List Voices** | Gibt die Namen und IDs der verfügbaren Stimmen zurück. |
+| Aktion                 | Was sie tut                                                                                                              |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **List Characters**    | Gibt die Namen und IDs deiner Charaktere zurück.                                                                         |
+| **List Chat Sessions** | Gibt die Chats eines Charakters zurück, jeweils mit der letzten Nachricht.                                               |
+| **Get Chat History**   | Gibt die Nachrichten eines Chats zurück. Du kannst festlegen, wie viele zurückgegeben und wie viele übersprungen werden. |
+| **Save Chat Message**  | Fügt einem Chat eine Nachricht hinzu, entweder von dir oder von einem Charakter. Dabei wird keine Antwort erzeugt.       |
+| **Remember Text**      | Fügt einem Charakter eine neue Erinnerung hinzu. Dafür muss das Langzeitgedächtnis-Modell heruntergeladen sein.          |
+| **Get Memories**       | Gibt die neuesten Erinnerungen eines Charakters oder seine wichtigsten Erinnerungen zurück.                              |
+| **List Voices**        | Gibt die Namen und IDs der verfügbaren Stimmen zurück.                                                                   |
 
 Die Listenaktionen geben ihre Ergebnisse als zusammengehörige Arrays zurück. Der Eintrag an Position 1 der Namen gehört zum Eintrag an Position 1 der IDs und so weiter:
 
@@ -189,11 +189,11 @@ Das solltest du wissen:
 
 ### Geplante Charakternachrichten
 
-| Aktion | Was sie tut |
-| --- | --- |
-| **Schedule Character Message** | Plant, dass eine Nachricht eines Charakters zu einem zukünftigen Zeitpunkt zugestellt wird. |
-| **List Scheduled Character Messages** | Listet alle geplanten und ungelesenen Charakternachrichten auf, auch solche, die nicht über Tasker erstellt wurden. |
-| **Cancel Scheduled Character Message** | Bricht eine geplante Nachricht anhand ihrer ID ab. |
+| Aktion                                 | Was sie tut                                                                                                         |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Schedule Character Message**         | Plant, dass eine Nachricht eines Charakters zu einem zukünftigen Zeitpunkt zugestellt wird.                         |
+| **List Scheduled Character Messages**  | Listet alle geplanten und ungelesenen Charakternachrichten auf, auch solche, die nicht über Tasker erstellt wurden. |
+| **Cancel Scheduled Character Message** | Bricht eine geplante Nachricht anhand ihrer ID ab.                                                                  |
 
 Die Planung stellt genau den Text zu, den du angibst, zu dem Zeitpunkt, den du wählst. Layla schreibt zum Zustellzeitpunkt keine neue Antwort. Layla benötigt die Benachrichtigungsberechtigung, um geplante Nachrichten zuzustellen.
 
@@ -203,10 +203,10 @@ Der Zustellzeitpunkt ist ein Unix-Zeitstempel in Millisekunden. In Tasker kannst
 
 ### Erweitert
 
-| Aktion | Was sie tut |
-| --- | --- |
+| Aktion                    | Was sie tut                                                                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Get Execution Context** | Gibt in `%layla_app_version` die auf deinem Gerät installierte Version von Layla zurück. Nützlich, um zu prüfen, ob Tasker Layla erreichen kann. |
-| **Raw Layla API Request** | Sendet eine Anfrage direkt an Layla, für Entwickler. Was verfügbar ist, steht im [Layla SDK](https://github.com/l3utterfly/layla-sdk). |
+| **Raw Layla API Request** | Sendet eine Anfrage direkt an Layla, für Entwickler. Was verfügbar ist, steht im [Layla SDK](https://github.com/l3utterfly/layla-sdk).           |
 
 ## Fehler und Timeouts behandeln
 

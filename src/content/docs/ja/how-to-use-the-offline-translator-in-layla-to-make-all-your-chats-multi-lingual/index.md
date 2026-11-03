@@ -9,7 +9,7 @@ keywords:
   - オフライン翻訳
   - ローカル言語モデル
   - 自動翻訳
-lastUpdated: 2024-11-07
+lastUpdated: 2026-11-04
 translationKey: how-to-use-the-offline-translator-in-layla-to-make-all-your-chats-multi-lingual
 ai_translated: true
 ---

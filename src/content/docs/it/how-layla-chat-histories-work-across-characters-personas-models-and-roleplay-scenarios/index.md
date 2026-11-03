@@ -9,7 +9,7 @@ keywords:
   - persona
   - modelli IA locali
   - scenari di gioco di ruolo
-lastUpdated: 2026-07-31
+lastUpdated: 2026-11-04
 translationKey: how-layla-chat-histories-work-across-characters-personas-models-and-roleplay-scenarios
 ai_translated: true
 ---

@@ -9,7 +9,7 @@ keywords:
   - prompt Stable Diffusion
   - output strutturato
   - immagini per giochi di ruolo
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: creating-an-image-generation-agent
 ai_translated: true
 ---

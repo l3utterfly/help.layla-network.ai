@@ -9,7 +9,7 @@ keywords:
   - voci dei personaggi
   - TTS Android
   - voce offline
-lastUpdated: 2026-05-11
+lastUpdated: 2026-11-04
 translationKey: how-to-add-multilingual-text-to-speech-for-your-characters-in-layla
 ai_translated: true
 ---

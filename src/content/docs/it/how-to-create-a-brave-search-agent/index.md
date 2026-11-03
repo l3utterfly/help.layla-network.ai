@@ -9,7 +9,7 @@ keywords:
   - richiesta HTTP
   - strumento Eval
   - Agente di ricerca Web
-lastUpdated: 2025-10-24
+lastUpdated: 2026-11-04
 translationKey: how-to-create-a-brave-search-agent
 ai_translated: true
 ---

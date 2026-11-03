@@ -20,7 +20,7 @@ These features are organised in Layla as **mini-apps**. Mini-apps are like the r
 
 Mini-apps can provide features ranging from configuring characters to enabling image generation and much more.
 
-You can find a list of your currently installed apps by tapping the *My Apps* button on any of the screens shown below:
+You can find a list of your currently installed apps by tapping the _My Apps_ button on any of the screens shown below:
 
 ![My Apps button in Layla.](./my-apps-button.jpg)
 
@@ -30,4 +30,4 @@ You will see a list of your currently enabled apps:
 
 The plus or minus sign in the top-right corner allows you to browse all the features Layla has to offer.
 
-*Please note: all mini-apps require the premium version of Layla. You can purchase the premium version through Google Play or from the purchase screen in the direct APK version. Layla offers a one-time purchase to unlock all features; no monthly subscription is required.*
+_Please note: all mini-apps require the premium version of Layla. You can purchase the premium version through Google Play or from the purchase screen in the direct APK version. Layla offers a one-time purchase to unlock all features; no monthly subscription is required._

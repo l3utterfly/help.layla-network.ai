@@ -9,7 +9,7 @@ keywords:
   - 캐릭터 음성
   - Android TTS
   - 오프라인 음성
-lastUpdated: 2026-05-11
+lastUpdated: 2026-11-04
 translationKey: how-to-add-multilingual-text-to-speech-for-your-characters-in-layla
 ai_translated: true
 ---

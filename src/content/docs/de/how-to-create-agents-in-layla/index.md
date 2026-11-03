@@ -9,7 +9,7 @@ keywords:
   - HTTP Request
   - Provide Context
   - Agent-Trigger
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: how-to-create-agents-in-layla
 ai_translated: true
 ---

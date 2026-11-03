@@ -9,7 +9,7 @@ keywords:
   - Layla Lite
   - 推論設定
   - モデル選択
-lastUpdated: 2024-07-18
+lastUpdated: 2026-11-04
 translationKey: how-to-switch-between-local-llm-and-layla-cloud
 ai_translated: true
 ---

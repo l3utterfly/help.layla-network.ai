@@ -9,7 +9,7 @@ keywords:
   - invite Stable Diffusion
   - sortie structurée
   - images de jeu de rôle
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: creating-an-image-generation-agent
 ai_translated: true
 ---

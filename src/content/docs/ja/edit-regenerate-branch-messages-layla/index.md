@@ -9,7 +9,7 @@ keywords:
   - 会話の分岐
   - メッセージ操作
   - オフラインチャット
-lastUpdated: 2026-07-25
+lastUpdated: 2026-11-04
 translationKey: edit-regenerate-branch-messages-layla
 ai_translated: true
 ---

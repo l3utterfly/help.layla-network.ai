@@ -9,7 +9,7 @@ keywords:
   - 백그라운드 처리
   - 배터리 최적화
   - Android 권한
-lastUpdated: 2024-03-15
+lastUpdated: 2026-11-04
 translationKey: my-long-term-memory-is-not-getting-constructed-fast-enough-are-there-any-ways-to-make-it-faster
 ai_translated: true
 ---

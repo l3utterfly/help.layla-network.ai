@@ -16,7 +16,7 @@ Sometimes, during model loading or after an update, you may see an error like th
 
 ![REPL error shown while a Layla model is loading.](./model-load-error.png)
 
-These errors can usually be fixed by going to the *Settings* page, scrolling down, and selecting *Clear cache*.
+These errors can usually be fixed by going to the _Settings_ page, scrolling down, and selecting _Clear cache_.
 
 It is very rare for an error to require downloading the models or app again. Clearing the cache is designed to reset the app to a clean state.
 

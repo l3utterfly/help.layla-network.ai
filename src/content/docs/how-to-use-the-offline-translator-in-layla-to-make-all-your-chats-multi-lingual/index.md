@@ -20,9 +20,9 @@ It is fast enough to translate conversations in real time. This means that even 
 
 **How to enable the Offline Translator app**
 
-1. Go to *Mini-apps*.
+1. Go to _Mini-apps_.
 2. Tap `+` to add a mini-app.
-3. Search for *Offline Translator* in the list of apps.
+3. Search for _Offline Translator_ in the list of apps.
 4. Enable it.
 
 ![Steps for enabling the Offline Translator mini-app.](./enable-offline-translator.jpg)
@@ -31,8 +31,8 @@ It is fast enough to translate conversations in real time. This means that even 
 
 1. Tap the language name at the top to switch languages.
 2. Search for your desired language pair.
-3. The translation feature works similarly to Google Translate and other translation apps. Turn on *Automatically translate your chat* at the bottom.
-4. Normally, your AI model—the LLM—will use English. Configure the translator to automatically translate your input, such as Korean, into English for the AI, then automatically translate the AI's output back into your language. *Make sure you have downloaded the translation model by tapping the cloud-download icon.*
+3. The translation feature works similarly to Google Translate and other translation apps. Turn on _Automatically translate your chat_ at the bottom.
+4. Normally, your AI model—the LLM—will use English. Configure the translator to automatically translate your input, such as Korean, into English for the AI, then automatically translate the AI's output back into your language. _Make sure you have downloaded the translation model by tapping the cloud-download icon._
 
 ![Offline Translator settings for automatically translating both sides of a chat.](./use-offline-translator.jpg)
 

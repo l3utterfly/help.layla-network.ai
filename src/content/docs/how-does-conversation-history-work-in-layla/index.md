@@ -71,10 +71,10 @@ To delete a conversation:
 
 Layla's retention behaviour depends on the status of the conversation:
 
-| Conversation status | Retention behaviour |
-| --- | --- |
-| Active | Remains in your History screen until you archive or delete it |
-| Permanently deleted | Removed immediately and cannot be restored |
+| Conversation status | Retention behaviour                                           |
+| ------------------- | ------------------------------------------------------------- |
+| Active              | Remains in your History screen until you archive or delete it |
+| Permanently deleted | Removed immediately and cannot be restored                    |
 
 ## What happens if I uninstall Layla or clear its data?
 

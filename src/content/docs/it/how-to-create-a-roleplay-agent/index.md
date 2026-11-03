@@ -9,7 +9,7 @@ keywords:
   - output strutturato
   - grammatica BNF
   - azione e dialogo
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: how-to-create-a-roleplay-agent
 ai_translated: true
 ---

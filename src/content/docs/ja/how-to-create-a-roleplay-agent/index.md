@@ -9,7 +9,7 @@ keywords:
   - 構造化出力
   - BNF文法
   - アクションと台詞
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: how-to-create-a-roleplay-agent
 ai_translated: true
 ---

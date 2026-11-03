@@ -58,11 +58,11 @@ This is the overview article for image generation in Layla. It walks through the
 
 ## Three ways to generate AI images in Layla
 
-| Method                 | Where images are made          | Needs internet               | Cost                                   |
-| ---------------------- | ------------------------------ | ---------------------------- | -------------------------------------- |
-| On your device         | Your phone's CPU, GPU, or NPU  | Only to download a model     | No per-image cost                      |
-| Layla Cloud            | Layla's servers                | Yes, and a Layla Cloud login | A monthly allowance that depends on your plan |
-| Stable Diffusion Web UI | A PC on your network          | Your local network           | No per-image cost, but you run the PC  |
+| Method                  | Where images are made         | Needs internet               | Cost                                          |
+| ----------------------- | ----------------------------- | ---------------------------- | --------------------------------------------- |
+| On your device          | Your phone's CPU, GPU, or NPU | Only to download a model     | No per-image cost                             |
+| Layla Cloud             | Layla's servers               | Yes, and a Layla Cloud login | A monthly allowance that depends on your plan |
+| Stable Diffusion Web UI | A PC on your network          | Your local network           | No per-image cost, but you run the PC         |
 
 The first method is what most of this article covers. It is the one that keeps your prompts and images entirely on your phone. [How to switch between a local LLM and Layla Cloud](/how-to-switch-between-local-llm-and-layla-cloud/) covers moving between Layla Cloud and models on your device.
 
@@ -118,17 +118,17 @@ For the full walkthrough, see [How to import custom image generation models into
 
 Layla groups models by the hardware that runs them. The badge on each model card shows the group.
 
-| Model type             | Examples in the built-in list                                | Runs on                  | Platforms       |
-| ---------------------- | ------------------------------------------------------------ | ------------------------ | --------------- |
-| SD 1.5 (CPU)           | SD1.5 Base, DreamShaper, RealCartoon, Pastel-Mix             | CPU, optional GPU        | Android and iOS |
-| SD 1.5 (NPU)           | CyberRealistic, Realistic Vision Hyper, Reliberate, ToonYou  | Snapdragon NPU           | Android         |
-| SDXL (CPU)             | SDXL Turbo, AnimeMix XL, IntoRealism                         | CPU                      | Android; IntoRealism also on iOS |
-| SDXL (NPU)             | Pony Realism V23, Illustrious V17, Nova Anime XL V10         | Snapdragon NPU           | Android         |
-| Newer diffusion transformers (NPU) | Z-Image Turbo, FLUX.2 Klein 4B and 9B, Qwen Image 2.1, Krea 2 Turbo, MOSS-Image, IntoRealism ZIT | Snapdragon NPU | Android |
-| Compact FLUX and Z-Image (on-device) | Bonsai Image 4B, FLUX.2 klein 4B, Z-Image Turbo 6B | CPU or GPU        | Android and iOS |
-| Core ML                | Realistic Vision Hyper, Deliberate v2                        | Apple hardware           | iOS             |
-| Layla Cloud            | FLUX.1[dev], BrainDance, CyberRealisticXL, iNiverse Mix      | Layla's servers          | Android and iOS |
-| Web UI                 | Any model your Web UI serves                                 | Your PC                  | Android and iOS |
+| Model type                           | Examples in the built-in list                                                                    | Runs on           | Platforms                        |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ | ----------------- | -------------------------------- |
+| SD 1.5 (CPU)                         | SD1.5 Base, DreamShaper, RealCartoon, Pastel-Mix                                                 | CPU, optional GPU | Android and iOS                  |
+| SD 1.5 (NPU)                         | CyberRealistic, Realistic Vision Hyper, Reliberate, ToonYou                                      | Snapdragon NPU    | Android                          |
+| SDXL (CPU)                           | SDXL Turbo, AnimeMix XL, IntoRealism                                                             | CPU               | Android; IntoRealism also on iOS |
+| SDXL (NPU)                           | Pony Realism V23, Illustrious V17, Nova Anime XL V10                                             | Snapdragon NPU    | Android                          |
+| Newer diffusion transformers (NPU)   | Z-Image Turbo, FLUX.2 Klein 4B and 9B, Qwen Image 2.1, Krea 2 Turbo, MOSS-Image, IntoRealism ZIT | Snapdragon NPU    | Android                          |
+| Compact FLUX and Z-Image (on-device) | Bonsai Image 4B, FLUX.2 klein 4B, Z-Image Turbo 6B                                               | CPU or GPU        | Android and iOS                  |
+| Core ML                              | Realistic Vision Hyper, Deliberate v2                                                            | Apple hardware    | iOS                              |
+| Layla Cloud                          | FLUX.1[dev], BrainDance, CyberRealisticXL, iNiverse Mix                                          | Layla's servers   | Android and iOS                  |
+| Web UI                               | Any model your Web UI serves                                                                     | Your PC           | Android and iOS                  |
 
 What the groups mean in practice:
 
@@ -146,19 +146,19 @@ Everything on the Local Dream screen below the model card controls how an image 
 
 ![Local Dream's Parameters section with the Size, Scheduler, Steps, CFG Scale, and Seed settings, the Auto Upscale toggle, Advanced Settings, and the Generate button.](./local-dream-image-generation-settings.jpg)
 
-| Setting                | What it does                                                          | Notes |
-| ---------------------- | --------------------------------------------------------------------- | ----- |
-| **Prompt**             | Describes the image you want.                                         | The star button writes a prompt for you from keywords using your chat model. The second button condenses a long prompt, and needs the Long-term Memory mini-app. |
-| **Negative prompt**    | Lists what the image should avoid.                                    | Hidden for models that ignore it. On newer diffusion transformers it only takes effect above CFG 1. |
-| **Size**               | Sets the image width and height.                                      | SD 1.5 CPU models offer several square sizes. The newer NPU models accept sizes up to 2048 x 2048. Some models are fixed at one size. |
-| **Steps**              | How many denoising steps to run.                                      | More steps cost more time. Fast "turbo" and distilled models are built for 4 to 9 steps. |
-| **CFG Scale**          | How strictly the image follows the prompt.                            | Each built-in model starts from a sensible default. Many newer models are tuned for 1. |
-| **Seed**               | Fixes the random starting point.                                      | A value of -1 picks a random seed each time. The result shows the seed it used, so you can repeat an image. |
-| **Scheduler**          | The sampler that runs the steps, such as DPM++ 2M Karras, Euler A, or LCM. | Shown for SD 1.5 and SDXL models. Newer models use their own. |
-| **Source image**       | Starts from an image you pick instead of from noise (image-to-image). | Supported by SD 1.5 CPU and NPU models, SDXL NPU models, and the newer NPU models. Once you pick an image you can paint a mask to redo only part of it, and set a **Denoise Strength**. |
-| **Reference images**   | Up to three images the model uses as guidance for an edit.            | FLUX.2 Klein and Qwen Image models. |
-| **Show Preview While Generating** | Shows a rough preview at every step.                       | Not available on every model. |
-| **Auto Upscale**       | Enlarges each finished image with an upscaling model.                 | You choose the upscaler, whether it uses OpenCL on your GPU, and a tile size. Smaller tiles use less memory. |
+| Setting                           | What it does                                                               | Notes                                                                                                                                                                                   |
+| --------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prompt**                        | Describes the image you want.                                              | The star button writes a prompt for you from keywords using your chat model. The second button condenses a long prompt, and needs the Long-term Memory mini-app.                        |
+| **Negative prompt**               | Lists what the image should avoid.                                         | Hidden for models that ignore it. On newer diffusion transformers it only takes effect above CFG 1.                                                                                     |
+| **Size**                          | Sets the image width and height.                                           | SD 1.5 CPU models offer several square sizes. The newer NPU models accept sizes up to 2048 x 2048. Some models are fixed at one size.                                                   |
+| **Steps**                         | How many denoising steps to run.                                           | More steps cost more time. Fast "turbo" and distilled models are built for 4 to 9 steps.                                                                                                |
+| **CFG Scale**                     | How strictly the image follows the prompt.                                 | Each built-in model starts from a sensible default. Many newer models are tuned for 1.                                                                                                  |
+| **Seed**                          | Fixes the random starting point.                                           | A value of -1 picks a random seed each time. The result shows the seed it used, so you can repeat an image.                                                                             |
+| **Scheduler**                     | The sampler that runs the steps, such as DPM++ 2M Karras, Euler A, or LCM. | Shown for SD 1.5 and SDXL models. Newer models use their own.                                                                                                                           |
+| **Source image**                  | Starts from an image you pick instead of from noise (image-to-image).      | Supported by SD 1.5 CPU and NPU models, SDXL NPU models, and the newer NPU models. Once you pick an image you can paint a mask to redo only part of it, and set a **Denoise Strength**. |
+| **Reference images**              | Up to three images the model uses as guidance for an edit.                 | FLUX.2 Klein and Qwen Image models.                                                                                                                                                     |
+| **Show Preview While Generating** | Shows a rough preview at every step.                                       | Not available on every model.                                                                                                                                                           |
+| **Auto Upscale**                  | Enlarges each finished image with an upscaling model.                      | You choose the upscaler, whether it uses OpenCL on your GPU, and a tile size. Smaller tiles use less memory.                                                                            |
 
 Under **Advanced Settings**:
 

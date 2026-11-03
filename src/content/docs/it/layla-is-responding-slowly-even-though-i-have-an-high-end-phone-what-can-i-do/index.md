@@ -9,7 +9,7 @@ keywords:
   - telefono di fascia alta
   - ottimizzazione della batteria
   - modello Q2
-lastUpdated: 2024-04-07
+lastUpdated: 2026-11-04
 translationKey: layla-is-responding-slowly-even-though-i-have-an-high-end-phone-what-can-i-do
 ai_translated: true
 ---

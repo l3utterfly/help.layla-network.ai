@@ -38,7 +38,7 @@ Let's add the Execute Python tool next. This section contains the Python code th
 
 Let's take a look at the [Python code in this GitHub Gist](https://gist.github.com/l3utterfly/bf9f703c09932fd87dbf68f2118e5ab4).
 
-At the top of the file, notice we need the *requests* library (`re` and `html` are part of Python):
+At the top of the file, notice we need the _requests_ library (`re` and `html` are part of Python):
 
 ![Python imports for requests, re, and html.](./python-imports.png)
 

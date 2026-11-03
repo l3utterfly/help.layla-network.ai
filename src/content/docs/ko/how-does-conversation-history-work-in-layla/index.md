@@ -9,7 +9,7 @@ keywords:
   - 대화 삭제
   - 대화 내보내기
   - 로컬 저장소
-lastUpdated: 2026-07-30
+lastUpdated: 2026-11-04
 translationKey: how-does-conversation-history-work-in-layla
 ai_translated: true
 ---

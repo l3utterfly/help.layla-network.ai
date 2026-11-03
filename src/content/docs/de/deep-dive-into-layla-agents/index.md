@@ -9,7 +9,7 @@ keywords:
   - Agent-Tools
   - Tool-Aufrufe
   - LLM-Parameter
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: deep-dive-into-layla-agents
 ai_translated: true
 ---

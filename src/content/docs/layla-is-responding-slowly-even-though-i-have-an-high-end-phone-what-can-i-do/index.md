@@ -17,7 +17,7 @@ Layla uses an emerging technology that allows ChatGPT-like chatbots to run local
 The expected response time for Layla Full on a high-end phone such as an **S23 Ultra with 12 GB of RAM** is around one or two words per second. If you have a high-end phone and are experiencing slow response times, try one or all of these methods:
 
 - Close all background apps.
-- Turn off battery optimisation for Layla. Navigate to *Settings* → *Apps & notifications* → *Layla* → *Advanced* → *Battery* → *Battery optimization*, then choose *Don't optimize*.
+- Turn off battery optimisation for Layla. Navigate to _Settings_ → _Apps & notifications_ → _Layla_ → _Advanced_ → _Battery_ → _Battery optimization_, then choose _Don't optimize_.
 - Turn on high-performance mode or gaming mode in your phone's settings, if available.
 - Switch to the Q2 base model. It has roughly the same intelligence as Layla Full, with a performance boost.
 

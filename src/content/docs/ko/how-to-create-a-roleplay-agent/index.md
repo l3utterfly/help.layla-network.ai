@@ -9,7 +9,7 @@ keywords:
   - 구조화된 출력
   - BNF 문법
   - 행동과 대화
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: how-to-create-a-roleplay-agent
 ai_translated: true
 ---

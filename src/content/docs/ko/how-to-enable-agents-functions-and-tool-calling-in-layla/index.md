@@ -9,7 +9,7 @@ keywords:
   - Function
   - Agent 미니 앱
   - 커스텀 캐릭터
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: how-to-enable-agents-functions-and-tool-calling-in-layla
 ai_translated: true
 ---

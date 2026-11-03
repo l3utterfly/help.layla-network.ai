@@ -9,7 +9,7 @@ keywords:
   - Agente Python
   - Esegui Python
   - chiamate agli strumenti
-lastUpdated: 2026-04-02
+lastUpdated: 2026-11-04
 translationKey: how-to-create-a-duckduckgo-news-search-agent-with-python-in-layla
 ai_translated: true
 ---

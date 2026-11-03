@@ -22,17 +22,17 @@ If you want a general introduction first, read [How to enable Agents, Functions,
 
 Without boring you with the details of how Agents work, let's get started immediately!
 
-Go to the *Agents* mini-app in Layla:
+Go to the _Agents_ mini-app in Layla:
 
 ![Layla Apps screen showing the Agents mini-app.](./open-agents-app.jpg)
 
-The easiest way to create an Agent is to duplicate an existing one. *Don't worry about the **Add New Agent** button just yet; that is for advanced users.*
+The easiest way to create an Agent is to duplicate an existing one. _Don't worry about the **Add New Agent** button just yet; that is for advanced users._
 
 ![Agents screen with an arrow pointing to the Duplicate action for an existing Agent.](./duplicate-agent.jpg)
 
-After duplicating any existing Agent, edit your newly copied Agent with the *Edit* button.
+After duplicating any existing Agent, edit your newly copied Agent with the _Edit_ button.
 
-The *Edit* button opens a popup with the Agent details. We are going to create a simple Agent that obtains a random cat fact from a public API!
+The _Edit_ button opens a popup with the Agent details. We are going to create a simple Agent that obtains a random cat fact from a public API!
 
 Step 1: Open the Edit Agent popup.
 
@@ -46,9 +46,9 @@ Step 3: Edit the name and description.
 
 ![Agent named Cat facts with the description Get a random cat fact.](./cat-facts-name.jpg)
 
-The name and description are only for your reference and are not used at the moment. *In more complex Agents, the name and description are important!*
+The name and description are only for your reference and are not used at the moment. _In more complex Agents, the name and description are important!_
 
-The next step is to add a *trigger*. Tap the plus sign next to "Triggers" and choose the "Phrase" trigger. This simple trigger activates the Agent when you enter a certain phrase in your chat. Don't worry about the other options yet!
+The next step is to add a _trigger_. Tap the plus sign next to "Triggers" and choose the "Phrase" trigger. This simple trigger activates the Agent when you enter a certain phrase in your chat. Don't worry about the other options yet!
 
 ![Edit Agent screen with arrows pointing to Add Trigger and Phrase.](./add-phrase-trigger.jpg)
 
@@ -56,23 +56,23 @@ We are going to trigger this Agent whenever the words "**cat fact**" are sent. T
 
 ![Cat Facts Agent configured with a phrase trigger.](./cat-fact-trigger.jpg)
 
-The *trigger phrase* is "cat fact". It is case-insensitive, so it doesn't matter if you enter "cat fact" or "Cat fact". Since we only have one trigger, the *exclusivity* option does not matter, so we will leave it at *OR*.
+The _trigger phrase_ is "cat fact". It is case-insensitive, so it doesn't matter if you enter "cat fact" or "Cat fact". Since we only have one trigger, the _exclusivity_ option does not matter, so we will leave it at _OR_.
 
-Next, add a tool for this Agent. We will use the *HTTP Request* tool. Our cat-fact API is a simple public API documented here: [MeowFacts on GitHub](https://github.com/wh-iterabb-it/meowfacts).
+Next, add a tool for this Agent. We will use the _HTTP Request_ tool. Our cat-fact API is a simple public API documented here: [MeowFacts on GitHub](https://github.com/wh-iterabb-it/meowfacts).
 
 ![Tool list with an arrow pointing to HTTP Request.](./choose-http-request.jpg)
 
-Add the *HTTP Request* tool and configure it as shown below:
+Add the _HTTP Request_ tool and configure it as shown below:
 
 ![HTTP Request configured to make a GET request to the Meow Facts API.](./configure-cat-api.jpg)
 
-The *URL* field is simply the URL given in the API documentation. The request is a GET request. We can leave the other two fields blank.
+The _URL_ field is simply the URL given in the API documentation. The request is a GET request. We can leave the other two fields blank.
 
 The first tool is added!
 
-This tool makes the GET request to the specified API and obtains the result. The next step is to *tell* Layla how to use the result. The simplest way to do this is through the *Provide Context* tool. This tool takes input and injects it into the context of the conversation. Layla will pick up the context and respond accordingly.
+This tool makes the GET request to the specified API and obtains the result. The next step is to _tell_ Layla how to use the result. The simplest way to do this is through the _Provide Context_ tool. This tool takes input and injects it into the context of the conversation. Layla will pick up the context and respond accordingly.
 
-Scroll to the bottom of the tool and tap *Add Tool* again. This time, choose *Provide Context*. This tool will be chained behind the *HTTP Request* tool we just added.
+Scroll to the bottom of the tool and tap _Add Tool_ again. This time, choose _Provide Context_. This tool will be chained behind the _HTTP Request_ tool we just added.
 
 ![Tool list with an arrow pointing to Provide Context.](./choose-provide-context.jpg)
 
@@ -80,7 +80,7 @@ We tell the LLM that this cat fact comes after searching the web:
 
 ![Provide Context configured for the Cat Facts Agent.](./configure-provide-context.jpg)
 
-Note that we use the special template `{{input}}`. It will be replaced with the *output* of the previous tool—the output of the previous tool becomes the input of the current tool. Don't worry about other options such as *LLM tool call* yet.
+Note that we use the special template `{{input}}`. It will be replaced with the _output_ of the previous tool—the output of the previous tool becomes the input of the current tool. Don't worry about other options such as _LLM tool call_ yet.
 
 And voilà! The Agent is complete. Save it and go back to start a chat with Layla.
 
@@ -90,19 +90,19 @@ You can see your new Agent in action! It makes an HTTP request to your URL and i
 
 **Conclusion**
 
-You can now see how Agents generally work in Layla: each Agent is *triggered* under specific conditions, whether those are phrases, regexes, or other more complex conditions. The Agent then calls each configured tool in sequence, chaining the output of one tool into the input of the next.
+You can now see how Agents generally work in Layla: each Agent is _triggered_ under specific conditions, whether those are phrases, regexes, or other more complex conditions. The Agent then calls each configured tool in sequence, chaining the output of one tool into the input of the next.
 
-The *Provide Context* tool is very important in this process. It is usually the last tool you add to your Agent because it provides the LLM—Layla in this case—with the execution results. Without this tool, the Agent will execute silently, and Layla won't know about it. You will almost always use this tool when creating your own Agents.
+The _Provide Context_ tool is very important in this process. It is usually the last tool you add to your Agent because it provides the LLM—Layla in this case—with the execution results. Without this tool, the Agent will execute silently, and Layla won't know about it. You will almost always use this tool when creating your own Agents.
 
 **A slightly more complex agent**
 
 Here's an example of creating a slightly more complex Agent that uses your LLM's "brain"!
 
-We make another simple *HTTP Request* to an API. This API returns a random picture of a dog: [https://random.dog/woof.json](https://random.dog/woof.json).
+We make another simple _HTTP Request_ to an API. This API returns a random picture of a dog: [https://random.dog/woof.json](https://random.dog/woof.json).
 
-This time, the API returns the URL of an image. We then *ask* the LLM to format it correctly and display it!
+This time, the API returns the URL of an image. We then _ask_ the LLM to format it correctly and display it!
 
-Step 1: The HTTP Request tool works as before, except that we change the API URL. The difference is in the instruction we put in the *Provide Context* tool. We tell the LLM that the result is JSON with a `url` field, which should be used to display the image in Markdown format.
+Step 1: The HTTP Request tool works as before, except that we change the API URL. The difference is in the instruction we put in the _Provide Context_ tool. We tell the LLM that the result is JSON with a `url` field, which should be used to display the image in Markdown format.
 
 ![Provide Context instructions for formatting the dog-image API result as Markdown.](./dog-image-instructions.jpg)
 

@@ -9,7 +9,7 @@ keywords:
   - Layla Agents
   - ツール呼び出し
   - リモートMCPツール
-lastUpdated: 2025-10-14
+lastUpdated: 2026-11-04
 translationKey: full-mcp-support-in-layla
 ai_translated: true
 ---

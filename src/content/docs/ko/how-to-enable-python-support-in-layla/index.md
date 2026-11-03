@@ -9,7 +9,7 @@ keywords:
   - Layla Agent
   - Python 실행
   - pip 패키지
-lastUpdated: 2026-03-24
+lastUpdated: 2026-11-04
 translationKey: how-to-enable-python-support-in-layla
 ai_translated: true
 ---

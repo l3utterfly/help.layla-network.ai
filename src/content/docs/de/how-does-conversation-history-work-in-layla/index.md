@@ -9,7 +9,7 @@ keywords:
   - Gespräche löschen
   - Gespräche exportieren
   - lokaler Speicher
-lastUpdated: 2026-07-30
+lastUpdated: 2026-11-04
 translationKey: how-does-conversation-history-work-in-layla
 ai_translated: true
 ---

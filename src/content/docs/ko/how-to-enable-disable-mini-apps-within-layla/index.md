@@ -9,7 +9,7 @@ keywords:
   - 기능 비활성화
   - 내 앱
   - Layla 프리미엄
-lastUpdated: 2024-12-14
+lastUpdated: 2026-11-04
 translationKey: how-to-enable-disable-mini-apps-within-layla
 ai_translated: true
 ---

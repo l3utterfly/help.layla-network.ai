@@ -9,7 +9,7 @@ keywords:
   - outils d’Agent
   - appel d’outils
   - paramètres du LLM
-lastUpdated: 2025-10-01
+lastUpdated: 2026-11-04
 translationKey: deep-dive-into-layla-agents
 ai_translated: true
 ---

@@ -9,7 +9,7 @@ keywords:
   - キャッシュを消去
   - チャットエラー
   - トラブルシューティング
-lastUpdated: 2024-03-14
+lastUpdated: 2026-11-04
 translationKey: layla-shows-an-error-when-starting-a-chat-after-an-update-how-to-fix
 ai_translated: true
 ---

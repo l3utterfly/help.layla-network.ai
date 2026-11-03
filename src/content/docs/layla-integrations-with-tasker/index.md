@@ -28,7 +28,7 @@ Tasker is a popular Android app for automation. It lets you create tasks that ru
 
 Because Layla runs models locally, these automations can work without an internet connection and without a per-request fee. Layla uses whichever inference engine you have set as your default, so tasks follow the same setup as your chats.
 
-*Note: Tasker is a separate app and requires a purchase from [Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en). Layla is not affiliated with Tasker.*
+_Note: Tasker is a separate app and requires a purchase from [Google Play](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en). Layla is not affiliated with Tasker._
 
 The Tasker integration is available on Android only.
 
@@ -113,11 +113,11 @@ Each action returns its results as Tasker variables, which you can use in any ac
 
 ### Chat and text
 
-| Action | What it does |
-| --- | --- |
-| **Ask Layla** | Sends a prompt, with optional system instructions, to Layla and returns the reply. Each request is standalone and does not read or change any chat history. |
-| **Analyze Sentiment** | Analyses the emotions in a piece of text. |
-| **Chat Completions** | An advanced action that accepts a full chat request with several messages, for when you want to supply the whole conversation yourself. |
+| Action                | What it does                                                                                                                                                |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ask Layla**         | Sends a prompt, with optional system instructions, to Layla and returns the reply. Each request is standalone and does not read or change any chat history. |
+| **Analyze Sentiment** | Analyses the emotions in a piece of text.                                                                                                                   |
+| **Chat Completions**  | An advanced action that accepts a full chat request with several messages, for when you want to supply the whole conversation yourself.                     |
 
 Ask Layla and Chat Completions are the actions to use when you want to run an LLM prompt from Tasker. They use the inference engine you have set as your default in Layla, so a local model on your device works without any extra setup in Tasker.
 
@@ -135,12 +135,12 @@ Ask Layla and Chat Completions are the actions to use when you want to run an LL
 
 These actions bring AI text-to-speech, image generation and music generation into Tasker. See [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/), [How to hear your characters speak in Layla](/how-to-hear-your-characters-speak-in-layla/) and [How to generate music offline in Layla with ACE-Step](/how-to-generate-music-offline-in-layla-with-ace-step/) for setting up the models these actions use.
 
-| Action | What it does |
-| --- | --- |
-| **Speak Text** | Reads text aloud in Layla's voice and waits until speaking has finished. Leave the voice empty to use your default voice. |
-| **Generate Speech File** | Turns text into an audio file without playing it. The voice is optional. |
-| **Generate Image** | Generates an image from a prompt. The image model is optional; leave it empty to use your default. |
-| **Generate Music** | Generates a song from a style description. Lyrics, duration in seconds and music model are optional. |
+| Action                   | What it does                                                                                                              |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| **Speak Text**           | Reads text aloud in Layla's voice and waits until speaking has finished. Leave the voice empty to use your default voice. |
+| **Generate Speech File** | Turns text into an audio file without playing it. The voice is optional.                                                  |
+| **Generate Image**       | Generates an image from a prompt. The image model is optional; leave it empty to use your default.                        |
+| **Generate Music**       | Generates a song from a style description. Lyrics, duration in seconds and music model are optional.                      |
 
 Generated images and audio are returned as files that Tasker can read:
 
@@ -153,15 +153,15 @@ Generating speech files requires a text-to-speech voice that can create audio fi
 
 ### Characters, chats and memories
 
-| Action | What it does |
-| --- | --- |
-| **List Characters** | Returns the names and IDs of your characters. |
-| **List Chat Sessions** | Returns the chats for a character, with the latest message in each. |
-| **Get Chat History** | Returns the messages from a chat. You can choose how many to return and how many to skip. |
-| **Save Chat Message** | Adds a message to a chat, either from you or from a character. This does not generate a reply. |
-| **Remember Text** | Adds a new memory to a character. This requires the long-term memory model to be downloaded. |
-| **Get Memories** | Returns a character's most recent memories, or its top memories. |
-| **List Voices** | Returns the names and IDs of the available voices. |
+| Action                 | What it does                                                                                   |
+| ---------------------- | ---------------------------------------------------------------------------------------------- |
+| **List Characters**    | Returns the names and IDs of your characters.                                                  |
+| **List Chat Sessions** | Returns the chats for a character, with the latest message in each.                            |
+| **Get Chat History**   | Returns the messages from a chat. You can choose how many to return and how many to skip.      |
+| **Save Chat Message**  | Adds a message to a chat, either from you or from a character. This does not generate a reply. |
+| **Remember Text**      | Adds a new memory to a character. This requires the long-term memory model to be downloaded.   |
+| **Get Memories**       | Returns a character's most recent memories, or its top memories.                               |
+| **List Voices**        | Returns the names and IDs of the available voices.                                             |
 
 The list actions return their results as matching arrays. The entry at position 1 of the names belongs to the entry at position 1 of the IDs, and so on:
 
@@ -187,11 +187,11 @@ A few things to know:
 
 ### Scheduled character messages
 
-| Action | What it does |
-| --- | --- |
-| **Schedule Character Message** | Schedules a message from a character to be delivered at a future time. |
-| **List Scheduled Character Messages** | Lists all scheduled and unread character messages, including ones not created through Tasker. |
-| **Cancel Scheduled Character Message** | Cancels a scheduled message using its ID. |
+| Action                                 | What it does                                                                                  |
+| -------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Schedule Character Message**         | Schedules a message from a character to be delivered at a future time.                        |
+| **List Scheduled Character Messages**  | Lists all scheduled and unread character messages, including ones not created through Tasker. |
+| **Cancel Scheduled Character Message** | Cancels a scheduled message using its ID.                                                     |
 
 Scheduling delivers the exact text you provide at the time you choose. Layla does not write a new reply at delivery time. Layla needs notification permission to deliver scheduled messages.
 
@@ -201,10 +201,10 @@ The delivery time is a Unix timestamp in milliseconds. In Tasker, you can calcul
 
 ### Advanced
 
-| Action | What it does |
-| --- | --- |
+| Action                    | What it does                                                                                                                            |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | **Get Execution Context** | Returns the version of Layla installed on your device in `%layla_app_version`. This is useful for checking that Tasker can reach Layla. |
-| **Raw Layla API Request** | Sends a request directly to Layla for developers. See the [Layla SDK](https://github.com/l3utterfly/layla-sdk) for what is available. |
+| **Raw Layla API Request** | Sends a request directly to Layla for developers. See the [Layla SDK](https://github.com/l3utterfly/layla-sdk) for what is available.   |
 
 ## Handling errors and timeouts
 

@@ -9,7 +9,7 @@ keywords:
   - 캐시 지우기
   - 채팅 오류
   - 문제 해결
-lastUpdated: 2024-03-14
+lastUpdated: 2026-11-04
 translationKey: layla-shows-an-error-when-starting-a-chat-after-an-update-how-to-fix
 ai_translated: true
 ---

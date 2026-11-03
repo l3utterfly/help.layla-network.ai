@@ -9,7 +9,7 @@ keywords:
   - disattivare funzionalità
   - Le mie app
   - Layla premium
-lastUpdated: 2024-12-14
+lastUpdated: 2026-11-04
 translationKey: how-to-enable-disable-mini-apps-within-layla
 ai_translated: true
 ---

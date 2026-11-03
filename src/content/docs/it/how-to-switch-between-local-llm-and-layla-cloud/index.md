@@ -9,7 +9,7 @@ keywords:
   - Layla Lite
   - Impostazioni di inferenza
   - selezione del modello
-lastUpdated: 2024-07-18
+lastUpdated: 2026-11-04
 translationKey: how-to-switch-between-local-llm-and-layla-cloud
 ai_translated: true
 ---

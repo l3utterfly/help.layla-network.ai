@@ -9,7 +9,7 @@ keywords:
   - 양자화
   - 사용자 지정 LLM
   - Hugging Face
-lastUpdated: 2024-08-21
+lastUpdated: 2026-11-04
 translationKey: what-are-gguf-models-what-are-model-quants
 ai_translated: true
 ---

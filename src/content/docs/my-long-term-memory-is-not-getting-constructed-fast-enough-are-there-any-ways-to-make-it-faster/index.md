@@ -20,11 +20,11 @@ Modern mobile operating systems such as Android and iOS strictly limit the amoun
 
 Here are some things you can do to speed up ingestion:
 
-1. Give Layla *Unrestricted background usage* in Android Settings.
-2. Turn off *Battery optimisation* for Layla in Android Settings.
+1. Give Layla _Unrestricted background usage_ in Android Settings.
+2. Turn off _Battery optimisation_ for Layla in Android Settings.
 3. Enable background-fetch permissions for Layla in iOS Settings.
 
-You can also go directly to the Long-Term Memory app in Layla and tap *Ingest*.
+You can also go directly to the Long-Term Memory app in Layla and tap _Ingest_.
 
 You can do this before going to sleep each night to make sure your conversations are ingested. The button starts the ingestion process, which continues until there are no more conversations to process.
 

@@ -9,7 +9,7 @@ keywords:
   - Layla Agents
   - 도구 호출
   - 원격 MCP 도구
-lastUpdated: 2025-10-14
+lastUpdated: 2026-11-04
 translationKey: full-mcp-support-in-layla
 ai_translated: true
 ---

@@ -29,17 +29,17 @@ For example, you can reopen an AI character chat that originally used one GGUF m
 
 ## Chat history behaviour matrix
 
-| Configuration item | Saved with the conversation | Can be changed after reopening | Changes existing messages | Applies to future replies |
-| --- | --- | --- | --- | --- |
-| Character | No | Yes | No | Yes |
-| User persona | No | Yes | No | Yes |
-| AI model | No | Yes | No | Yes |
-| Inference engine | No | Yes | No | Yes |
-| Roleplay scenario | No | Yes | No | Yes |
-| System prompt or advanced instructions | No | Yes | No | Yes |
-| LoreBooks or contextual resources | No | Yes | No | Yes |
-| Generation settings | No | Yes | No | Yes |
-| Chat title and organisational metadata | Yes | Yes | No | No |
+| Configuration item                     | Saved with the conversation | Can be changed after reopening | Changes existing messages | Applies to future replies |
+| -------------------------------------- | --------------------------- | ------------------------------ | ------------------------- | ------------------------- |
+| Character                              | No                          | Yes                            | No                        | Yes                       |
+| User persona                           | No                          | Yes                            | No                        | Yes                       |
+| AI model                               | No                          | Yes                            | No                        | Yes                       |
+| Inference engine                       | No                          | Yes                            | No                        | Yes                       |
+| Roleplay scenario                      | No                          | Yes                            | No                        | Yes                       |
+| System prompt or advanced instructions | No                          | Yes                            | No                        | Yes                       |
+| LoreBooks or contextual resources      | No                          | Yes                            | No                        | Yes                       |
+| Generation settings                    | No                          | Yes                            | No                        | Yes                       |
+| Chat title and organisational metadata | Yes                         | Yes                            | No                        | No                        |
 
 The important rule is that configuration changes are **forward-looking**. They change how the next prompt is assembled and how the next reply is generated; they do not rewrite the saved transcript.
 

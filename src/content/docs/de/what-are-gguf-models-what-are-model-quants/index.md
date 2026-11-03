@@ -9,7 +9,7 @@ keywords:
   - Quantisierung
   - eigenes LLM
   - Hugging Face
-lastUpdated: 2024-08-21
+lastUpdated: 2026-11-04
 translationKey: what-are-gguf-models-what-are-model-quants
 ai_translated: true
 ---

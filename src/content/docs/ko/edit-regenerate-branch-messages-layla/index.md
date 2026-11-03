@@ -9,7 +9,7 @@ keywords:
   - 대화 분기
   - 메시지 작업
   - 오프라인 채팅
-lastUpdated: 2026-07-25
+lastUpdated: 2026-11-04
 translationKey: edit-regenerate-branch-messages-layla
 ai_translated: true
 ---

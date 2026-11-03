@@ -12,7 +12,7 @@ keywords:
 lastUpdated: 2025-10-01
 ---
 
-Let's explore creating a simple *Roleplay Agent* in Layla.
+Let's explore creating a simple _Roleplay Agent_ in Layla.
 
 This Agent will force your character to respond in **action-dialogue** format.
 
@@ -30,9 +30,9 @@ Let's take a look at what this Agent does:
 
 1. The name and description can be anything; they are there to help you easily identify your Agent.
 
-2. We use the *Regex Trigger*. The `.` (dot) regex matches anything, so this will be triggered on every message. This is what we want because we want all outputs to follow our format.
+2. We use the _Regex Trigger_. The `.` (dot) regex matches anything, so this will be triggered on every message. This is what we want because we want all outputs to follow our format.
 
-3. We use the *Structured Output* tool. This uses BNF grammar to structure the output:
+3. We use the _Structured Output_ tool. This uses BNF grammar to structure the output:
 
    - `root` is always needed; it starts the grammar definition.
    - `::=` is the assignment operator, which assigns grammar to variables.
@@ -41,6 +41,6 @@ Let's take a look at what this Agent does:
 
 4. Putting this all together, our output is defined as `*fragment*fragment`, where each `fragment` is any text that is not a new line. This is exactly what we want.
 
-Here is the Agent file for you to download and import. You can use the *Add New Agent* button to import it.
+Here is the Agent file for you to download and import. You can use the _Add New Agent_ button to import it.
 
 [Download roleplay-action-dialogue.json](/assets/articles/how-to-create-a-roleplay-agent/roleplay-action-dialogue.json)

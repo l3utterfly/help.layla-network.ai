@@ -22,7 +22,7 @@ This happens if you have enabled Layla Cloud.
 
 To switch back to local LLMs that run on your device, uninstall the Layla Cloud mini-app within Layla:
 
-1. Go to *My Apps* from the main screen with the large butterfly.
+1. Go to _My Apps_ from the main screen with the large butterfly.
 2. Tap the minus icon in the top-right corner of the apps area.
 3. Remove the Layla Cloud app.
 

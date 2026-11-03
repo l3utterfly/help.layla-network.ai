@@ -9,7 +9,7 @@ keywords:
   - 페르소나
   - 로컬 AI 모델
   - 롤플레이 시나리오
-lastUpdated: 2026-07-31
+lastUpdated: 2026-11-04
 translationKey: how-layla-chat-histories-work-across-characters-personas-models-and-roleplay-scenarios
 ai_translated: true
 ---

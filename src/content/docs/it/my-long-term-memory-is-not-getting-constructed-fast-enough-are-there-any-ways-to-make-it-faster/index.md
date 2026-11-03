@@ -9,7 +9,7 @@ keywords:
   - elaborazione in background
   - ottimizzazione della batteria
   - autorizzazioni Android
-lastUpdated: 2024-03-15
+lastUpdated: 2026-11-04
 translationKey: my-long-term-memory-is-not-getting-constructed-fast-enough-are-there-any-ways-to-make-it-faster
 ai_translated: true
 ---

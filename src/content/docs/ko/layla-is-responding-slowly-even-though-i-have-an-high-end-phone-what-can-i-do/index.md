@@ -9,7 +9,7 @@ keywords:
   - 고급 휴대전화
   - 배터리 최적화
   - Q2 모델
-lastUpdated: 2024-04-07
+lastUpdated: 2026-11-04
 translationKey: layla-is-responding-slowly-even-though-i-have-an-high-end-phone-what-can-i-do
 ai_translated: true
 ---

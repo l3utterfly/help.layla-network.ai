@@ -24,7 +24,7 @@ Download the app from [F-Droid](https://f-droid.org/en/packages/org.woheller69.t
 
 Scroll down the **Versions** section and download the latest APK.
 
-*F-Droid is a Google Play alternative that publishes apps that are **free and open source (FOSS)**.*
+_F-Droid is a Google Play alternative that publishes apps that are **free and open source (FOSS)**._
 
 **Step 2: Configure SherpaTTS**
 
@@ -60,7 +60,7 @@ Done! Your default voice will now be using Sherpa.
 
 **Step 4: Configure Layla**
 
-Layla will automatically read this setting and make the voices you select available. *(Make sure you restart Layla for the changes to take effect.)*
+Layla will automatically read this setting and make the voices you select available. _(Make sure you restart Layla for the changes to take effect.)_
 
 Go to your character's settings (**Edit character** → **Advanced** tab):
 

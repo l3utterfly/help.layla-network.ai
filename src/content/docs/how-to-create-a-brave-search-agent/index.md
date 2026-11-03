@@ -18,7 +18,7 @@ Brave offers an API: [Brave Search API](https://brave.com/search/api/).
 
 If you would like to use Brave Search instead of DuckDuckGo in Layla, this article will show you how to create your own Brave Search Agent, using your own API key, to replace the DuckDuckGo Agent in Layla.
 
-*This is an advanced tutorial. You will learn several methods of obtaining and parsing results from HTTP requests, which you can hopefully use in your future agents!*
+_This is an advanced tutorial. You will learn several methods of obtaining and parsing results from HTTP requests, which you can hopefully use in your future agents!_
 
 **Register an API key**
 
@@ -50,7 +50,7 @@ We will go through what each tool does and how they connect below.
 The first tool is simple: we need to encode any input as a URI component to send to the API. This is the JavaScript function:
 
 ```js
-encodeURIComponent
+encodeURIComponent;
 ```
 
 Your input to the tool will be run through Eval, and the result will be the output of this tool. You can see `{{input}}` here, which represents the raw text from your input message.

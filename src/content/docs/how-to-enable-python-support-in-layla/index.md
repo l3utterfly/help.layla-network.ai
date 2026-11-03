@@ -16,15 +16,15 @@ Layla Agents can execute Python! This is possible after update v6.7.0: [Layla v6
 
 To enable Python code execution, we need to install a few mini-apps. If you need a refresher, see [How to add features (mini-apps) in Layla](/how-to-add-features-mini-apps-in-layla/).
 
-**Step 1: You need the *Agents* mini-app and the *Python Interpreter* mini-app**
+**Step 1: You need the _Agents_ mini-app and the _Python Interpreter_ mini-app**
 
-Go to your apps, tap the plus sign, and browse mini-apps. Find the *Agents* and *Python Interpreter* mini-apps. Tap **Download** to add them to Layla.
+Go to your apps, tap the plus sign, and browse mini-apps. Find the _Agents_ and _Python Interpreter_ mini-apps. Tap **Download** to add them to Layla.
 
 ![Layla Agents mini-app details screen.](./agents-mini-app.jpg)
 
 ![Layla Python Interpreter mini-app details screen.](./python-interpreter-mini-app.jpg)
 
-**Step 2: Test out the *Python Interpreter***
+**Step 2: Test out the _Python Interpreter_**
 
 After you've installed those two mini-apps, let's go to the Python Interpreter mini-app to test it out.
 

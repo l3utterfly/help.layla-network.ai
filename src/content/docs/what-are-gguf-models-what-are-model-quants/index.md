@@ -118,7 +118,7 @@ When a model is listed as GGUF on Hugging Face, it has been converted into the G
 
 ### Is GGUF better than safetensors or PyTorch?
 
-They serve different purposes. PyTorch and safetensors are training and research formats: full-precision, large, and GPU-oriented. GGUF is an **inference** format: quantized, compact, and optimised for CPUs, phones, and modest GPUs. If you want to *use* a model rather than *train* it, GGUF is the more appropriate choice.
+They serve different purposes. PyTorch and safetensors are training and research formats: full-precision, large, and GPU-oriented. GGUF is an **inference** format: quantized, compact, and optimised for CPUs, phones, and modest GPUs. If you want to _use_ a model rather than _train_ it, GGUF is the more appropriate choice.
 
 ### Can I run GGUF models on Android?
 
