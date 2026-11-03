@@ -18,6 +18,12 @@ keywords:
   - safetensors on Android
   - GGUF image model
   - Stable Diffusion LoRA
+  - LoRA on Android
+  - run SDXL on Android
+  - SDXL on phone
+  - Stable Diffusion on iPhone
+  - Civitai checkpoint
+  - AI image generator no internet
   - text-to-image
   - image-to-image
   - on-device image generation
@@ -50,7 +56,7 @@ Layla includes a set of ready-to-download image models, but most of the variety 
 
 An imported model runs through Local Dream, Layla's on-device image generator, so the whole process is local:
 
-- **Offline.** After the import, generating an image needs no internet connection, account, or subscription.
+- **Offline.** After the import, Layla works as an AI image generator with no internet connection, account, or subscription.
 - **Private.** Your prompts and images stay on your phone, and no online service reviews them.
 - **Flexible.** The model supports text-to-image and, for most types, image-to-image. Your characters can also use it when they send images in chat.
 
@@ -65,6 +71,8 @@ Local Dream is the mini-app that runs image generation on your device, and every
 
 The screen has up to three tabs: **Safetensor**, **Zip**, and **Web UI**. When an import finishes, the model is saved to your image generation models and selected automatically. Keep Layla open while it runs, because a large import can take several minutes.
 
+![The Add Image Model screen in Layla with the Safetensor, Zip, and Web UI tabs and the Base Model list set to SD1.5.](./add-image-model-safetensor-tab-layla.jpg)
+
 ## The three import methods
 
 |                  | Safetensor tab                                            | Zip tab                                         | Web UI tab                         |
@@ -78,6 +86,8 @@ The screen has up to three tabs: **Safetensor**, **Zip**, and **Web UI**. When a
 ## Which image generation models does Layla support?
 
 The Safetensor tab has a **Base Model** list on Android. The base model tells Layla how to convert the file, so choose the family your checkpoint was trained from.
+
+![The Base Model list in Layla's Add Image Model screen showing SD1.5, SDXL, MOSS, Qwen Image 2.1, and Flux 2 Klein.](./image-model-base-model-list-layla.jpg)
 
 | Base model     | What Layla creates                                  | Runs on        | Platforms       |
 | -------------- | --------------------------------------------------- | -------------- | --------------- |
@@ -135,7 +145,11 @@ For these three families you also get a **LoRA only** checkbox. It lets you skip
 
 ## Import a zip
 
-The **Zip** tab is for a model that someone has already converted and packaged for Layla. Pick the zip, check the name, and tap **Import & Extract**. Layla extracts it and works out the model type from what is inside:
+The **Zip** tab is for a model that someone has already converted and packaged for Layla. Pick the zip, check the name, and tap **Import & Extract**.
+
+![The Zip tab of Layla's Add Image Model screen with a model zip picker, a model name field, and the Import & Extract button.](./import-image-model-zip-tab-layla.jpg)
+
+Layla extracts the zip and works out the model type from what is inside:
 
 - a Core ML bundle is imported as an SD 1.5 Core ML model, which is available on iOS;
 - an SDXL package with MNN files becomes an SDXL CPU model;
@@ -149,6 +163,8 @@ Because the last case is a fallback, a zip that was not built for Layla can impo
 ## Connect a Web UI
 
 If you already run an [AUTOMATIC1111 Stable Diffusion Web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) on a PC, the **Web UI** tab connects Layla to it. The images are generated on that computer, so this method needs a network connection to it and does not run offline.
+
+![The Web UI tab of Layla's Add Image Model screen with Name, Endpoint, API Key, and Model fields for an Automatic1111-compatible Stable Diffusion API.](./connect-stable-diffusion-web-ui-api-layla.jpg)
 
 Fill in:
 
@@ -181,6 +197,14 @@ Imported models also appear in the image generation model list for your characte
 ### Can I run Stable Diffusion offline on Android?
 
 Yes. Layla runs Stable Diffusion models on your device through the Local Dream mini-app. Most phones use the CPU, and phones with a supported Snapdragon chip can use the NPU. Once a model is on your phone, generating images needs no internet connection.
+
+### Can I run SDXL on my phone?
+
+Yes, on Android with a Snapdragon 8 Elite (SM8750) or newer. Pick **SDXL** as the Base Model on the Safetensor tab and Layla converts the checkpoint into a model that runs on the Snapdragon NPU. A package that was already converted for Layla can also be imported from the **Zip** tab, and NPU Forge can convert SDXL checkpoints for the chips it supports.
+
+### Can I run Stable Diffusion on an iPhone?
+
+Yes, with SD 1.5. iOS imports SD 1.5 safetensors from the **Safetensor** tab and Core ML packages from the **Zip** tab. The other model families are available on Android only.
 
 ### Can I use Civitai models on my phone?
 
