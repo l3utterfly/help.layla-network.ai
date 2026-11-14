@@ -1,40 +1,43 @@
 ---
-title: "OpenRouter image generation in Layla: many image models, one API key"
-description: Connect Layla to OpenRouter's image API so your AI characters can make pictures in chat with FLUX, Seedream, GPT Image or Nano Banana. Setup, cost, and code.
+title: "OpenRouter image generation on Android: AI chat that sends pictures"
+description: Use the OpenRouter image generation API in Layla so your AI characters send pictures in chat with FLUX, Seedream or Nano Banana. Setup, pricing, and code.
 category: Image generation
 order: 55
 keywords:
   - OpenRouter image generation
   - OpenRouter image generation API
+  - OpenRouter image generation models
+  - OpenRouter image generation pricing
+  - OpenRouter image generation free
+  - OpenRouter image API endpoint
   - OpenRouter API key
-  - OpenRouter image models
-  - OpenRouter images endpoint
-  - OpenRouter credits
+  - OpenRouter API key not working
+  - OpenRouter Android app
+  - OpenRouter FLUX Klein
+  - OpenRouter Nano Banana Pro
+  - SillyTavern image generation OpenRouter
   - FLUX 3 Image Klein
-  - FLUX API
   - Seedream API
   - GPT Image API
-  - Nano Banana on OpenRouter
+  - cheapest image generation API
   - AI chat with image generation
-  - AI chatbot that generates images
+  - AI chatbot that can send pictures
   - AI character image generator
+  - AI roleplay with image generation
   - AI companion images
-  - AI roleplay image generation
   - bring your own API key AI chat
-  - custom image generation Agent
   - AI image generator for Android
   - local LLM with cloud image generation
   - Layla image generation Agent
   - Layla Agents
-  - Eval tool
 lastUpdated: 2026-11-14
 ---
 
-**OpenRouter is a single API that gives you access to image generation models from many companies, including Black Forest Labs, ByteDance, Google, OpenAI and Qwen, with one API key and one account balance.** This article builds a Layla Agent around OpenRouter's image generation API. When your AI character describes a picture in its reply, the Agent sends that description to OpenRouter, receives the finished image, and shows it in your chat.
+**OpenRouter image generation gives you one API key for image models from many companies, including FLUX from Black Forest Labs, Seedream from ByteDance, Nano Banana from Google and GPT Image from OpenAI.** This guide connects the OpenRouter image generation API to Layla, an AI chat app for Android, so your AI characters can send pictures in chat. When a character describes a picture in its reply, a Layla Agent sends that description to OpenRouter, receives the finished image, and shows it in the conversation.
 
 Layla already generates images with Stable Diffusion models, either on your device or through Layla Cloud. An Agent adds another option: you choose the service, the model and the settings, and you use your own API key. [Nano Banana API in Layla](/how-to-use-the-google-nano-banana-image-generation-agent/) does this with one Google model. The OpenRouter Agent follows the same method, but switching to a model from a different company only means changing one line.
 
-The article shows how to get an OpenRouter API key and set the Agent up, explains every step of the Agent's code, and lists the image models you can switch to.
+The article shows how to get an OpenRouter API key and set the Agent up, compares OpenRouter image generation models and pricing, and explains every step of the Agent's code.
 
 Unlike Layla's local models, this Agent needs an internet connection. Your image description is sent to OpenRouter and the company that runs the model, and each image is paid for from your OpenRouter credits. If you chat with a local model, the rest of your conversation stays on your device.
 
@@ -47,7 +50,7 @@ Unlike Layla's local models, this Agent needs an internet connection. Your image
   <a class="file-download-button" href="/assets/articles/how-to-use-the-openrouter-image-generation-agent/openrouter-generate-image.json" download="openrouter-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
 </div>
 
-## Why use OpenRouter for image generation in Layla?
+## Why use OpenRouter image generation in Layla?
 
 Layla's own Stable Diffusion models are the right choice when you want images generated entirely on your device. OpenRouter suits a different set of needs:
 
@@ -55,7 +58,8 @@ Layla's own Stable Diffusion models are the right choice when you want images ge
 - **Low prices per image.** At the time of writing, the model this Agent uses by default, FLUX 3 Image Klein, costs $0.009 for a 1K image. OpenRouter passes on the price of the company that runs the model and adds no markup to it.
 - **A spending limit on the key.** OpenRouter lets you give each API key its own credit limit, so the key stored in your Agent can only ever spend what you allow.
 - **Image quality that does not depend on your phone.** The picture is generated on a server, so the speed of your device's CPU or NPU does not limit the result or the wait.
-- **A local chat model with cloud images.** The Agent only reacts to the character's reply, so it works with whichever model you chat with. You can keep a local LLM for the conversation, and only the image description leaves your phone.
+- **One OpenRouter account for chat and images.** Layla can also use OpenRouter's language models for the conversation itself, through its [OpenAI-compatible API connection](/how-to-connect-layla-to-any-openai-compatible-api/). With this Agent, the same account powers both your character's replies and its pictures, so Layla works as an OpenRouter Android app for both.
+- **Or a local chat model with cloud images.** The Agent only reacts to the character's reply, so it works with whichever model you chat with. You can keep a private, offline LLM for the conversation, and only the image description leaves your phone.
 
 ## How the Agent works at a glance
 
@@ -133,9 +137,9 @@ OpenRouter shows the new key once. Select the copy button next to it and keep th
 
 Treat the key like a password. Anyone who has it can generate images that are paid for with your credits. OpenRouter's [authentication guide](https://openrouter.ai/docs/api_reference/authentication) explains the key format and what to do if a key is exposed.
 
-## Which OpenRouter image model should you use?
+## OpenRouter image generation models and pricing
 
-OpenRouter lists every model that can create images on its [models page, filtered by image output](https://openrouter.ai/models?output_modalities=image). Each entry shows the model's price and the date it was added.
+OpenRouter lists every image generation model on its [models page, filtered by image output](https://openrouter.ai/models?output_modalities=image). Each entry shows the model's price and the date it was added.
 
 ![The OpenRouter Models page with the Image tab selected, listing image generation models with their prices.](./openrouter-image-models.jpg)
 
@@ -156,11 +160,13 @@ The Agent uses FLUX 3 Image Klein, an open-weights model from Black Forest Labs 
 | Nano Banana Pro      | `google/gemini-3-pro-image`            | about $0.134       | Google's premium model, billed per token.                                  |
 | GPT Image 2          | `openai/gpt-image-2`                   | varies             | OpenAI's model, billed per token. The cost depends on size and quality.    |
 
+At $0.009 a picture, FLUX 3 Image Klein is the cheapest option in this table, which makes it a sensible default for an AI chat that sends pictures often. Nano Banana Pro and FLUX 3 Image cost more and are worth trying when you want more detail.
+
 Larger images cost more on most models. Some models, such as the GPT Image and Recraft models, do not accept the `resolution` setting the Agent sends. Others, such as the Recraft vector models, return SVG drawings instead of pictures, which _Display Image_ may not show. If you pick one of these, read the next paragraph.
 
 To switch models, copy the model ID from its page, paste it into `MODEL_ID` in the script, and run the **Test** button. If the model returns an error, check which settings it supports. The code walkthrough below explains how to change or remove them. Prices and models change often, so check the model's page on OpenRouter before you choose.
 
-## Set up the Agent in Layla
+## Set up OpenRouter image generation in Layla
 
 ### Step 1: Turn off Layla's default image generation
 
@@ -411,9 +417,9 @@ The second tool is _Display Image_, and its only setting is:
 
 `{{input}}` is replaced with the output of the previous tool, which is the file path that the script returned. _Display Image_ opens that file from the character's workspace and attaches it to the reply, and the picture appears in the chat.
 
-## Make your AI character's images consistent
+## AI roleplay with image generation: keep your character consistent
 
-A language model writes each image description from scratch, so without guidance a character can look different from one picture to the next. These approaches keep AI character images consistent and let you decide how often pictures appear:
+A language model writes each image description from scratch, so without guidance a character can look different from one picture to the next. These approaches keep AI character images consistent in roleplay and companion chats, and let you decide how often pictures appear:
 
 - **Describe the character once.** In the character's _Scenario_, add an instruction such as: "Whenever you write a `<stable_diffusion_prompt>`, begin with this description of yourself: a woman in her late twenties with short red hair, green eyes and freckles. Then describe the scene." The model repeats the appearance in every prompt, which helps the image model draw the same character each time.
 - **Fix the art style.** Add a style to the same instruction, for example "35mm film photograph, natural light" or "watercolor illustration".
@@ -437,15 +443,31 @@ Create an account at [openrouter.ai](https://openrouter.ai), add credits on the 
 
 ### Is OpenRouter image generation free?
 
-Creating an account and a key is free, but image models charge for each picture, so you need credits. At the time of writing, FLUX 3 Image Klein costs $0.009 for a 1K image. OpenRouter occasionally lists a free image model for a limited time, marked "(free)" on the models page.
+Creating an account and a key is free, but image models charge for each picture, so you need credits. At the time of writing, FLUX 3 Image Klein costs $0.009 for a 1K image. OpenRouter occasionally lists a free image generation model for a limited time, marked "(free)" on the models page.
 
 ### How much does OpenRouter image generation cost?
 
 Each model has its own price, shown on its page. At the time of writing, prices for a 1K image range from under one cent for FLUX 3 Image Klein to about $0.134 for Nano Banana Pro. OpenRouter adds no markup to model prices but charges a fee when you buy credits.
 
-### Can I use Nano Banana through OpenRouter?
+### What is the OpenRouter image generation API endpoint?
 
-Yes. Set `MODEL_ID` to `google/gemini-3-pro-image` for Nano Banana Pro or `google/gemini-nano-banana-2.1` for Nano Banana 2.1. If you would rather pay Google directly, use the [Nano Banana Agent](/how-to-use-the-google-nano-banana-image-generation-agent/) instead.
+Requests go to `https://openrouter.ai/api/v1/images` as a `POST` with your key in the `Authorization` header. The same endpoint serves every image model, and the `model` field in the request chooses which one runs. OpenRouter's [image generation guide](https://openrouter.ai/docs/guides/overview/multimodal/image-generation) documents every setting.
+
+### Can I use Nano Banana Pro through OpenRouter?
+
+Yes. Set `MODEL_ID` to `google/gemini-3-pro-image` for Nano Banana Pro or `google/gemini-nano-banana-2.1` for Nano Banana 2.1. Both accept 1K, 2K and 4K through the `RESOLUTION` setting. If you would rather pay Google directly, use the [Nano Banana Agent](/how-to-use-the-google-nano-banana-image-generation-agent/) instead.
+
+### Is there an OpenRouter app for Android?
+
+OpenRouter itself is a website and an API. Layla is an Android app that works with it: it can chat with OpenRouter's language models through its [OpenAI-compatible API connection](/how-to-connect-layla-to-any-openai-compatible-api/), and generate pictures with OpenRouter's image models through this Agent.
+
+### Can an AI chatbot send pictures on Android?
+
+Yes. With this Agent, a Layla character sends a picture whenever you ask for one, or after every message if you set it up that way. Layla can also send pictures without any cloud service, using Stable Diffusion models that run on your phone, as described in [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/).
+
+### Can I use my SillyTavern characters with OpenRouter image generation?
+
+Yes. Layla imports [TavernPNG character cards](/how-to-import-tavernpng-characters-in-layla/), the format SillyTavern uses, and [SillyTavern presets](/how-to-use-sillytavern-presets-in-layla/), and this Agent works with any character. If you used OpenRouter image generation with SillyTavern on a computer, this gives you the same setup in a chat app on your phone.
 
 ### Why did I get two images?
 
@@ -455,13 +477,13 @@ Either Layla's built-in image generation is still enabled, or another Agent that
 
 The key placeholder is still in the script. Open the Agent, edit the _Eval_ tool, and replace `PUT YOUR API KEY HERE` with your key.
 
-### The Agent shows an HTTP error. What does it mean?
+### Why is my OpenRouter API key not working?
 
-The message includes OpenRouter's own explanation. A 401 error means the key is wrong, deleted or expired. A 402 error means your balance or the key's credit limit has run out. A 400 error usually means the model does not accept one of the settings, such as the resolution. Check the model's page and change `RESOLUTION` or `ASPECT_RATIO`.
+When a request fails, the Agent shows an HTTP error that includes OpenRouter's own explanation. A 401 error means the key is wrong, deleted or expired. A 402 error means your balance or the key's credit limit has run out. A 400 error usually means the model does not accept one of the settings, such as the resolution. Check the model's page and change `RESOLUTION` or `ASPECT_RATIO`.
 
 ### Does OpenRouter filter images?
 
-Each company applies its own content policy to its models, and a request that a model declines returns no picture. The Agent then reports the error it received. For image generation that happens entirely on your device, use the local Stable Diffusion models described in [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/).
+Yes. Each company applies its own content policy to its models, and a request that a model declines returns no picture. The Agent then reports the error it received. Policies differ between models, so a prompt one model declines may work with another. For image generation that happens entirely on your device, with no prompt sent to any provider, use the local Stable Diffusion models described in [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/).
 
 ### Is my prompt private?
 
@@ -473,9 +495,9 @@ No. The Agent calls OpenRouter's servers. For offline image generation, use one 
 
 ## Conclusion
 
-The OpenRouter Agent uses the same four pieces as any image generation Agent in Layla: a system prompt that asks for a tagged description, a regex trigger that catches it, a short script that exchanges the description for an image, and _Display Image_ to put the result in your chat. Because OpenRouter answers in the same format for every model, one script gives your characters access to dozens of image models, and switching between them is a one-line change.
+The OpenRouter Agent uses the same four pieces as any image generation Agent in Layla: a system prompt that asks for a tagged description, a regex trigger that catches it, a short script that exchanges the description for an image, and _Display Image_ to put the result in your chat. Because OpenRouter answers in the same format for every model, one script gives your AI characters access to dozens of image generation models, and switching between them is a one-line change.
 
-Layla's local models remain the choice for fully offline image generation. This Agent is an option for when you prefer a particular online model and accept the connection and the cost.
+Layla is built as an offline AI assistant for Android, and its local models remain the choice for fully private, offline chat and image generation. OpenRouter image generation is an option for when you want a particular online model in your chats and accept the connection and the cost per picture.
 
 ## Download the Agent
 
