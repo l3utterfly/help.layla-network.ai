@@ -45,7 +45,14 @@ Agentが動作する様子は次のとおりです。キャラクターが返信
 
 ![キャラクターの返信、彼女が書いた画像の描写、そして夕暮れの岩場の海岸に座る彼女の生成画像が表示されたLaylaのチャット。](./generated-image.jpg)
 
-すぐに試したい場合は、こちらからAgentファイルをダウンロードしてください：[google-nano-banana-generate-image.json](/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json)。動作にはGoogle APIキーが必要です。取得方法はこの記事の後半で説明します。
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agentファイル</span>
+    <span class="file-download-name">google-nano-banana-generate-image.json</span>
+    <span class="file-download-hint">動作にはGoogle APIキーが必要です。取得方法はこの記事の後半で説明します。</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json" download="google-nano-banana-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>ダウンロード</a>
+</div>
 
 ## LaylaでNano Bananaを使う理由
 
@@ -501,6 +508,11 @@ Nano Banana Agentは、AIチャット向けの画像生成Agentがどれほど�
 
 ## Agentをダウンロードする
 
-[google-nano-banana-generate-image.jsonをダウンロード](/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json)
-
-Agentミニアプリの_Import_ボタンでインポートし、APIキーを追加してください。
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agentファイル</span>
+    <span class="file-download-name">google-nano-banana-generate-image.json</span>
+    <span class="file-download-hint">Agentミニアプリの<em>Import</em>ボタンでインポートし、APIキーを追加してください。</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json" download="google-nano-banana-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>ダウンロード</a>
+</div>

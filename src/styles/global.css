@@ -537,6 +537,15 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
 .article-content blockquote { padding: 16px 20px; margin: 24px 0; border: 1px solid rgb(46 143 255 / 26%); border-radius: var(--radius); background: #101820; }
 .article-content blockquote::before { content: "Note"; display: block; margin-bottom: 8px; color: var(--accent); font: 700 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
 .article-content blockquote p { margin: 0; font-size: 14px; }
+.article-content .file-download { display: flex; align-items: center; gap: 18px; padding: 18px 20px; margin: 24px 0; border: 1px solid rgb(46 143 255 / 36%); border-radius: var(--radius); background: #101820; }
+.article-content .file-download-info { min-width: 0; flex: 1; }
+.article-content .file-download-label { display: block; margin-bottom: 8px; color: var(--accent); font: 700 10px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
+.article-content .file-download-name { display: block; color: var(--text); font: 600 14px/1.45 var(--mono); overflow-wrap: anywhere; }
+.article-content .file-download-hint { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.article-content a.file-download-button { display: inline-flex; flex: none; align-items: center; justify-content: center; gap: 8px; padding: 10px 18px; color: white; border-radius: var(--radius-pill); background: #1f6fd6; font-size: 14px; font-weight: 650; line-height: 1.2; text-decoration: none; transition: background .16s ease; }
+.article-content a.file-download-button:hover { background: #2b7fe8; }
+.article-content a.file-download-button:focus-visible { outline: 2px solid var(--accent-hover); outline-offset: 3px; }
+.article-content .file-download-button svg { width: 16px; height: 16px; flex: none; }
 .article-content img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 .article-content video { display: block; max-width: 100%; height: auto; }
 .article-content table { width: 100%; margin: 24px 0; border-collapse: collapse; font-size: 14px; }
@@ -591,6 +600,7 @@ svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: 
   .header-text-links, .header-links > .search-trigger, .header-links astro-island .search-trigger { display: none; }
   .header-links { margin-left: auto; }
   .download-link { padding: 7px 14px; font-size: 12px; }
+  .article-content .file-download { flex-direction: column; align-items: stretch; gap: 14px; padding: 16px; }
   .site-header.has-mobile-context .header-inner { display: none; }
   .mobile-context-bar { min-height: var(--header-height); padding: 0 20px; align-items: center; gap: 10px; }
   .site-header.has-mobile-context .mobile-context-bar { display: flex; }

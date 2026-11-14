@@ -43,7 +43,14 @@ Here is the Agent in action. The character replies, and the image description it
 
 ![A Layla chat showing a character's reply, the image description she wrote, and the generated picture of her sitting on a rocky coastline at sunset.](./generated-image.jpg)
 
-If you want to try it right away, download the Agent file here: [google-nano-banana-generate-image.json](/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json). You will need a Google API key before it works, which the article explains below.
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agent file</span>
+    <span class="file-download-name">google-nano-banana-generate-image.json</span>
+    <span class="file-download-hint">You will need a Google API key before it works, which the article explains below.</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json" download="google-nano-banana-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>
 
 ## Why use Nano Banana in Layla?
 
@@ -499,6 +506,11 @@ Layla's local models remain the choice for fully offline image generation. Agent
 
 ## Download the Agent
 
-[Download google-nano-banana-generate-image.json](/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json)
-
-Use the _Import_ button in the Agents mini-app to import it, then add your API key.
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agent file</span>
+    <span class="file-download-name">google-nano-banana-generate-image.json</span>
+    <span class="file-download-hint">Use the <em>Import</em> button in the Agents mini-app to import it, then add your API key.</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json" download="google-nano-banana-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>

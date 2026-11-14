@@ -38,7 +38,14 @@ The article shows how to get an OpenRouter API key and set the Agent up, explain
 
 Unlike Layla's local models, this Agent needs an internet connection. Your image description is sent to OpenRouter and the company that runs the model, and each image is paid for from your OpenRouter credits. If you chat with a local model, the rest of your conversation stays on your device.
 
-If you want to try it right away, download the Agent file here: [openrouter-generate-image.json](/assets/articles/how-to-use-the-openrouter-image-generation-agent/openrouter-generate-image.json). You will need an OpenRouter API key before it works, which the article explains below.
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agent file</span>
+    <span class="file-download-name">openrouter-generate-image.json</span>
+    <span class="file-download-hint">You will need an OpenRouter API key before it works, which the article explains below.</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-openrouter-image-generation-agent/openrouter-generate-image.json" download="openrouter-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>
 
 ## Why use OpenRouter for image generation in Layla?
 
@@ -472,6 +479,11 @@ Layla's local models remain the choice for fully offline image generation. This 
 
 ## Download the Agent
 
-[Download openrouter-generate-image.json](/assets/articles/how-to-use-the-openrouter-image-generation-agent/openrouter-generate-image.json)
-
-Use the _Import_ button in the Agents mini-app to import it, then add your API key.
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agent file</span>
+    <span class="file-download-name">openrouter-generate-image.json</span>
+    <span class="file-download-hint">Use the <em>Import</em> button in the Agents mini-app to import it, then add your API key.</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-openrouter-image-generation-agent/openrouter-generate-image.json" download="openrouter-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>

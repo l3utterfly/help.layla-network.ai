@@ -45,7 +45,14 @@ Agent가 동작하는 모습입니다. 캐릭터가 응답하고, 캐릭터가 �
 
 ![캐릭터의 응답, 캐릭터가 쓴 이미지 묘사, 그리고 해 질 녘 바위 해안에 앉아 있는 모습의 생성된 이미지를 보여 주는 Layla 채팅.](./generated-image.jpg)
 
-바로 사용해 보고 싶다면 여기에서 Agent 파일을 다운로드하세요: [google-nano-banana-generate-image.json](/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json). 작동하려면 Google API 키가 필요하며, 키를 받는 방법은 아래에서 설명합니다.
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agent 파일</span>
+    <span class="file-download-name">google-nano-banana-generate-image.json</span>
+    <span class="file-download-hint">작동하려면 Google API 키가 필요하며, 키를 받는 방법은 아래에서 설명합니다.</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json" download="google-nano-banana-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>다운로드</a>
+</div>
 
 ## Layla에서 Nano Banana를 쓰는 이유
 
@@ -501,6 +508,11 @@ Nano Banana Agent는 AI 채팅용 이미지 생성 Agent가 얼마나 작을 수
 
 ## Agent 다운로드
 
-[google-nano-banana-generate-image.json 다운로드](/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json)
-
-Agent 미니 앱의 _Import_ 버튼으로 가져온 다음 API 키를 추가하세요.
+<div class="file-download">
+  <div class="file-download-info">
+    <span class="file-download-label">Agent 파일</span>
+    <span class="file-download-name">google-nano-banana-generate-image.json</span>
+    <span class="file-download-hint">Agent 미니 앱의 <em>Import</em> 버튼으로 가져온 다음 API 키를 추가하세요.</span>
+  </div>
+  <a class="file-download-button" href="/assets/articles/how-to-use-the-google-nano-banana-image-generation-agent/google-nano-banana-generate-image.json" download="google-nano-banana-generate-image.json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>다운로드</a>
+</div>
