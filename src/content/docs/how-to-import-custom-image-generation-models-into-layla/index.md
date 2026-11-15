@@ -169,7 +169,7 @@ If you already run an [AUTOMATIC1111 Stable Diffusion Web UI](https://github.com
 Fill in:
 
 - **Name**: any label you will recognise.
-- **Endpoint**: the API address, which usually ends with `/sdapi/v1/text2img`.
+- **Endpoint**: the API address, which usually ends with `/sdapi/v1/txt2img`.
 - **API Key**: leave this blank for a local API.
 - **Model**: leave this blank to use the Web UI's default model.
 

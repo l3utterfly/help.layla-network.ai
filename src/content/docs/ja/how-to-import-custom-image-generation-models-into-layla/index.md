@@ -151,7 +151,7 @@ PCで[AUTOMATIC1111 Stable Diffusion Web UI](https://github.com/AUTOMATIC1111/st
 次を入力します。
 
 - **Name**：識別しやすい名前。
-- **Endpoint**：APIアドレス。通常は末尾が`/sdapi/v1/text2img`。
+- **Endpoint**：APIアドレス。通常は末尾が`/sdapi/v1/txt2img`。
 - **API Key**：ローカルAPIでは空欄。
 - **Model**：Web UIの既定モデルを使う場合は空欄。
 

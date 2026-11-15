@@ -151,7 +151,7 @@ Si votre PC exécute [AUTOMATIC1111 Stable Diffusion Web UI](https://github.com/
 Renseignez :
 
 - **Name** : un nom reconnaissable.
-- **Endpoint** : l'adresse d'API, généralement terminée par `/sdapi/v1/text2img`.
+- **Endpoint** : l'adresse d'API, généralement terminée par `/sdapi/v1/txt2img`.
 - **API Key** : laissez vide pour une API locale.
 - **Model** : laissez vide pour le modèle par défaut de Web UI.
 

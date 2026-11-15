@@ -151,7 +151,7 @@ Mit [AUTOMATIC1111 Stable Diffusion Web UI](https://github.com/AUTOMATIC1111/sta
 Tragen Sie ein:
 
 - **Name**: frei erkennbarer Name.
-- **Endpoint**: API-Adresse, meist mit `/sdapi/v1/text2img` am Ende.
+- **Endpoint**: API-Adresse, meist mit `/sdapi/v1/txt2img` am Ende.
 - **API Key**: für eine lokale API leer lassen.
 - **Model**: leer lassen, um das Standardmodell der Web UI zu nutzen.
 

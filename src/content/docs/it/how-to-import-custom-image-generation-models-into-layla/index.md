@@ -151,7 +151,7 @@ Se usi [AUTOMATIC1111 Stable Diffusion Web UI](https://github.com/AUTOMATIC1111/
 Compila:
 
 - **Name**: un nome riconoscibile.
-- **Endpoint**: indirizzo API, solitamente termina con `/sdapi/v1/text2img`.
+- **Endpoint**: indirizzo API, solitamente termina con `/sdapi/v1/txt2img`.
 - **API Key**: vuoto per API locale.
 - **Model**: vuoto per usare il modello predefinito della Web UI.
 
