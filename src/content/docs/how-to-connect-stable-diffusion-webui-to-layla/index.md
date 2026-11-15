@@ -1,38 +1,71 @@
 ---
-title: How to connect Stable Diffusion WebUI to Layla for AI image generation
-description: Connect AUTOMATIC1111 Stable Diffusion WebUI to Layla on Android. Enable the API, add a Web UI model in Local Dream, and edit the request JSON template.
+title: "Stable Diffusion WebUI on Android: connect AUTOMATIC1111 to Layla"
+description: Use Stable Diffusion WebUI on Android. Connect AUTOMATIC1111 to Layla, enable the API, add a Web UI model in Local Dream, and edit the request JSON template.
 category: Image generation
 order: 17
 keywords:
   - Stable Diffusion WebUI Android
-  - connect Stable Diffusion WebUI to phone
+  - Stable Diffusion WebUI on Android
+  - Stable Diffusion WebUI Android client
+  - Stable Diffusion Android app
+  - AUTOMATIC1111 Android
   - AUTOMATIC1111 Android app
+  - AUTOMATIC1111 mobile
   - AUTOMATIC1111 API
+  - AUTOMATIC1111 API on phone
+  - connect Stable Diffusion WebUI to phone
+  - access Stable Diffusion WebUI from phone
+  - use Stable Diffusion on your phone
+  - use Stable Diffusion from your phone
+  - run Stable Diffusion on Android
+  - Stable Diffusion remote access phone
+  - Stable Diffusion on local network
+  - Stable Diffusion API on local network
+  - Stable Diffusion WebUI listen on network
   - stable-diffusion-webui --api
+  - stable-diffusion-webui --listen
   - sdapi/v1/txt2img
   - txt2img API request body
   - Stable Diffusion WebUI API settings
   - Stable Diffusion WebUI API JSON
-  - Stable Diffusion API on local network
-  - use Stable Diffusion from your phone
-  - Stable Diffusion remote access phone
-  - Stable Diffusion WebUI listen on network
   - Stable Diffusion WebUI Forge Android
-  - SDXL on Stable Diffusion WebUI API
-  - Stable Diffusion LoRA API
+  - Stable Diffusion SDXL on Android
+  - Stable Diffusion LoRA on phone
+  - Stable Diffusion hires fix API
   - override_settings sd_model_checkpoint
   - AI image generator for Android
+  - AI image generator app
+  - text-to-image app
   - AI character image generation
   - Local Dream
   - Layla image generation
 lastUpdated: 2026-11-15
 ---
 
-**Layla can use an AUTOMATIC1111 Stable Diffusion WebUI running on your own PC as its image generator, so your Android phone sends the prompt over your network and the PC does the rendering.** You turn on the WebUI's API, add a _Web UI_ model in the Local Dream mini-app, and Layla builds each request from a JSON template that you can edit. The result appears in Local Dream and in your chats, the same as any other Layla image model.
+**Layla is an Android app that works as a client for AUTOMATIC1111 Stable Diffusion WebUI: your phone sends the prompt over your network to the WebUI on your own PC, and the PC does the rendering.** You turn on the WebUI's API, add a _Web UI_ model in the Local Dream mini-app, and Layla builds each request from a JSON template that you can edit. The image appears in Local Dream and in your chats, the same as with any other Layla image model.
 
-This is the route to take when you already have checkpoints, LoRAs and extensions set up in the WebUI and want to use them from your phone, or when your PC has a graphics card that is much faster than the phone. This guide covers starting the WebUI with its API enabled, adding the model in Local Dream, the request template and every placeholder in it, ready-to-use templates for SD 1.5, SDXL, LoRAs and hires fix, and fixes for the usual connection errors.
+AUTOMATIC1111 is a web interface for a computer and does not ship an Android app of its own. This connection is how you use Stable Diffusion WebUI on Android: you keep the checkpoints, LoRAs and extensions you already set up in the WebUI, and you generate from your phone. This guide covers starting the WebUI with its API enabled, adding the model in Local Dream, the request template and every placeholder in it, ready-to-use templates for SD 1.5, SDXL, LoRAs and hires fix, and fixes for the usual connection errors.
 
-Unlike Layla's on-device models, this method needs the PC to be switched on and reachable from the phone while you generate. The prompt and the image travel over your local network to your own computer, not to an online service.
+Unlike Layla's on-device models, this method needs the PC to be switched on and reachable from the phone while you generate. The prompt and the image travel over your local network to your own computer, not to an online service, so the connection does not need internet access.
+
+## Why use Stable Diffusion WebUI on Android with Layla?
+
+Layla can also run Stable Diffusion on the phone itself, so this is one of two ways to get an AI image generator for Android in Layla. The WebUI connection suits these cases:
+
+- **You already have a Stable Diffusion setup.** Your checkpoints, LoRAs, embeddings and extensions such as ControlNet or ADetailer stay on the PC and are available from the phone.
+- **Your PC has a faster graphics card than your phone.** The PC renders, so the speed of the phone's processor does not limit the image size, the step count or the model.
+- **You want models a phone cannot run.** Large SDXL checkpoints and heavy extensions run on a desktop GPU without any conversion.
+- **There is no per-image cost.** You generate with your own hardware, with no credits and no account.
+- **It works in chat.** A Web UI model can be the image model for Layla or for a single character, so your characters can send you pictures made by your own PC.
+
+|                        | On-device model                              | Web UI connection                     |
+| ---------------------- | -------------------------------------------- | ------------------------------------- |
+| Where images are made  | On your phone                                | On your PC                            |
+| Needs a PC and network | No                                           | Yes, the PC must be on and reachable  |
+| Models                 | Models Layla can import and run on the phone | Anything your WebUI can load          |
+| Settings               | Layla's controls                             | Layla's controls plus a JSON template |
+
+[How to import custom image generation models into Layla](/how-to-import-custom-image-generation-models-into-layla/) covers the on-device route, including Civitai checkpoints and LoRAs.
 
 ## How Layla talks to the Stable Diffusion WebUI
 
@@ -56,7 +89,7 @@ Nothing else is sent. Layla does not switch the model, set a sampler or choose a
 - Your phone and PC on the same network, for example the same Wi-Fi.
 - Layla with the **Local Dream** mini-app installed. [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/) shows how to install it, and [How to enable or disable mini-apps within Layla](/how-to-enable-disable-mini-apps-within-layla/) explains where mini-apps live.
 
-## Step 1: Start the WebUI with the API enabled
+## Step 1: Enable the Stable Diffusion WebUI API (--api and --listen)
 
 The API is off by default. Add the `--api` flag, and add `--listen` so the WebUI accepts connections from other devices and not only from the PC itself. Both go in the `COMMANDLINE_ARGS` line of the WebUI's launcher file, which is `webui-user.bat` on Windows and `webui-user.sh` on Linux:
 
@@ -90,7 +123,7 @@ The route is spelled `txt2img`. Layla's placeholder text on the endpoint field s
 
 The WebUI's own `--api-auth` option sets a username and password, but it uses HTTP Basic authentication, and Layla sends its API key as a Bearer token. The two do not match, so leave the **API Key** field empty for a plain WebUI. The field is for setups where something in front of the WebUI, such as a reverse proxy, checks a Bearer token.
 
-## Step 2: Add a Web UI model in Local Dream
+## Step 2: Add the WebUI to Layla as a Web UI model in Local Dream
 
 1. Open the **Local Dream** mini-app.
 2. Tap **Add Model** at the top right. The Add Image Model screen opens with three tabs: Safetensor, Zip and Web UI.
@@ -117,7 +150,7 @@ The WebUI renders with whichever checkpoint it has loaded. In the current versio
 
 Every Web UI model keeps its own settings, including its own request template. You can add the same endpoint several times under different names, for example one connection for an SD 1.5 anime checkpoint and one for an SDXL photo checkpoint, each with a template that selects the right checkpoint and image size. Switching between them in Local Dream then switches the whole setup. To change a connection's name, endpoint or key later, open the model list and tap the pencil icon on its card.
 
-## Step 3: Generate an image
+## Step 3: Generate Stable Diffusion images from your phone
 
 With the Web UI model selected, Local Dream shows the same controls as for other models:
 
@@ -135,7 +168,7 @@ A few controls do not apply to a Web UI model:
 - **Scheduler** is for Layla's on-device models. It is not sent to the WebUI. To choose a sampler or scheduler, set them in the template.
 - **Image to image** is not available. Layla's Web UI connection only calls txt2img.
 
-## The request template
+## The Stable Diffusion WebUI API request template (JSON)
 
 The template is the JSON that Layla sends to the WebUI. Select a Web UI model in Local Dream, open **Advanced Settings**, and scroll to **WEBUI API BODY TEMPLATE**. The text box holds the whole request body, and you can edit it freely. Layla saves the change automatically a moment after you stop typing, and it applies to that model only.
 
@@ -357,29 +390,37 @@ Layla's default template sets `denoising_strength` to `0`, which is fine when hi
 
 ## Frequently asked questions
 
+### How can I use Stable Diffusion WebUI on my Android phone?
+
+Run the WebUI on a PC with `--api --listen`, then add it in Layla's Local Dream mini-app as a **Web UI** model, using the PC's address followed by `/sdapi/v1/txt2img`. The phone sends the prompt, the PC renders the image, and Layla shows it. Opening the WebUI page in the phone's browser also works, but then you use the WebUI's own page and not Layla's chat and image tools.
+
+### Is there an AUTOMATIC1111 app for Android?
+
+AUTOMATIC1111 is a web interface that runs on a computer, and it does not ship an Android app. Layla acts as an Android client for it: its Web UI model sends txt2img requests to your WebUI and shows the pictures it returns, and it also lets your characters use the WebUI in chat.
+
+### Can I run Stable Diffusion on Android without a PC?
+
+Yes, but not with a Web UI connection, which needs the WebUI to run on a computer. Layla can run Stable Diffusion on the phone with its on-device models, with no PC and no internet connection. [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/) covers them.
+
 ### How do I enable the Stable Diffusion WebUI API?
 
 Start the WebUI with the `--api` flag, normally by adding it to `COMMANDLINE_ARGS` in `webui-user.bat` or `webui-user.sh`. Add `--listen` as well so other devices on your network, such as your phone, can reach it. You can confirm it works by opening `/docs` on the WebUI's address.
 
-### What endpoint do I enter in Layla?
+### What is the Stable Diffusion WebUI API endpoint for Layla?
 
 The WebUI's address followed by `/sdapi/v1/txt2img`, for example `http://192.168.1.50:7860/sdapi/v1/txt2img`. Use the PC's address on your network and not `localhost`, because on the phone `localhost` refers to the phone.
 
-### Can I use Stable Diffusion WebUI on my phone without a PC?
+### Can I access Stable Diffusion WebUI from my phone when I am away from home?
 
-Not through this method. The WebUI runs on a computer, and Layla only sends it requests. For image generation that runs entirely on the phone, add a model that Layla runs itself, as described in [How to import custom image generation models into Layla](/how-to-import-custom-image-generation-models-into-layla/).
-
-### Does it work over mobile data or away from home?
-
-Only if the phone can reach the PC. At home, the same Wi-Fi is enough. Away from home you would need a private connection to your home network, such as a VPN. Do not expose the WebUI directly to the internet, because its API has no login by default.
+Only if the phone can reach the PC. At home, the same Wi-Fi is enough, and mobile data does not reach the PC on its own. Away from home you would need a private connection to your home network, such as a VPN. Do not expose the WebUI directly to the internet, because its API has no login by default. For images away from home with nothing to set up, Layla's on-device models work on mobile data or with no connection at all.
 
 ### Does Layla work with Forge, reForge or SD.Next?
 
 Layla only sends a txt2img request in the AUTOMATIC1111 format, so any server that accepts the same request at `/sdapi/v1/txt2img` can work. Forks differ in which fields and sampler names they accept, so check the `/docs` page of yours and adjust the template.
 
-### How do I use a different checkpoint, LoRA or sampler?
+### How do I use SDXL, a different checkpoint, a LoRA or another sampler with the WebUI API?
 
-Edit the template. Add the checkpoint under `override_settings` as `"sd_model_checkpoint"`, write the LoRA tag into the `prompt` line, and set `sampler_name` and `scheduler` to names the WebUI lists. The templates above show each one.
+Edit the template. Add the checkpoint under `override_settings` as `"sd_model_checkpoint"`, write the LoRA tag into the `prompt` line, and set `sampler_name` and `scheduler` to names the WebUI lists. For an SDXL checkpoint, also set `width` and `height` to around 1024. The templates above show each one.
 
 ### How do I generate larger images?
 
@@ -389,7 +430,7 @@ Set `width` and `height` to numbers in the template. A Web UI model in Layla onl
 
 Layla shows the WebUI's own status code and message after that text, which tells you what went wrong. A `404` usually means the API is not enabled or the endpoint path is misspelled, so check `--api` and `txt2img`. A `422` means the WebUI rejected the request body: a field has the wrong type, a name is misspelled, or the JSON is invalid. A `500` means the WebUI hit an error while rendering, and its console window on the PC shows the reason, such as an unknown sampler or an out-of-memory error.
 
-### Why does Layla say the network request failed?
+### Why can't my phone connect to Stable Diffusion WebUI? (network request failed)
 
 The phone could not reach the PC. Check that the WebUI is running, that it was started with `--listen`, that the phone and PC are on the same network, that the IP address in the endpoint is current, and that the firewall allows port `7860`. Opening the WebUI address in the phone's browser is the quickest test.
 
@@ -411,6 +452,6 @@ Yes. A Web UI model is an image model like any other. Select it as the default i
 
 ## Conclusion
 
-A Web UI model turns a Stable Diffusion WebUI on your PC into an image generator for Layla. The WebUI needs `--api` and `--listen`, Local Dream needs the address of its `txt2img` endpoint, and the request template decides everything else: the checkpoint, the sampler, the size, the LoRAs and hires fix. Keeping a short template for each setup, saved as separate connections, lets you switch between them from the model list.
+A Web UI model lets you use Stable Diffusion WebUI on Android by turning the AUTOMATIC1111 install on your PC into an image generator for Layla. The WebUI needs `--api` and `--listen`, Local Dream needs the address of its `txt2img` endpoint, and the request template decides everything else: the checkpoint, the sampler, the size, the LoRAs and hires fix. Keeping a short template for each setup, saved as separate connections, lets you switch between them from the model list.
 
-Layla is built as an offline AI assistant for Android, and its on-device models remain the way to generate images with no PC and no network. The WebUI connection is for the case where you already have a Stable Diffusion setup on a computer you own and want it available in your chats and in Local Dream.
+Layla is built as an offline AI assistant for Android, and its on-device models remain the way to run Stable Diffusion on your phone with no PC and no network. The WebUI connection is for the case where you already have a Stable Diffusion setup on a computer you own and want it available in your chats and in Local Dream.
