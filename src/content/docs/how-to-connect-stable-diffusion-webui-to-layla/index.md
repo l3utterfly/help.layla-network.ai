@@ -115,7 +115,7 @@ Your endpoint is that address followed by the txt2img path, for example:
 http://192.168.1.50:7860/sdapi/v1/txt2img
 ```
 
-The route is spelled `txt2img`. Layla's placeholder text on the endpoint field says `text2img`, which is not a route the WebUI has.
+The route is spelled `txt2img`. Older versions of Layla showed `text2img` in the placeholder text of the endpoint field, which is not a route the WebUI has.
 
 ### A note on API keys and security
 
