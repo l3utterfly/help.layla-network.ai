@@ -173,7 +173,7 @@ Fill in:
 - **API Key**: leave this blank for a local API.
 - **Model**: leave this blank to use the Web UI's default model.
 
-Tap **Save & Select**. [How to enable image generation in Layla](/how-to-enable-image-generation-in-layla/) covers setting up the Web UI itself.
+Tap **Save & Select**. [How to connect Stable Diffusion WebUI to Layla](/how-to-connect-stable-diffusion-webui-to-layla/) covers starting the Web UI with its API enabled, editing the request template, and fixing connection errors.
 
 ## Faster Stable Diffusion on the Snapdragon NPU with NPU Forge
 

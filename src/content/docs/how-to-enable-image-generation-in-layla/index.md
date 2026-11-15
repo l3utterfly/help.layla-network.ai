@@ -270,7 +270,7 @@ Check five things: whether it generates with no internet connection, which model
 
 ### How do I connect Layla to Stable Diffusion on my PC?
 
-Set up the AUTOMATIC1111 Web UI with its API enabled, then add it from the **Web UI** tab of the Add Image Model screen using the API address. Images are then generated on your PC, so your phone must be able to reach it over the network.
+Set up the AUTOMATIC1111 Web UI with its API enabled, then add it from the **Web UI** tab of the Add Image Model screen using the API address. Images are then generated on your PC, so your phone must be able to reach it over the network. [How to connect Stable Diffusion WebUI to Layla](/how-to-connect-stable-diffusion-webui-to-layla/) walks through the whole setup, including the request template.
 
 ## Credits
 
