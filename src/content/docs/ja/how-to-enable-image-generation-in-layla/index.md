@@ -193,6 +193,8 @@ Inference Settingsは共通の初期設定です。カスタムキャラクタ�
 - [画像生成エージェントの作成](/ja/creating-an-image-generation-agent/)：各メッセージ後に場面やキャラクターを描画。
 - [Perchanceエージェントで画像生成](/ja/how-to-use-the-perchance-image-generation-agent/)：無料のPerchanceサイトを使用。
 - [LaylaのNano Banana API](/ja/how-to-use-the-google-nano-banana-image-generation-agent/)：Google AI StudioのAPIキーでGoogleのモデルに接続。
+- [LaylaでOpenRouter画像生成](/ja/how-to-use-the-openrouter-image-generation-agent/)：1つのOpenRouter APIキーで、FLUX、Seedream、GPT Imageなど多くの企業の画像モデルに接続。
+- [LaylaでNanoGPT画像生成](/ja/how-to-create-a-nanogpt-image-generation-agent-in-layla/)：HiDream、FLUX、SDXLなどNanoGPTの従量課金制の画像モデルを使うエージェントを手順を追って作成し、コードを1行ずつ解説。
 
 ## よくある質問
 
@@ -250,7 +252,7 @@ Local Dreamをインストールし、モデルを取得してください。そ
 
 ### PCのStable Diffusionに接続するには？
 
-AUTOMATIC1111 Web UIのAPIを有効にし、Add Image Modelの**Web UI**にAPIアドレスを追加します。生成はPC側で行うため、端末からネットワーク経由で到達できる必要があります。
+AUTOMATIC1111 Web UIのAPIを有効にし、Add Image Modelの**Web UI**にAPIアドレスを追加します。生成はPC側で行うため、端末からネットワーク経由で到達できる必要があります。リクエストテンプレートを含むセットアップ全体は、[AndroidでStable Diffusion WebUIを使う方法：AUTOMATIC1111をLaylaに接続する](/ja/how-to-connect-stable-diffusion-webui-to-layla/)で説明しています。
 
 ## クレジット
 

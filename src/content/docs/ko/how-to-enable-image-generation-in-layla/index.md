@@ -193,6 +193,8 @@ Inference Settings는 기본값일 뿐입니다. 각 사용자 지정 캐릭터�
 - [이미지 생성 에이전트 만들기](/ko/creating-an-image-generation-agent/): 메시지마다 장면이나 캐릭터 생성.
 - [Perchance 에이전트로 이미지 생성](/ko/how-to-use-the-perchance-image-generation-agent/): 무료 Perchance 웹사이트 사용.
 - [Layla의 Nano Banana API](/ko/how-to-use-the-google-nano-banana-image-generation-agent/): Google AI Studio API 키로 Google 모델 연결.
+- [Layla의 OpenRouter 이미지 생성](/ko/how-to-use-the-openrouter-image-generation-agent/): OpenRouter API 키 하나로 FLUX, Seedream, GPT Image 등 여러 회사의 이미지 모델 연결.
+- [Layla의 NanoGPT 이미지 생성](/ko/how-to-create-a-nanogpt-image-generation-agent-in-layla/): HiDream, FLUX, SDXL 등 NanoGPT의 종량제 이미지 모델을 쓰는 에이전트를 단계별로 만들고 코드를 한 줄씩 설명.
 
 ## 자주 묻는 질문
 
@@ -250,7 +252,7 @@ DreamShaper 같은 SD 1.5를 시도하세요. 다운로드가 작고 최근 기�
 
 ### PC의 Stable Diffusion에 연결하려면?
 
-AUTOMATIC1111 Web UI의 API를 켜고 Add Image Model의 **Web UI**에 주소를 넣습니다. PC가 생성하므로 휴대전화에서 네트워크로 접근할 수 있어야 합니다.
+AUTOMATIC1111 Web UI의 API를 켜고 Add Image Model의 **Web UI**에 주소를 넣습니다. PC가 생성하므로 휴대전화에서 네트워크로 접근할 수 있어야 합니다. 요청 템플릿을 포함한 전체 설정은 [안드로이드에서 Stable Diffusion WebUI 사용하기: AUTOMATIC1111을 Layla에 연결](/ko/how-to-connect-stable-diffusion-webui-to-layla/)에서 설명합니다.
 
 ## 제작 기여
 

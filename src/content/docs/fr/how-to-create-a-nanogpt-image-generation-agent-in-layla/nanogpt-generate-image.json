@@ -1,0 +1,34 @@
+{
+  "id": "nanogpt-image-gen-js",
+  "name": "NanoGPT Image Generation (JS)",
+  "description": "Generates an image with the NanoGPT image API from the prompt the AI writes in a <stable_diffusion_prompt> tag, then shows it inline in the chat. Runs in Layla's built-in JavaScript runtime, no Python needed. Set API_KEY (and optionally MODEL and SIZE) at the top of the eval step before use.",
+  "systemPrompt": "{{char}} can create images. Whenever {{user}} asks to see, draw, paint, picture or imagine something, or a visual would help the conversation, {{char}} writes an image prompt inside <stable_diffusion_prompt></stable_diffusion_prompt> tags. The image is then generated and shown in the chat automatically, so {{char}} never says it cannot create images and never describes the image as already visible before it is generated.\n\nRules for the tag:\n- Use at most one <stable_diffusion_prompt> tag per reply, and place it at the end of the reply.\n- Write the prompt in English as a comma-separated list of descriptive phrases: subject first, then appearance, clothing, pose and action, setting and background, lighting, camera angle and framing, art style or medium, and quality words.\n- Be concrete and visual. Name colours, materials, time of day and mood. Do not use names the image model would not know; describe the person or thing instead.\n- When the image shows {{char}} or {{user}}, describe their appearance in full inside the prompt every time.\n- Keep the prompt on a single line, under 75 words, with no quotation marks, backticks or other tags inside it.\n\nExample:\nHere is the lighthouse I told you about.\n<stable_diffusion_prompt>old stone lighthouse on a rocky cliff, stormy sea crashing below, dramatic overcast sky, warm light glowing from the lantern room, seagulls, wide angle, cinematic lighting, highly detailed digital painting</stable_diffusion_prompt>",
+  "version": 1,
+  "enabled": true,
+  "triggers": [
+    {
+      "type": "on_regex",
+      "data": {
+        "regex": "/<stable_diffusion_prompt>(.*?)</stable_diffusion_prompt>/s",
+        "trigger_on_output": true
+      },
+      "exclusivity": "OR"
+    }
+  ],
+  "toolsData": [
+    {
+      "toolId": "eval",
+      "ai_decides_input": false,
+      "parameters": {
+        "code": "(async () => {\n  // ---- configure these ----\n  const API_KEY = \"YOUR_NANOGPT_API_KEY\"; // https://nano-gpt.com/api\n  const MODEL = \"hidream\"; // any id from GET https://api.nano-gpt.com/api/v1/images/models\n  const SIZE = \"1024x1024\";\n  // --------------------------\n\n  const PROMPT = String.raw`{{match$1}}`.trim();\n  const ENDPOINT = \"https://api.nano-gpt.com/v1/images/generations\";\n\n  if (!PROMPT) throw new Error(\"The <stable_diffusion_prompt> tag was empty.\");\n  if (!API_KEY || API_KEY.startsWith(\"YOUR_\"))\n    throw new Error(\"Set API_KEY in the NanoGPT Image Generation (JS) agent.\");\n\n  const response = await fetch(ENDPOINT, {\n    method: \"POST\",\n    headers: {\n      Authorization: `Bearer ${API_KEY}`,\n      \"Content-Type\": \"application/json\",\n    },\n    body: JSON.stringify({\n      model: MODEL,\n      prompt: PROMPT,\n      n: 1,\n      size: SIZE,\n      response_format: \"b64_json\",\n    }),\n  });\n  const text = await response.text();\n  if (!response.ok)\n    throw new Error(\n      `nano-gpt returned HTTP ${response.status}: ${text.slice(0, 500)}`,\n    );\n\n  const item = (JSON.parse(text).data || [])[0];\n  if (!item)\n    throw new Error(`nano-gpt returned no image: ${text.slice(0, 500)}`);\n\n  let base64;\n  if (item.b64_json) {\n    base64 = item.b64_json.replace(/^data:[^,]*,/, \"\");\n  } else if (item.url) {\n    // nano-gpt may answer with a link instead of base64; download it and encode it ourselves.\n    const download = await fetch(item.url);\n    if (!download.ok)\n      throw new Error(`Image download failed: HTTP ${download.status}`);\n    base64 = (await download.bytes()).toBase64();\n  } else {\n    throw new Error(\n      `nano-gpt response had no b64_json or url: ${text.slice(0, 500)}`,\n    );\n  }\n\n  const ext = base64.startsWith(\"/9j/\")\n    ? \"jpg\"\n    : base64.startsWith(\"UklGR\")\n      ? \"webp\"\n      : \"png\";\n  const filename = `nanogpt_${Date.now()}.${ext}`;\n\n  // Saved in the character workspace, the folder display-image resolves relative paths against.\n  await layla.utils.saveFile(filename, base64);\n\n  // The result is the next tool's input: display-image reads it as the image path.\n  return filename;\n})();"
+      }
+    },
+    {
+      "toolId": "display-image",
+      "ai_decides_input": false,
+      "parameters": {
+        "imagePath": "{{input}}"
+      }
+    }
+  ]
+}

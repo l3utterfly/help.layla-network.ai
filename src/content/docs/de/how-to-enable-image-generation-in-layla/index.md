@@ -193,6 +193,8 @@ Auch Agenten können Bilder generieren, etwa wenn Ihr Smartphone zu langsam ist.
 - [Einen Bildgenerierungsagenten erstellen](/de/creating-an-image-generation-agent/) erzeugt nach jeder Nachricht ein Bild der Szene oder Figur.
 - [Bilder mit dem Perchance-Agenten erzeugen](/de/how-to-use-the-perchance-image-generation-agent/) nutzt die kostenlose Perchance-Website.
 - [Nano Banana API in Layla](/de/how-to-use-the-google-nano-banana-image-generation-agent/) verbindet Googles Modell mit einem API-Schlüssel aus Google AI Studio.
+- [OpenRouter-Bildgenerierung in Layla](/de/how-to-use-the-openrouter-image-generation-agent/) verbindet Bildmodelle vieler Anbieter, etwa FLUX, Seedream und GPT Image, mit einem einzigen OpenRouter-API-Schlüssel.
+- [NanoGPT-Bildgenerierung in Layla](/de/how-to-create-a-nanogpt-image-generation-agent-in-layla/) baut Schritt für Schritt einen Agenten, der die nutzungsbasiert abgerechneten Bildmodelle von NanoGPT wie HiDream, FLUX und SDXL verwendet, und erklärt seinen Code Zeile für Zeile.
 
 ## Häufige Fragen
 
@@ -250,7 +252,7 @@ Prüfen Sie Offline-Betrieb, Modellunterstützung, NPU-Nutzung, Import eigener S
 
 ### Wie verbinde ich Layla mit Stable Diffusion auf meinem PC?
 
-Aktivieren Sie die API der AUTOMATIC1111 Web UI und fügen Sie ihre Adresse unter **Web UI** in Add Image Model hinzu. Der PC berechnet die Bilder und muss vom Smartphone im Netzwerk erreichbar sein.
+Aktivieren Sie die API der AUTOMATIC1111 Web UI und fügen Sie ihre Adresse unter **Web UI** in Add Image Model hinzu. Der PC berechnet die Bilder und muss vom Smartphone im Netzwerk erreichbar sein. [Stable Diffusion WebUI auf Android: AUTOMATIC1111 mit Layla verbinden](/de/how-to-connect-stable-diffusion-webui-to-layla/) führt durch die gesamte Einrichtung, einschließlich der Anfragevorlage.
 
 ## Mitwirkende
 
