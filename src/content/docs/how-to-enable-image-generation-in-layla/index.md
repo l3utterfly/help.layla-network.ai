@@ -213,6 +213,7 @@ On-device models are not the only route. Layla's agents can generate images too,
 - [How to generate AI images in Layla with the Perchance Agent](/how-to-use-the-perchance-image-generation-agent/) uses the free Perchance website.
 - [Nano Banana API in Layla: AI chat with image generation](/how-to-use-the-google-nano-banana-image-generation-agent/) connects Google's Nano Banana model with an API key from Google AI Studio.
 - [OpenRouter image generation in Layla](/how-to-use-the-openrouter-image-generation-agent/) connects image models from many companies, such as FLUX, Seedream and GPT Image, with one OpenRouter API key.
+- [NanoGPT image generation in Layla](/how-to-create-a-nanogpt-image-generation-agent-in-layla/) builds an agent step by step that uses NanoGPT's pay-as-you-go image models, such as HiDream, FLUX and SDXL, and explains its code line by line.
 
 ## Frequently asked questions
 
