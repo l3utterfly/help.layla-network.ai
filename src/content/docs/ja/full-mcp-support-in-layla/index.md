@@ -34,9 +34,9 @@ _Layla: Introspection_ Agentは、LaylaでMCPツール呼び出しを利用す�
 
 ![複数のLayla Tool Triggerが表示されたLayla Introspection Agentの編集画面。](./introspection-agent.jpg)
 
-すべてのトリガーが前の記事で紹介した特別な「Layla Tool Trigger」を使用しています。このトリガーは、使用可能なすべてのツールのシグネチャをシステムプロンプトに含めるようAgentに指示します。この例では、_Layla Apps Info_、_Layla: Clear Caches_、_Layla: Operating Stats_のシグネチャが含まれます。
+すべてのトリガーが前の記事で紹介した特別な「Layla Tool Trigger」を使用しています。このトリガーは、使用可能なすべてのツールのシグネチャをシステムプロンプトに含めるようAgentに指示します。この例では、_Layla Apps Info_、_Layla: Clear Caches_、*Layla: Operating Stats*のシグネチャが含まれます。
 
-_Tools Flow_セクションには、入力が `{{match$1}}` の _Layla Tool Call_ が1つあります。ツール呼び出しはこの形式を前提としているため変更しないでください。他のツールを追加する必要はありません。LLMがTriggersセクションにある各ツールを呼び出すタイミングを判断します。各ツールの出力は自動的にLLMのコンテキストへ追加され、必要なら別のツール呼び出しを続けることもできます。
+*Tools Flow*セクションには、入力が `{{match$1}}` の _Layla Tool Call_ が1つあります。ツール呼び出しはこの形式を前提としているため変更しないでください。他のツールを追加する必要はありません。LLMがTriggersセクションにある各ツールを呼び出すタイミングを判断します。各ツールの出力は自動的にLLMのコンテキストへ追加され、必要なら別のツール呼び出しを続けることもできます。
 
 ツール一覧を変更するには、_Introspection_ Agentを編集して既存のトリガーを削除し、新しいものを追加します。ドロップダウンからLaylaで利用できるすべてのツールを選択できます。
 
@@ -48,7 +48,7 @@ _注：ツールの選択にはバランスが必要です。多すぎると、L
 
 Laylaは、著名な組織が提供するものでも自分のPCで動かすものでも、外部MCPサーバーに接続できます。
 
-_MCP Support_ミニアプリを使うと、外部MCPサーバーを自動的に検出して設定できます。
+*MCP Support*ミニアプリを使うと、外部MCPサーバーを自動的に検出して設定できます。
 
 ![MCP Supportミニアプリの概要。](./mcp-support-mini-app.jpg)
 
@@ -62,9 +62,9 @@ Laylaで _MCP Support_ ミニアプリを開き、リモートMCPサーバーの
 
 ![リモートサーバーのURLと、ツールの検出およびAgent作成の操作が表示されたMCP Support画面。](./discover-mcp-tools.jpg)
 
-_Discover Tools_をタップします。MCPサーバーへの接続が始まり、利用可能なツールの一覧が問い合わせられます。この例では「fetch」というツールが1つだけ返されます。
+*Discover Tools*をタップします。MCPサーバーへの接続が始まり、利用可能なツールの一覧が問い合わせられます。この例では「fetch」というツールが1つだけ返されます。
 
-ツールを選択して緑色にした後、_Create Agent_をタップします。選択したツールを持つ新しいLayla Agentが作成されます。
+ツールを選択して緑色にした後、*Create Agent*をタップします。選択したツールを持つ新しいLayla Agentが作成されます。
 
 Agentsミニアプリに移動し、「New Agent」という新しいAgentが表示されます。名前と説明は自由に編集できます。
 
@@ -78,7 +78,7 @@ TriggersやTool Flowなど、その他のパラメーターは変更しないで
 
 ![Create Character画面のAdvancedタブ。](./character-advanced-tab.jpg)
 
-_Select Agents_をタップしてポップアップを開きます。
+*Select Agents*をタップしてポップアップを開きます。
 
 ![Fetch Agentなどを一覧表示するAvailable Agentsポップアップ。](./available-agents.jpg)
 

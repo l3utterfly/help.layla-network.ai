@@ -156,7 +156,7 @@ Web UI 모델에 적용되지 않는 조작 항목이 몇 가지 있습니다.
 
 - **Size**는 512×512 한 가지 옵션만 제공합니다. 다른 크기로 생성하려면 아래 설명처럼 템플릿에서 `width`와 `height`를 설정하세요.
 - **Scheduler**는 Layla의 기기 내 모델용이며 WebUI로 전송되지 않습니다. 샘플러나 스케줄러는 템플릿에서 설정하세요.
-- **이미지에서 이미지(Image to image)**는 사용할 수 없습니다. Layla의 Web UI 연결은 txt2img만 호출합니다.
+- <strong>이미지에서 이미지(Image to image)</strong>는 사용할 수 없습니다. Layla의 Web UI 연결은 txt2img만 호출합니다.
 
 ## Stable Diffusion WebUI API 요청 템플릿 (JSON)
 

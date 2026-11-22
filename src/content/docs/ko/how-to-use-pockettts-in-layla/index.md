@@ -32,7 +32,7 @@ PocketTTS는 TTS 기능으로, 텍스트에서 음성을 만들지만 캐릭터 
 
 1. Layla에서 **My Apps**를 여세요.
 2. 더하기 기호를 누르세요.
-3. **Pocket TTS (Voice Cloning)**을 찾아 설치하세요.
+3. <strong>Pocket TTS (Voice Cloning)</strong>을 찾아 설치하세요.
 4. **My Apps**에서 **Pocket TTS**를 여세요.
 
 설치에는 로컬 TTS 파일 다운로드를 위한 인터넷 연결이 필요합니다. 이후 복제와 생성은 기기에서 실행할 수 있습니다. 자세한 내용은 [미니 앱 활성화 또는 비활성화 방법](/how-to-enable-disable-mini-apps-within-layla/)을 참조하세요.

@@ -54,7 +54,7 @@ Local Dream은 기기 내 생성을 담당합니다. 선택 기능이므로 기�
 1. Layla 미니 앱 화면(**Browse Apps**)에서 **Local Dream**을 찾습니다. 위치는 [미니 앱 활성화 및 비활성화](/ko/how-to-enable-disable-mini-apps-within-layla/)를 참고하세요.
 2. 페이지를 열고 설명을 읽습니다. 추가 다운로드는 약 54 MB로 모델보다 작습니다.
 3. **Download**를 누릅니다.
-4. 미니 앱을 엽니다. 상단에는 _On-device image generation_이 표시됩니다.
+4. 미니 앱을 엽니다. 상단에는 *On-device image generation*이 표시됩니다.
 
 ![Browse Apps의 Local Dream 페이지. 설명과 54 MB 추가 다운로드, Download 버튼이 표시됩니다.](../../how-to-enable-image-generation-in-layla/install-local-dream-mini-app-layla.jpg)
 
@@ -166,7 +166,7 @@ Local Dream은 직접 생성할 때 씁니다. Layla와 캐릭터가 채팅 중 
 Inference Settings는 기본값일 뿐입니다. 각 사용자 지정 캐릭터는 별도 모델과 전송 규칙을 가질 수 있습니다. 채팅 중 사진을 보내거나 한 캐릭터는 애니메이션, 다른 캐릭터는 사실적인 스타일을 쓰게 할 수 있습니다.
 
 1. 캐릭터를 만들거나 편집합니다. 전체 설명은 [사용자 지정 캐릭터 만들기](/ko/how-do-i-create-custom-characters/)를 참고하세요.
-2. **Advanced** 탭의 **OUTPUT**에서 **Image generation**을 찾습니다. 현재 모델이나 _No image generation_이 표시됩니다.
+2. **Advanced** 탭의 **OUTPUT**에서 **Image generation**을 찾습니다. 현재 모델이나 *No image generation*이 표시됩니다.
 3. 눌러 **Select Model**에서 고릅니다. **No Image Generation**은 해당 캐릭터의 생성을 끕니다.
 4. 아래 옵션을 조정하고 **Save**를 누릅니다.
 

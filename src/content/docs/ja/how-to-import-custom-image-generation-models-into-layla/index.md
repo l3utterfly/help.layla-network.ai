@@ -104,7 +104,7 @@ Androidではsafetensorsの代わりに`.gguf`拡散モデルを選べます。�
 
 ### LoRA
 
-LoRAはスタイルや人物・概念を追加する小さなファイルです。**LORA FILES (OPTIONAL)**の**Add LoRA**で`.safetensors`を選び、強さを指定します。初期値は1.0で、複数追加できます。
+LoRAはスタイルや人物・概念を追加する小さなファイルです。<strong>LORA FILES (OPTIONAL)</strong>の**Add LoRA**で`.safetensors`を選び、強さを指定します。初期値は1.0で、複数追加できます。
 
 適用方法は系統で異なります。
 

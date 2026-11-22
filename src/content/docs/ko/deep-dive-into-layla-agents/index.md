@@ -32,7 +32,7 @@ Layla에는 여러 종류의 트리거가 있습니다. 다음 이미지는 그�
 
 ![Intent, Regex, Phrase, Date or Time, MCP Tool, Layla Tool, Voice Mode 트리거가 표시된 Layla 화면.](./trigger-types.jpg)
 
-- **Intent** — Layla가 입력의 의도를 분류하고 감지된 의도에 따라 Agent를 실행합니다. 분류기에는 “search news”, “query weather”, “set alarm”, “set calendar” 등 많은 의도가 포함되어 있습니다. _Intent Trigger_를 추가한 뒤 드롭다운에서 전체 목록을 확인할 수 있습니다.
+- **Intent** — Layla가 입력의 의도를 분류하고 감지된 의도에 따라 Agent를 실행합니다. 분류기에는 “search news”, “query weather”, “set alarm”, “set calendar” 등 많은 의도가 포함되어 있습니다. *Intent Trigger*를 추가한 뒤 드롭다운에서 전체 목록을 확인할 수 있습니다.
 - **Regex** — 입력한 정규식이 채팅 메시지에서 일치하면 Agent가 실행됩니다. 일치한 문자열이 첫 번째 도구의 입력이 됩니다.
 - **Phrase** — 입력한 문구가 대소문자 구분 없이 메시지에서 감지되면 Agent가 실행됩니다. 일치한 문구가 첫 번째 도구의 입력이 됩니다.
 - **Date/Time Detected** — 메시지에서 날짜 또는 시간이 감지되면 Agent가 실행됩니다. 감지된 값이 첫 번째 도구의 입력이 됩니다.
@@ -59,9 +59,9 @@ _HTTP Request_ 도구에는 설정할 수 있는 매개변수가 여러 개 있�
 
 ![Meow Facts API로 HTTP Request를 보내도록 설정하는 Edit Agent 화면.](./http-request-config.jpg)
 
-각 도구의 출력은 다음 도구의 입력으로 사용됩니다. 이 방식으로 하나의 Agent에 여러 도구를 연결할 수 있습니다. 위 예에서 _HTTP Request_의 출력은 설정된 매개변수로 URL을 호출한 후 반환된 원시 문자열입니다.
+각 도구의 출력은 다음 도구의 입력으로 사용됩니다. 이 방식으로 하나의 Agent에 여러 도구를 연결할 수 있습니다. 위 예에서 *HTTP Request*의 출력은 설정된 매개변수로 URL을 호출한 후 반환된 원시 문자열입니다.
 
-_Provide Context_는 Agent의 최종 출력을 LLM 컨텍스트에 넣는 중요한 도구입니다. Agent 실행 후 LLM에 근거가 되는 결과를 제공합니다.
+*Provide Context*는 Agent의 최종 출력을 LLM 컨텍스트에 넣는 중요한 도구입니다. Agent 실행 후 LLM에 근거가 되는 결과를 제공합니다.
 
 **Agents 테스트하기**
 

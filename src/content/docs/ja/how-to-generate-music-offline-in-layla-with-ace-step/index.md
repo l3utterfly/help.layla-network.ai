@@ -43,7 +43,7 @@ Laylaは[acestep.cpp](https://github.com/ServeurpersoCom/acestep.cpp)というGG
 
 ## ステップ1：Music Generationミニアプリを有効にする
 
-音楽生成はオプション機能のため、既定では有効になっていません。_マイアプリ_を開き、右上のプラス記号をタップして利用可能な機能を一覧し、**Music Generation (Ace Step)** を有効にしてください。
+音楽生成はオプション機能のため、既定では有効になっていません。*マイアプリ*を開き、右上のプラス記号をタップして利用可能な機能を一覧し、**Music Generation (Ace Step)** を有効にしてください。
 
 ミニアプリの仕組みを使うのが初めての場合は、[Laylaでミニアプリを有効または無効にする方法](/ja/how-to-enable-disable-mini-apps-within-layla/)をご覧ください。
 

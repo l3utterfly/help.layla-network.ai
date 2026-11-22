@@ -54,7 +54,7 @@ Local Dreamが端末内の画像生成を担当します。任意の機能で、
 1. Laylaのミニアプリ画面（**Browse Apps**）で**Local Dream**を探します。場所は[ミニアプリの有効化と無効化](/ja/how-to-enable-disable-mini-apps-within-layla/)をご覧ください。
 2. ページを開いて説明を読みます。追加ダウンロードは約54 MBで、モデルより小さいサイズです。
 3. **Download**をタップします。
-4. ミニアプリを開きます。見出しに_On-device image generation_と表示されます。
+4. ミニアプリを開きます。見出しに*On-device image generation*と表示されます。
 
 ![Browse Apps内のLocal Dreamページ。説明、54 MBの追加ダウンロード、Downloadボタンが表示されています。](../../how-to-enable-image-generation-in-layla/install-local-dream-mini-app-layla.jpg)
 
@@ -69,7 +69,7 @@ Local Dream上部のモデルカードか矢印をタップし、**Select Model*
 ![Select Model一覧。検索、Downloaded、CPU、NPU、Cloud、TagsのフィルターとSD1.5 Base、DreamShaperが表示されています。](../../how-to-enable-image-generation-in-layla/select-image-generation-model-local-dream.jpg)
 
 - **Search**でモデル名を検索できます。
-- **フィルター**で**Downloaded**、**CPU**、**NPU**、**Cloud**に絞れます。**Tags**は_realistic_、_anime_、_sdxl_などのスタイル用です。
+- **フィルター**で**Downloaded**、**CPU**、**NPU**、**Cloud**に絞れます。**Tags**は*realistic*、_anime_、*sdxl*などのスタイル用です。
 - 未取得のカードにはダウンロードアイコン、取得済みにはチェックが表示されます。隅のバッジはCPU、NPU、Cloudの区別です。
 
 モデルを選び**Download Model**をタップします。SD 1.5の約1 GBから、大型NPUモデルの10 GB超まであるため、Wi-Fiと空き容量を確認してください。モデルは端末に保存され、**Delete Model**でいつでも容量を空けられます。
@@ -166,7 +166,7 @@ Local Dreamは手動生成用です。チャット中にLaylaやキャラクタ�
 Inference Settingsは共通の初期設定です。カスタムキャラクターごとにモデルと送信条件を変えられます。会話中に画像を送ったり、一方をアニメ調、もう一方を写実的にしたりできます。
 
 1. キャラクターを作成または編集します。全体の説明は[カスタムキャラクターの作成](/ja/how-do-i-create-custom-characters/)をご覧ください。
-2. **Advanced**タブの**OUTPUT**内で**Image generation**を探します。モデル名か_No image generation_が表示されます。
+2. **Advanced**タブの**OUTPUT**内で**Image generation**を探します。モデル名か*No image generation*が表示されます。
 3. タップして**Select Model**から選びます。**No Image Generation**ならそのキャラクターの生成を無効化します。
 4. 以下の設定を調整し、**Save**をタップします。
 
@@ -176,7 +176,7 @@ Inference Settingsは共通の初期設定です。カスタムキャラクタ�
 
 - **Send images randomly**：依頼がなくても会話中に画像を送れます。初期状態は無効です。
 - **Generate Images based on your character's profile image**：常にプロフィール画像を画像間生成の出発点にして、外見を近づけます。対応モデルが必要です。上の設定表で確認してください。
-- **Fallback phrase**：_写真を送って_や_画像を生成して_などをカンマ区切りで指定します。メッセージに含まれると画像を提案します。通常の画像、写真、セルフィーの依頼も認識するため、自分が使う言い方や他言語の表現を追加する欄です。
+- **Fallback phrase**：*写真を送って*や*画像を生成して*などをカンマ区切りで指定します。メッセージに含まれると画像を提案します。通常の画像、写真、セルフィーの依頼も認識するため、自分が使う言い方や他言語の表現を追加する欄です。
 
 画像の提案は断れます。意図せず一致しても、提案を閉じるだけです。
 

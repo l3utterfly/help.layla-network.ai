@@ -81,7 +81,7 @@ GoogleのGeminiアプリでも、AndroidでNano Bananaを使えます。ここ�
 1. **システムプロンプトがモデルにタグを求めます。** Agentは、画像をリクエストしたときに、キャラクターの言語モデルが詳細な画像の描写を`<stable_diffusion_prompt></stable_diffusion_prompt>`タグの中に書くよう指示を追加します。
 2. **トリガーがタグを検出します。** Agentにはモデルの返信を監視する正規表現トリガーがあります。タグを見つけると、中のテキストを取り出してAgentを起動します。
 3. **スクリプトがAPIを呼び出します。** Agentの最初のツールは短いJavaScriptプログラムを実行します。描写をGoogleに送り、画像を受け取って、ファイルとして保存します。
-4. **画像がチャットに表示されます。** 2つ目のツール_Display Image_が、保存されたファイルを受け取って会話に表示します。
+4. **画像がチャットに表示されます。** 2つ目のツール*Display Image*が、保存されたファイルを受け取って会話に表示します。
 
 言語モデルがGoogleと直接やり取りすることはありません。モデルが書くのはテキストだけです。それ以降はすべてAgentが処理するため、APIのあるどのサービスでも同じパターンが使えます。
 
@@ -89,13 +89,13 @@ GoogleのGeminiアプリでも、AndroidでNano Bananaを使えます。ここ�
 
 ## 必要なもの
 
-- インストール済みの_Agent_ミニアプリ。Agentを使ったことがない場合は、先に[LaylaでAgent、Function、Tool Callingを有効にする方法](/how-to-enable-agents-functions-and-tool-calling-in-layla/)をお読みください。
+- インストール済みの*Agent*ミニアプリ。Agentを使ったことがない場合は、先に[LaylaでAgent、Function、Tool Callingを有効にする方法](/how-to-enable-agents-functions-and-tool-calling-in-layla/)をお読みください。
 - Googleアカウント。
 - 課金を有効にしたGemini APIキー（Nano Banana APIキー）。次のセクションで取得方法を説明します。
 - インターネット接続。
 - この記事の最後にリンクがあるAgentファイル。
 
-このAgentはLaylaに内蔵されている_Eval_ツールを使います。Pythonインタープリターミニアプリは不要です。
+このAgentはLaylaに内蔵されている*Eval*ツールを使います。Pythonインタープリターミニアプリは不要です。
 
 ## Google AI StudioでNano Banana APIキーを取得する方法
 
@@ -111,17 +111,17 @@ Nano Banana専用のキーはありません。必要なのはGemini APIキー�
 
 ### ステップ2：キーを作成する
 
-_API Keys_ページには、プロジェクト内のキーが一覧表示されます。**Create API key**を選びます。
+*API Keys*ページには、プロジェクト内のキーが一覧表示されます。**Create API key**を選びます。
 
 ![右上にCreate API keyボタンがあるGoogle AI StudioのAPI Keysページ。](./ai-studio-api-keys-page.jpg)
 
 ### ステップ3：キーに名前を付けてプロジェクトを選ぶ
 
-分かりやすい名前（例：「Layla」）を入力し、プロジェクトを選びます。新しいアカウントには_Default Gemini Project_というプロジェクトがあります。**Create key**を選びます。
+分かりやすい名前（例：「Layla」）を入力し、プロジェクトを選びます。新しいアカウントには*Default Gemini Project*というプロジェクトがあります。**Create key**を選びます。
 
 ![キー名の入力欄とプロジェクト選択がある「Create a new key」ダイアログ。](./ai-studio-create-key-dialog.jpg)
 
-APIキーはすべてGoogle Cloudプロジェクトに属し、プロジェクトが課金と利用上限を管理します。すでにGoogle Cloudを使っている場合、AI Studioは既存のプロジェクトを自動では表示しません。_Import projects_ボタンで使いたいプロジェクトを追加してください。Googleはこの点を[Using Gemini API keys](https://ai.google.dev/gemini-api/docs/api-key)で説明しています。
+APIキーはすべてGoogle Cloudプロジェクトに属し、プロジェクトが課金と利用上限を管理します。すでにGoogle Cloudを使っている場合、AI Studioは既存のプロジェクトを自動では表示しません。*Import projects*ボタンで使いたいプロジェクトを追加してください。Googleはこの点を[Using Gemini API keys](https://ai.google.dev/gemini-api/docs/api-key)で説明しています。
 
 ### ステップ4：キーをコピーする
 
@@ -133,11 +133,11 @@ APIキーはすべてGoogle Cloudプロジェクトに属し、プロジェク�
 
 ### ステップ5：課金を設定する
 
-前のスクリーンショットのQuota Tier列には_Free tier_と表示され、隣に**Set up billing**リンクがあります。このステップは必須です。GoogleはAPIのNano Banana画像モデルに無料枠を提供していないためです。キーが属するプロジェクトには請求先アカウントが必要です。
+前のスクリーンショットのQuota Tier列には*Free tier*と表示され、隣に**Set up billing**リンクがあります。このステップは必須です。GoogleはAPIのNano Banana画像モデルに無料枠を提供していないためです。キーが属するプロジェクトには請求先アカウントが必要です。
 
 **Set up billing**を選び、Googleの案内に従って、国を選択し、規約に同意し、支払い方法を追加します。アカウントによっては、Googleから最低額（現在は$5）のクレジットの前払いを求められる場合があります。現在の手順とプランは、Googleの[課金ガイド](https://ai.google.dev/gemini-api/docs/billing)に記載されています。
 
-Googleは画像1枚ごとに課金します。執筆時点では、Nano Banana Proの1Kまたは2K画像は$0.134、4K画像は$0.24です。この記事のAgentは1K画像をリクエストします。料金は変わるため、始める前にGoogleの[料金ページ](https://ai.google.dev/gemini-api/docs/pricing)を確認してください。利用状況は、AI Studioの_Dashboard_、次に_Usage_で確認できます。
+Googleは画像1枚ごとに課金します。執筆時点では、Nano Banana Proの1Kまたは2K画像は$0.134、4K画像は$0.24です。この記事のAgentは1K画像をリクエストします。料金は変わるため、始める前にGoogleの[料金ページ](https://ai.google.dev/gemini-api/docs/pricing)を確認してください。利用状況は、AI Studioの*Dashboard*、次に*Usage*で確認できます。
 
 Googleの料金ページには、有料プランで送信されたコンテンツはGoogleの製品改善に使われないとも記載されています。
 
@@ -161,15 +161,15 @@ Nano Banana ProとNano Banana 2を比べると、Proは1K画像あたりの価�
 
 ### ステップ1：Laylaのデフォルトの画像生成をオフにする
 
-_推論設定_を開き、_画像生成_セクションまでスクロールして、画像生成モデルを選びます。_Select Model_の一覧で**No Image Generation**（画像生成なし）を選びます。
+*推論設定*を開き、*画像生成*セクションまでスクロールして、画像生成モデルを選びます。*Select Model*の一覧で**No Image Generation**（画像生成なし）を選びます。
 
 ![Select Modelの一覧が開き、No Image Generationが選択された推論設定の画面。](./no-img-gen-settings.jpg)
 
-Layla内蔵の画像生成も、キャラクターの返信から同じ`<stable_diffusion_prompt>`タグを読み取ります。モデルが選択されたままだと、Laylaがそのタグから独自の画像を生成し、画像が2枚届きます。_No Image Generation_を選んでおけば、タグはAgentに任されます。[Laylaで画像生成を有効にする方法](/how-to-enable-image-generation-in-layla/)で、この設定の場所を確認できます。
+Layla内蔵の画像生成も、キャラクターの返信から同じ`<stable_diffusion_prompt>`タグを読み取ります。モデルが選択されたままだと、Laylaがそのタグから独自の画像を生成し、画像が2枚届きます。*No Image Generation*を選んでおけば、タグはAgentに任されます。[Laylaで画像生成を有効にする方法](/how-to-enable-image-generation-in-layla/)で、この設定の場所を確認できます。
 
 ### ステップ2：Agentをインポートする
 
-この記事の最後にあるAgentファイルをダウンロードします。_Agent_ミニアプリを開き、右上の**Import**ボタンでインポートします。Agent名は_Google Nano Banana: generate image_で、カードには使用する2つのツール、_Eval_と_Display Image_が表示されます。
+この記事の最後にあるAgentファイルをダウンロードします。*Agent*ミニアプリを開き、右上の**Import**ボタンでインポートします。Agent名は*Google Nano Banana: generate image*で、カードには使用する2つのツール、*Eval*と*Display Image*が表示されます。
 
 ![インポートしたGoogle Nano Banana Agentと、そのEvalおよびDisplay Imageツール、Edit、Test、Moreボタンが表示されたAgentミニアプリ。](./imported-agent.jpg)
 
@@ -177,7 +177,7 @@ Agentのカードの右上にあるスイッチがオンになっていること
 
 ### ステップ3：APIキーを追加する
 
-**Edit**ボタンでAgentを開き、_Eval_ツールを探します。コードの冒頭付近に次の行があります。
+**Edit**ボタンでAgentを開き、*Eval*ツールを探します。コードの冒頭付近に次の行があります。
 
 ```js
 const API_KEY = "PUT YOUR API KEY HERE";
@@ -223,7 +223,7 @@ never put backticks inside them.
 
 ### 2. トリガー
 
-このAgentにはトリガーが1つあります。入力ではなく、モデルの**出力**に対して動作する_正規表現トリガー_です。パターンは次のとおりです。
+このAgentにはトリガーが1つあります。入力ではなく、モデルの**出力**に対して動作する*正規表現トリガー*です。パターンは次のとおりです。
 
 ```text
 /<stable_diffusion_prompt>(.*?)<\/stable_diffusion_prompt>/s
@@ -237,7 +237,7 @@ never put backticks inside them.
 
 ### 3. Evalツール：APIを呼び出す
 
-最初のツールは_Eval_です。Layla内のサンドボックス化された実行環境でJavaScriptを実行します。この環境には、Webリクエスト用の`fetch`と、ファイルの保存などLaylaの機能にスクリプトからアクセスするためのグローバルオブジェクト`layla`があります。ブラウザのページやNode.jsのモジュールはありません。
+最初のツールは*Eval*です。Layla内のサンドボックス化された実行環境でJavaScriptを実行します。この環境には、Webリクエスト用の`fetch`と、ファイルの保存などLaylaの機能にスクリプトからアクセスするためのグローバルオブジェクト`layla`があります。ブラウザのページやNode.jsのモジュールはありません。
 
 Evalはスクリプトの最後の式の値を返し、それがPromiseの場合は完了を待ちます。これが、処理を開始するスクリプトの最終行`generateImage(PROMPT);`の理由です。
 
@@ -402,21 +402,21 @@ throw new Error(
 
 ### 4. Display Imageツール
 
-2つ目のツールは_Display Image_で、設定は次の1つだけです。
+2つ目のツールは*Display Image*で、設定は次の1つだけです。
 
 ```text
 {{input}}
 ```
 
-`{{input}}`は、前のツールの出力、つまりスクリプトが返したファイルパスに置き換えられます。_Display Image_は、キャラクターのワークスペースからそのファイルを開いて返信に添付し、画像がチャットに表示されます。
+`{{input}}`は、前のツールの出力、つまりスクリプトが返したファイルパスに置き換えられます。*Display Image*は、キャラクターのワークスペースからそのファイルを開いて返信に添付し、画像がチャットに表示されます。
 
 ## AIキャラクターの画像を一貫させる
 
 言語モデルは、画像の描写を毎回ゼロから書きます。そのため、何も指示がないと、キャラクターの見た目が画像ごとに変わることがあります。次の方法で、AIキャラクターの画像を一貫させ、画像が表示される頻度も決められます。
 
-- **キャラクターを一度だけ描写する。** キャラクターの_シナリオ_に、次のような指示を追加します。「`<stable_diffusion_prompt>`を書くときは、自分自身についての次の描写から始めること：20代後半の女性、短い赤い髪、緑の瞳、そばかす。そのあとでシーンを描写すること。」モデルがすべてのプロンプトで外見を繰り返すため、画像モデルが毎回同じキャラクターを描きやすくなります。
+- **キャラクターを一度だけ描写する。** キャラクターの*シナリオ*に、次のような指示を追加します。「`<stable_diffusion_prompt>`を書くときは、自分自身についての次の描写から始めること：20代後半の女性、短い赤い髪、緑の瞳、そばかす。そのあとでシーンを描写すること。」モデルがすべてのプロンプトで外見を繰り返すため、画像モデルが毎回同じキャラクターを描きやすくなります。
 - **画風を固定する。** 同じ指示に画風を加えます。たとえば「35mmフィルム写真、自然光」や「水彩イラスト」などです。[PerchanceのAgentでLaylaにAI画像を生成させる方法](/how-to-use-the-perchance-image-generation-agent/)でも同じ方法を説明しており、このタグを使うどのAgentでも使えます。
-- **メッセージごとに画像を生成する。** [画像生成Agentを作成する方法](/creating-an-image-generation-agent/)のように、_シナリオ_に各返信の最後にタグを付ける指示を追加します。すると、すべての返信に画像が付きます。AIロールプレイやストーリーに向いています。画像1枚ごとに課金されるため、リクエストしたときだけ画像を出す場合より費用がかかります。
+- **メッセージごとに画像を生成する。** [画像生成Agentを作成する方法](/creating-an-image-generation-agent/)のように、*シナリオ*に各返信の最後にタグを付ける指示を追加します。すると、すべての返信に画像が付きます。AIロールプレイやストーリーに向いています。画像1枚ごとに課金されるため、リクエストしたときだけ画像を出す場合より費用がかかります。
 - **参照画像を使う。** Nano Bananaモデルは画像を入力として受け取ることもでき、キャラクターの顔を保つのに役立ちます。このAgentが送るのはテキストだけなので、リクエストに参照画像を追加するのは、次に取り組むのに良いプロジェクトです。
 
 ## 同じパターンで他のAgentを作る
@@ -426,7 +426,7 @@ Nano Banana Agentはテンプレートです。システムプロンプト、正
 - **モデルや設定を変更する。** スクリプトで`MODEL_ID`や`imageSize`を編集するか、`aspectRatio`を追加します。Googleは価格の異なる複数のNano Bananaモデルを提供しており、[料金ページ](https://ai.google.dev/gemini-api/docs/pricing)に掲載されています。
 - **別の画像サービスを使う。** リクエストとレスポンスの処理を置き換えます。サービスがbase64テキストを返す場合、保存のステップはそのままです。Webアドレスを返す場合は、そのアドレスを取得し、`layla.utils.saveFile`を呼ぶ前に`toBase64()`でバイト列を変換します。
 - **描写以外の情報もモデルに求める。** システムプロンプトで、自由なテキストではなく、`prompt`と`aspect_ratio`を持つ短いJSONオブジェクトなど、いくつかのフィールドを求めることができます。スクリプトは取り出したテキストからフィールドを読み取ります。Agentが`PROMPT`で行っているように、プレースホルダーは文字列リテラルの中に置き、テキストの解析は自分のコードで行ってください。
-- **画像以外のことをする。** `<weather_request>`のような別のタグを選び、_Eval_に別のAPIを呼び出させ、最後に_Provide Context_ツールを使って、キャラクターが結果について話せるようにします。[Brave Search Agentを作成する方法](/how-to-create-a-brave-search-agent/)が、この流れの例です。
+- **画像以外のことをする。** `<weather_request>`のような別のタグを選び、*Eval*に別のAPIを呼び出させ、最後に*Provide Context*ツールを使って、キャラクターが結果について話せるようにします。[Brave Search Agentを作成する方法](/how-to-create-a-brave-search-agent/)が、この流れの例です。
 
 自分のAgentを書くときに、このAgentから取り入れる価値のある習慣がいくつかあります。
 
@@ -442,7 +442,7 @@ Nano Banana Agentはテンプレートです。システムプロンプト、正
 
 ### Nano Banana APIキーはどうすれば取得できますか？
 
-Nano Banana専用のキーはありません。[Google AI Studio](https://aistudio.google.com)にログインし、_API Keys_ページを開いて**Create API key**を選びます。その後、キーのプロジェクトで課金を有効にしてください。APIのNano Bananaモデルには無料枠がないためです。
+Nano Banana専用のキーはありません。[Google AI Studio](https://aistudio.google.com)にログインし、*API Keys*ページを開いて**Create API key**を選びます。その後、キーのプロジェクトで課金を有効にしてください。APIのNano Bananaモデルには無料枠がないためです。
 
 ### Nano Banana APIは無料ですか？
 
@@ -462,7 +462,7 @@ Nano Banana Proは複雑なシーン向けのGoogleのプレミアム画像モ�
 
 ### AIキャラクターはチャットやロールプレイ中に画像を送れますか？
 
-はい。チャットで画像をリクエストするか、キャラクターの_シナリオ_に、各返信の最後に画像の描写を付ける指示を追加します。画像の一貫性に関するセクションで、両方の方法を説明しています。
+はい。チャットで画像をリクエストするか、キャラクターの*シナリオ*に、各返信の最後に画像の描写を付ける指示を追加します。画像の一貫性に関するセクションで、両方の方法を説明しています。
 
 ### Nano Bananaは画像をフィルタリングしますか？
 
@@ -470,11 +470,11 @@ Nano Banana Proは複雑なシーン向けのGoogleのプレミアム画像モ�
 
 ### 画像が2枚届いたのはなぜですか？
 
-Layla内蔵の画像生成がまだ有効になっている可能性が高いです。推論設定で_No Image Generation_を選び、タグをAgentだけが処理するようにしてください。
+Layla内蔵の画像生成がまだ有効になっている可能性が高いです。推論設定で*No Image Generation*を選び、タグをAgentだけが処理するようにしてください。
 
 ### Agentに「Set API_KEY in this agent first.」と表示されます
 
-キーのプレースホルダーがスクリプトに残っています。Agentを開いて_Eval_ツールを編集し、`PUT YOUR API KEY HERE`を自分のキーに置き換えてください。
+キーのプレースホルダーがスクリプトに残っています。Agentを開いて*Eval*ツールを編集し、`PUT YOUR API KEY HERE`を自分のキーに置き換えてください。
 
 ### AgentにHTTPエラーが表示されます。これは何ですか？
 
@@ -502,7 +502,7 @@ Googleは、Nano Bananaモデルで生成されたすべての画像にSynthID�
 
 ## まとめ
 
-Nano Banana Agentは、AIチャット向けの画像生成Agentがどれほど小さくできるかを示しています。システムプロンプトでモデルにタグ付きの描写を書かせ、正規表現トリガーがそれを捉え、短いスクリプトが描写を画像に変え、_Display Image_が結果をチャットに表示します。この4つの要素を理解すれば、サービス、モデル、設定を入れ替えて、Laylaが標準ではサポートしていない画像サービス向けのAgentを作れます。
+Nano Banana Agentは、AIチャット向けの画像生成Agentがどれほど小さくできるかを示しています。システムプロンプトでモデルにタグ付きの描写を書かせ、正規表現トリガーがそれを捉え、短いスクリプトが描写を画像に変え、*Display Image*が結果をチャットに表示します。この4つの要素を理解すれば、サービス、モデル、設定を入れ替えて、Laylaが標準ではサポートしていない画像サービス向けのAgentを作れます。
 
 完全にオフラインで画像を生成したい場合は、引き続きLaylaのローカルモデルが適しています。このようなAgentは、特定のオンラインモデルを使いたく、接続と費用を受け入れられる場合の選択肢です。
 

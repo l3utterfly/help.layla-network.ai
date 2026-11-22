@@ -58,7 +58,7 @@ _Edit_ 버튼을 누르면 Agent 세부 정보가 있는 팝업이 열립니다.
 
 ![문구 트리거가 설정된 Cat Facts Agent.](./cat-fact-trigger.jpg)
 
-_트리거 문구_ 는 “cat fact”입니다. 대소문자를 구분하지 않으므로 “cat fact”와 “Cat fact” 모두 작동합니다. 트리거가 하나뿐이므로 _exclusivity_ 옵션은 영향을 주지 않습니다. _OR_로 두세요.
+_트리거 문구_ 는 “cat fact”입니다. 대소문자를 구분하지 않으므로 “cat fact”와 “Cat fact” 모두 작동합니다. 트리거가 하나뿐이므로 _exclusivity_ 옵션은 영향을 주지 않습니다. *OR*로 두세요.
 
 이제 Agent에 도구를 추가하세요. _HTTP Request_ 도구를 사용하겠습니다. 고양이 상식 공개 API의 문서는 다음에서 확인할 수 있습니다: [GitHub의 MeowFacts](https://github.com/wh-iterabb-it/meowfacts).
 
@@ -74,7 +74,7 @@ _URL_ 필드에는 API 문서에 나온 URL을 그대로 입력합니다. 요청
 
 이 도구는 지정한 API로 GET 요청을 보내고 결과를 가져옵니다. 다음으로 Layla에 결과를 사용하는 방법을 _알려줘야_ 합니다. 가장 간단한 방법은 _Provide Context_ 도구입니다. 이 도구는 입력값을 받아 대화 컨텍스트에 삽입합니다. Layla는 그 컨텍스트를 바탕으로 응답합니다.
 
-도구 맨 아래로 스크롤하고 _Add Tool_을 다시 누르세요. 이번에는 _Provide Context_를 선택합니다. 방금 추가한 _HTTP Request_ 도구 뒤에 연결됩니다.
+도구 맨 아래로 스크롤하고 *Add Tool*을 다시 누르세요. 이번에는 *Provide Context*를 선택합니다. 방금 추가한 _HTTP Request_ 도구 뒤에 연결됩니다.
 
 ![Provide Context를 화살표로 표시한 도구 목록.](./choose-provide-context.jpg)
 
@@ -100,7 +100,7 @@ _Provide Context_ 도구는 이 과정에서 매우 중요합니다. 일반적�
 
 LLM의 “두뇌”를 사용하는 조금 더 복잡한 Agent의 예를 살펴보겠습니다.
 
-다른 API로 간단한 _HTTP Request_를 보냅니다. 이 API는 임의의 강아지 사진을 반환합니다: [https://random.dog/woof.json](https://random.dog/woof.json).
+다른 API로 간단한 *HTTP Request*를 보냅니다. 이 API는 임의의 강아지 사진을 반환합니다: [https://random.dog/woof.json](https://random.dog/woof.json).
 
 이번에는 API가 이미지 URL을 반환합니다. 그러면 LLM에 URL을 올바른 형식으로 만들고 표시하도록 요청합니다.
 

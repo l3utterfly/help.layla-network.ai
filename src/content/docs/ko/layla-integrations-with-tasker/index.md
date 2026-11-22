@@ -51,7 +51,7 @@ Tasker 연동은 Android에서만 사용할 수 있습니다.
 
 ### 1단계: 작업을 만들고 액션 추가하기
 
-Tasker를 열고 새 작업을 만든 다음 **+**를 눌러 액션을 추가합니다. Tasker가 액션 카테고리를 선택하라고 안내합니다. **Plugin**을 선택합니다.
+Tasker를 열고 새 작업을 만든 다음 <strong>+</strong>를 눌러 액션을 추가합니다. Tasker가 액션 카테고리를 선택하라고 안내합니다. **Plugin**을 선택합니다.
 
 ![Plugin이 보이는 Tasker의 액션 카테고리 목록.](./select-plugins.jpg)
 

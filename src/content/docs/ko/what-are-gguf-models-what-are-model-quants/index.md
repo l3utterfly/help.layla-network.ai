@@ -120,7 +120,7 @@ Hugging Face에서 GGUF로 표시된 모델은 GGUF 형식으로 변환되어 La
 
 ### GGUF가 safetensors 또는 PyTorch보다 낫나요?
 
-용도가 다릅니다. PyTorch와 safetensors는 전체 정밀도, 큰 크기, GPU 중심의 학습 및 연구 형식입니다. GGUF는 양자화되고 작으며 CPU, 휴대전화 및 보급형 GPU에 최적화된 **추론** 형식입니다. 모델을 _학습_하는 대신 _사용_하려면 GGUF가 더 적합합니다.
+용도가 다릅니다. PyTorch와 safetensors는 전체 정밀도, 큰 크기, GPU 중심의 학습 및 연구 형식입니다. GGUF는 양자화되고 작으며 CPU, 휴대전화 및 보급형 GPU에 최적화된 **추론** 형식입니다. 모델을 *학습*하는 대신 *사용*하려면 GGUF가 더 적합합니다.
 
 ### Android에서 GGUF 모델을 실행할 수 있나요?
 

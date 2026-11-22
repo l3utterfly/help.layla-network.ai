@@ -32,7 +32,7 @@ Laylaには多くのトリガーがあります。次の画像はその一部で
 
 ![Intent、Regex、Phrase、Date or Time、MCP Tool、Layla Tool、Voice Modeトリガーを表示したLaylaの画面。](./trigger-types.jpg)
 
-- **Intent** — Laylaが入力の意図を分類し、検出した意図に応じてAgentを起動します。分類器には「search news」「query weather」「set alarm」「set calendar」など多数の意図が組み込まれています。_Intent Trigger_を追加すると、ドロップダウンに完全な一覧が表示されます。
+- **Intent** — Laylaが入力の意図を分類し、検出した意図に応じてAgentを起動します。分類器には「search news」「query weather」「set alarm」「set calendar」など多数の意図が組み込まれています。*Intent Trigger*を追加すると、ドロップダウンに完全な一覧が表示されます。
 - **Regex** — 入力した正規表現がチャットメッセージ内で一致するとAgentが起動します。一致した文字列が最初のツールへの入力になります。
 - **Phrase** — 入力した語句が大文字と小文字を区別せずメッセージ内で検出されると起動します。一致した語句が最初のツールへの入力になります。
 - **Date/Time Detected** — メッセージ内で日付または時刻が検出されると起動します。検出した値が最初のツールへの入力になります。

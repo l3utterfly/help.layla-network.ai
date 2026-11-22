@@ -43,7 +43,7 @@ Layla는 GGML 기반 구현인 [acestep.cpp](https://github.com/ServeurpersoCom/
 
 ## 1단계: Music Generation 미니 앱 활성화하기
 
-음악 생성은 선택 기능이라 기본적으로 켜져 있지 않습니다. _내 앱_을 열고 오른쪽 위의 더하기 기호를 눌러 사용할 수 있는 기능을 살펴본 뒤 **Music Generation (Ace Step)** 을 활성화하세요.
+음악 생성은 선택 기능이라 기본적으로 켜져 있지 않습니다. *내 앱*을 열고 오른쪽 위의 더하기 기호를 눌러 사용할 수 있는 기능을 살펴본 뒤 **Music Generation (Ace Step)** 을 활성화하세요.
 
 미니 앱 시스템을 처음 사용한다면 [Layla에서 미니 앱을 활성화하거나 비활성화하는 방법](/ko/how-to-enable-disable-mini-apps-within-layla/)을 참고하세요.
 

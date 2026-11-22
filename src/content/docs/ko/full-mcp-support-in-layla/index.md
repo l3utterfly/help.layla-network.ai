@@ -34,7 +34,7 @@ _Layla: Introspection_ Agent는 Layla에서 MCP 도구 호출을 사용하는 �
 
 ![여러 Layla Tool Trigger가 표시된 Layla Introspection Agent 편집 화면.](./introspection-agent.jpg)
 
-모든 트리거가 이전 문서에서 언급한 특별한 “Layla Tool Trigger”를 사용한다는 점이 핵심입니다. 이 트리거는 가능한 모든 도구의 시그니처를 시스템 프롬프트에 삽입하도록 Agent에 지시합니다. 이 예에서는 _Layla Apps Info_, _Layla: Clear Caches_, _Layla: Operating Stats_의 시그니처가 삽입됩니다.
+모든 트리거가 이전 문서에서 언급한 특별한 “Layla Tool Trigger”를 사용한다는 점이 핵심입니다. 이 트리거는 가능한 모든 도구의 시그니처를 시스템 프롬프트에 삽입하도록 Agent에 지시합니다. 이 예에서는 _Layla Apps Info_, _Layla: Clear Caches_, *Layla: Operating Stats*의 시그니처가 삽입됩니다.
 
 _Tools Flow_ 섹션에는 입력값이 `{{match$1}}`인 _Layla Tool Call_ 도구 하나가 있습니다. 도구 호출에 이 형식이 필요하므로 그대로 두세요. Triggers 섹션에 나열된 각 도구를 언제 호출할지는 LLM이 결정하므로 다른 도구를 추가할 필요가 없습니다. 각 도구의 출력은 LLM 컨텍스트에 자동으로 삽입되고, LLM은 필요에 따라 다른 도구 호출을 이어서 실행할 수 있습니다.
 
@@ -62,9 +62,9 @@ Layla에서 _MCP Support_ 미니 앱을 열고 원격 MCP 서버 URL을 입력�
 
 ![원격 서버 URL과 도구 검색 및 Agent 생성 컨트롤이 표시된 MCP Support 화면.](./discover-mcp-tools.jpg)
 
-_Discover Tools_를 누르세요. MCP 서버에 연결하고 사용 가능한 도구 목록을 요청합니다. 이 예에서는 “fetch”라는 도구 하나만 반환되어 표시됩니다.
+*Discover Tools*를 누르세요. MCP 서버에 연결하고 사용 가능한 도구 목록을 요청합니다. 이 예에서는 “fetch”라는 도구 하나만 반환되어 표시됩니다.
 
-도구를 선택해 초록색으로 강조한 다음 _Create Agent_를 누르세요. 선택한 도구가 포함된 새 Layla Agent가 생성됩니다.
+도구를 선택해 초록색으로 강조한 다음 *Create Agent*를 누르세요. 선택한 도구가 포함된 새 Layla Agent가 생성됩니다.
 
 Agents 미니 앱으로 이동하며 “New Agent”라는 새 Agent가 표시됩니다. 이름과 설명은 자유롭게 편집할 수 있습니다.
 
@@ -78,7 +78,7 @@ Triggers, Tool Flow 등 다른 매개변수는 변경하지 마세요. 올바르
 
 ![Create Character 화면의 Advanced 탭.](./character-advanced-tab.jpg)
 
-_Select Agents_를 눌러 팝업을 여세요.
+*Select Agents*를 눌러 팝업을 여세요.
 
 ![Fetch Agent와 다른 Agent가 나열된 Available Agents 팝업.](./available-agents.jpg)
 
@@ -86,13 +86,13 @@ _Fetch_ Agent를 선택하세요. 목록에 표시됩니다.
 
 ![캐릭터에 Fetch Agent가 연결된 Create Character 화면.](./fetch-agent-selected.jpg)
 
-그런 다음 캐릭터를 저장하세요. 이 예에서는 _Kip_의 복제본을 사용합니다.
+그런 다음 캐릭터를 저장하세요. 이 예에서는 *Kip*의 복제본을 사용합니다.
 
 요청하면 Kip이 MCP 도구 호출을 시작합니다.
 
 ![MCP 도구 호출이 표시된 Kip과의 채팅.](./mcp-tool-call.jpg)
 
-MCP 도구 호출 후 _Kip_은 자신의 성격을 유지하며 요청에 응답합니다. 이것이 **개인화**의 의미입니다. 직접 만든 캐릭터는 도구 호출이 포함된 요청에도 설정된 성격으로 응답합니다.
+MCP 도구 호출 후 *Kip*은 자신의 성격을 유지하며 요청에 응답합니다. 이것이 **개인화**의 의미입니다. 직접 만든 캐릭터는 도구 호출이 포함된 요청에도 설정된 성격으로 응답합니다.
 
 ![MCP 도구로 얻은 정보를 캐릭터의 말투로 답하는 Kip.](./personalized-mcp-response.jpg)
 

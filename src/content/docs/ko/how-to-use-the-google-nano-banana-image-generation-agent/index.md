@@ -81,7 +81,7 @@ Google의 Gemini 앱도 Android에서 Nano Banana를 제공합니다. 차이점�
 1. **시스템 프롬프트가 모델에게 태그를 요청합니다.** Agent는 이미지를 요청할 때마다 캐릭터의 언어 모델이 자세한 이미지 묘사를 `<stable_diffusion_prompt></stable_diffusion_prompt>` 태그 안에 쓰도록 지시하는 내용을 추가합니다.
 2. **트리거가 태그를 감지합니다.** Agent에는 모델의 응답을 지켜보는 정규식 트리거가 있습니다. 태그를 발견하면 안의 텍스트를 가져와 Agent를 시작합니다.
 3. **스크립트가 API를 호출합니다.** Agent의 첫 번째 도구는 짧은 JavaScript 프로그램을 실행합니다. 묘사를 Google에 보내고, 이미지를 받아 파일로 저장합니다.
-4. **이미지가 채팅에 나타납니다.** 두 번째 도구인 _Display Image_가 저장된 파일을 가져와 대화에 표시합니다.
+4. **이미지가 채팅에 나타납니다.** 두 번째 도구인 *Display Image*가 저장된 파일을 가져와 대화에 표시합니다.
 
 언어 모델은 Google과 직접 통신하지 않습니다. 텍스트만 씁니다. 그 이후는 모두 Agent가 처리하며, 그래서 같은 패턴이 API가 있는 어떤 서비스에서도 동작합니다.
 
@@ -117,7 +117,7 @@ _API Keys_ 페이지에는 프로젝트의 키 목록이 표시됩니다. **Crea
 
 ### 3단계: 키 이름 정하고 프로젝트 선택하기
 
-알아보기 쉬운 이름(예: "Layla")을 입력하고 프로젝트를 선택합니다. 새 계정에는 _Default Gemini Project_라는 프로젝트가 있습니다. **Create key**를 선택합니다.
+알아보기 쉬운 이름(예: "Layla")을 입력하고 프로젝트를 선택합니다. 새 계정에는 *Default Gemini Project*라는 프로젝트가 있습니다. **Create key**를 선택합니다.
 
 ![키 이름 입력란과 프로젝트 선택기가 있는 Create a new key 대화 상자.](./ai-studio-create-key-dialog.jpg)
 
@@ -133,11 +133,11 @@ _API Keys_ 페이지에는 프로젝트의 키 목록이 표시됩니다. **Crea
 
 ### 5단계: 결제 설정하기
 
-이전 스크린샷의 Quota Tier 열에는 _Free tier_가 표시되고 옆에 **Set up billing** 링크가 있습니다. 이 단계는 필수입니다. Google이 API의 Nano Banana 이미지 모델에는 무료 등급을 제공하지 않기 때문입니다. 키가 속한 프로젝트에는 결제 계정이 있어야 합니다.
+이전 스크린샷의 Quota Tier 열에는 *Free tier*가 표시되고 옆에 **Set up billing** 링크가 있습니다. 이 단계는 필수입니다. Google이 API의 Nano Banana 이미지 모델에는 무료 등급을 제공하지 않기 때문입니다. 키가 속한 프로젝트에는 결제 계정이 있어야 합니다.
 
 **Set up billing**을 선택하고 Google의 안내를 따릅니다. 국가를 선택하고, 약관에 동의하고, 결제 수단을 추가하세요. 계정에 따라 Google이 최소 금액(현재 $5)의 크레딧 선결제를 요구할 수 있습니다. Google의 [결제 가이드](https://ai.google.dev/gemini-api/docs/billing)에 현재 단계와 요금제가 나와 있습니다.
 
-Google은 이미지마다 요금을 부과합니다. 이 글을 쓰는 시점에서 Nano Banana Pro의 1K 또는 2K 이미지는 $0.134, 4K 이미지는 $0.24입니다. 이 글의 Agent는 1K 이미지를 요청합니다. 가격은 바뀔 수 있으므로 시작하기 전에 Google의 [가격 페이지](https://ai.google.dev/gemini-api/docs/pricing)를 확인하세요. 사용량은 AI Studio의 _Dashboard_, 그다음 _Usage_에서 볼 수 있습니다.
+Google은 이미지마다 요금을 부과합니다. 이 글을 쓰는 시점에서 Nano Banana Pro의 1K 또는 2K 이미지는 $0.134, 4K 이미지는 $0.24입니다. 이 글의 Agent는 1K 이미지를 요청합니다. 가격은 바뀔 수 있으므로 시작하기 전에 Google의 [가격 페이지](https://ai.google.dev/gemini-api/docs/pricing)를 확인하세요. 사용량은 AI Studio의 _Dashboard_, 그다음 *Usage*에서 볼 수 있습니다.
 
 Google의 가격 페이지에는 유료 등급에서 전송된 콘텐츠가 Google 제품 개선에 사용되지 않는다는 설명도 있습니다.
 
@@ -161,15 +161,15 @@ Nano Banana Pro와 Nano Banana 2를 비교하면, Pro는 1K 이미지당 가격�
 
 ### 1단계: Layla의 기본 이미지 생성 끄기
 
-_추론 설정_을 열고 _이미지 생성_ 섹션까지 스크롤한 다음 이미지 생성 모델을 선택합니다. _Select Model_ 목록에서 **No Image Generation**(이미지 생성 안 함)을 선택하세요.
+*추론 설정*을 열고 _이미지 생성_ 섹션까지 스크롤한 다음 이미지 생성 모델을 선택합니다. _Select Model_ 목록에서 **No Image Generation**(이미지 생성 안 함)을 선택하세요.
 
 ![Select Model 목록이 열려 있고 No Image Generation이 선택된 추론 설정 화면.](./no-img-gen-settings.jpg)
 
-Layla에 내장된 이미지 생성도 캐릭터의 응답에서 같은 `<stable_diffusion_prompt>` 태그를 읽습니다. 모델이 여전히 선택되어 있으면 Layla가 그 태그로 자체 이미지를 생성해서 이미지가 두 장 나옵니다. _No Image Generation_을 선택하면 태그는 Agent에게 남겨집니다. [Layla에서 이미지 생성을 활성화하는 방법](/how-to-enable-image-generation-in-layla/)에서 이 설정의 위치를 확인할 수 있습니다.
+Layla에 내장된 이미지 생성도 캐릭터의 응답에서 같은 `<stable_diffusion_prompt>` 태그를 읽습니다. 모델이 여전히 선택되어 있으면 Layla가 그 태그로 자체 이미지를 생성해서 이미지가 두 장 나옵니다. *No Image Generation*을 선택하면 태그는 Agent에게 남겨집니다. [Layla에서 이미지 생성을 활성화하는 방법](/how-to-enable-image-generation-in-layla/)에서 이 설정의 위치를 확인할 수 있습니다.
 
 ### 2단계: Agent 가져오기
 
-이 글의 끝에 있는 Agent 파일을 다운로드합니다. _Agent_ 미니 앱을 열고 오른쪽 위의 **Import** 버튼으로 가져옵니다. Agent 이름은 _Google Nano Banana: generate image_이며, 카드에는 사용하는 두 도구인 _Eval_과 _Display Image_가 표시됩니다.
+이 글의 끝에 있는 Agent 파일을 다운로드합니다. _Agent_ 미니 앱을 열고 오른쪽 위의 **Import** 버튼으로 가져옵니다. Agent 이름은 *Google Nano Banana: generate image*이며, 카드에는 사용하는 두 도구인 *Eval*과 *Display Image*가 표시됩니다.
 
 ![가져온 Google Nano Banana Agent와 그 Eval 및 Display Image 도구, Edit, Test, More 버튼이 보이는 Agent 미니 앱.](./imported-agent.jpg)
 
@@ -223,7 +223,7 @@ never put backticks inside them.
 
 ### 2. 트리거
 
-이 Agent에는 트리거가 하나 있습니다. 입력이 아니라 모델의 **출력**에 작동하는 _정규식 트리거_입니다. 패턴은 다음과 같습니다.
+이 Agent에는 트리거가 하나 있습니다. 입력이 아니라 모델의 **출력**에 작동하는 *정규식 트리거*입니다. 패턴은 다음과 같습니다.
 
 ```text
 /<stable_diffusion_prompt>(.*?)<\/stable_diffusion_prompt>/s
@@ -237,7 +237,7 @@ never put backticks inside them.
 
 ### 3. Eval 도구: API 호출하기
 
-첫 번째 도구는 _Eval_입니다. Layla 내부의 샌드박스 런타임에서 JavaScript를 실행합니다. 이 런타임에는 웹 요청용 `fetch`와, 파일 저장 같은 Layla 기능에 스크립트가 접근하게 해 주는 `layla`라는 전역 객체가 있습니다. 브라우저 페이지나 Node.js 모듈은 없습니다.
+첫 번째 도구는 *Eval*입니다. Layla 내부의 샌드박스 런타임에서 JavaScript를 실행합니다. 이 런타임에는 웹 요청용 `fetch`와, 파일 저장 같은 Layla 기능에 스크립트가 접근하게 해 주는 `layla`라는 전역 객체가 있습니다. 브라우저 페이지나 Node.js 모듈은 없습니다.
 
 Eval은 스크립트의 마지막 식의 값을 반환하며, 그것이 Promise라면 완료될 때까지 기다립니다. 그래서 스크립트의 마지막 줄이 작업을 시작하는 `generateImage(PROMPT);`입니다.
 
@@ -402,21 +402,21 @@ throw new Error(
 
 ### 4. Display Image 도구
 
-두 번째 도구는 _Display Image_이며, 유일한 설정은 다음과 같습니다.
+두 번째 도구는 *Display Image*이며, 유일한 설정은 다음과 같습니다.
 
 ```text
 {{input}}
 ```
 
-`{{input}}`은 이전 도구의 출력, 즉 스크립트가 반환한 파일 경로로 대체됩니다. _Display Image_는 캐릭터의 워크스페이스에서 그 파일을 열어 응답에 첨부하며, 이미지가 채팅에 나타납니다.
+`{{input}}`은 이전 도구의 출력, 즉 스크립트가 반환한 파일 경로로 대체됩니다. *Display Image*는 캐릭터의 워크스페이스에서 그 파일을 열어 응답에 첨부하며, 이미지가 채팅에 나타납니다.
 
 ## AI 캐릭터의 이미지를 일관되게 유지하기
 
 언어 모델은 이미지 묘사를 매번 처음부터 씁니다. 그래서 별다른 안내가 없으면 캐릭터가 이미지마다 다르게 보일 수 있습니다. 다음 방법으로 AI 캐릭터 이미지를 일관되게 유지하고, 이미지가 나타나는 빈도도 정할 수 있습니다.
 
-- **캐릭터를 한 번만 묘사하기.** 캐릭터의 _시나리오_에 다음과 같은 지시문을 추가하세요. "`<stable_diffusion_prompt>`를 쓸 때는 자신에 대한 다음 묘사로 시작할 것: 20대 후반의 여성, 짧은 붉은 머리, 초록색 눈, 주근깨. 그다음 장면을 묘사할 것." 모델이 모든 프롬프트에서 외모를 반복하므로, 이미지 모델이 매번 같은 캐릭터를 그리는 데 도움이 됩니다.
+- **캐릭터를 한 번만 묘사하기.** 캐릭터의 *시나리오*에 다음과 같은 지시문을 추가하세요. "`<stable_diffusion_prompt>`를 쓸 때는 자신에 대한 다음 묘사로 시작할 것: 20대 후반의 여성, 짧은 붉은 머리, 초록색 눈, 주근깨. 그다음 장면을 묘사할 것." 모델이 모든 프롬프트에서 외모를 반복하므로, 이미지 모델이 매번 같은 캐릭터를 그리는 데 도움이 됩니다.
 - **화풍 고정하기.** 같은 지시문에 화풍을 추가하세요. 예를 들어 "35mm 필름 사진, 자연광"이나 "수채화 일러스트" 등입니다. [Perchance Agent로 Layla에서 AI 이미지를 생성하는 방법](/how-to-use-the-perchance-image-generation-agent/)에서도 같은 방식을 설명하며, 이 태그를 사용하는 모든 Agent에서 작동합니다.
-- **메시지마다 이미지 생성하기.** [이미지 생성 Agent 만들기](/creating-an-image-generation-agent/)처럼, _시나리오_에 모든 응답을 태그로 끝내라는 지시문을 추가합니다. 그러면 모든 응답에 이미지가 붙으며, AI 롤플레이와 스토리텔링에 잘 맞습니다. 이미지마다 요금이 부과되므로, 요청할 때만 이미지를 받는 것보다 비용이 더 듭니다.
+- **메시지마다 이미지 생성하기.** [이미지 생성 Agent 만들기](/creating-an-image-generation-agent/)처럼, *시나리오*에 모든 응답을 태그로 끝내라는 지시문을 추가합니다. 그러면 모든 응답에 이미지가 붙으며, AI 롤플레이와 스토리텔링에 잘 맞습니다. 이미지마다 요금이 부과되므로, 요청할 때만 이미지를 받는 것보다 비용이 더 듭니다.
 - **참조 이미지 사용하기.** Nano Banana 모델은 이미지를 입력으로 받을 수도 있어서, 캐릭터가 같은 얼굴을 유지하는 데 도움이 됩니다. 이 Agent는 텍스트만 보내므로, 요청에 참조 이미지를 추가하는 것이 다음에 해 볼 만한 좋은 프로젝트입니다.
 
 ## 같은 패턴으로 다른 Agent 만들기
@@ -426,7 +426,7 @@ Nano Banana Agent는 템플릿입니다. 시스템 프롬프트, 정규식 트�
 - **모델이나 설정 바꾸기.** 스크립트에서 `MODEL_ID`나 `imageSize`를 수정하거나 `aspectRatio`를 추가하세요. Google은 가격이 다른 여러 Nano Banana 모델을 제공하며, [가격 페이지](https://ai.google.dev/gemini-api/docs/pricing)에 나와 있습니다.
 - **다른 이미지 서비스 사용하기.** 요청과 응답 처리를 교체하세요. 서비스가 base64 텍스트를 반환한다면 저장 단계는 그대로입니다. 웹 주소를 반환한다면 그 주소를 가져와 `layla.utils.saveFile`을 호출하기 전에 `toBase64()`로 바이트를 변환하세요.
 - **묘사 외의 정보도 모델에게 요청하기.** 시스템 프롬프트에서 자유 텍스트 대신 `prompt`와 `aspect_ratio`가 담긴 짧은 JSON 객체처럼 몇 가지 필드를 요청할 수 있습니다. 그러면 스크립트가 캡처한 텍스트에서 필드를 읽습니다. Agent가 `PROMPT`로 하는 것처럼 자리표시자는 문자열 리터럴 안에 두고, 텍스트 분석은 자신의 코드에서 하세요.
-- **이미지가 아닌 다른 일 하기.** `<weather_request>` 같은 다른 태그를 고르고, _Eval_이 다른 API를 호출하게 한 뒤, _Provide Context_ 도구로 마무리하면 캐릭터가 결과에 대해 이야기할 수 있습니다. [Brave Search Agent를 만드는 방법](/how-to-create-a-brave-search-agent/)이 이 흐름의 예시입니다.
+- **이미지가 아닌 다른 일 하기.** `<weather_request>` 같은 다른 태그를 고르고, *Eval*이 다른 API를 호출하게 한 뒤, _Provide Context_ 도구로 마무리하면 캐릭터가 결과에 대해 이야기할 수 있습니다. [Brave Search Agent를 만드는 방법](/how-to-create-a-brave-search-agent/)이 이 흐름의 예시입니다.
 
 직접 Agent를 만들 때 이 Agent에서 가져가면 좋은 습관이 몇 가지 있습니다.
 
@@ -462,7 +462,7 @@ Nano Banana Pro는 복잡한 장면을 위한 Google의 프리미엄 이미지 �
 
 ### AI 캐릭터가 채팅이나 롤플레이 중에 이미지를 보낼 수 있나요?
 
-네. 채팅에서 이미지를 요청하거나, 캐릭터의 _시나리오_에 모든 응답이 이미지 묘사로 끝나도록 지시문을 추가하세요. 이미지 일관성 섹션에서 두 방법을 모두 설명합니다.
+네. 채팅에서 이미지를 요청하거나, 캐릭터의 *시나리오*에 모든 응답이 이미지 묘사로 끝나도록 지시문을 추가하세요. 이미지 일관성 섹션에서 두 방법을 모두 설명합니다.
 
 ### Nano Banana는 이미지를 필터링하나요?
 
@@ -470,7 +470,7 @@ Nano Banana Pro는 복잡한 장면을 위한 Google의 프리미엄 이미지 �
 
 ### 이미지가 두 장 나온 이유는 무엇인가요?
 
-Layla에 내장된 이미지 생성이 아직 켜져 있을 가능성이 큽니다. 추론 설정에서 _No Image Generation_을 선택해 Agent만 태그를 처리하도록 하세요.
+Layla에 내장된 이미지 생성이 아직 켜져 있을 가능성이 큽니다. 추론 설정에서 *No Image Generation*을 선택해 Agent만 태그를 처리하도록 하세요.
 
 ### Agent가 "Set API_KEY in this agent first."라고 표시합니다
 
@@ -502,7 +502,7 @@ Google은 Nano Banana 모델로 생성한 모든 이미지에 SynthID 워터마�
 
 ## 마치며
 
-Nano Banana Agent는 AI 채팅용 이미지 생성 Agent가 얼마나 작을 수 있는지 보여 줍니다. 시스템 프롬프트가 모델이 태그로 감싼 묘사를 쓰게 하고, 정규식 트리거가 이를 잡아내고, 짧은 스크립트가 묘사를 이미지로 바꾸며, _Display Image_가 결과를 채팅에 표시합니다. 이 네 가지 요소를 이해하면 서비스, 모델, 설정을 바꿔 가며 Layla가 기본으로 지원하지 않는 이미지 서비스용 Agent도 만들 수 있습니다.
+Nano Banana Agent는 AI 채팅용 이미지 생성 Agent가 얼마나 작을 수 있는지 보여 줍니다. 시스템 프롬프트가 모델이 태그로 감싼 묘사를 쓰게 하고, 정규식 트리거가 이를 잡아내고, 짧은 스크립트가 묘사를 이미지로 바꾸며, *Display Image*가 결과를 채팅에 표시합니다. 이 네 가지 요소를 이해하면 서비스, 모델, 설정을 바꿔 가며 Layla가 기본으로 지원하지 않는 이미지 서비스용 Agent도 만들 수 있습니다.
 
 완전한 오프라인 이미지 생성에는 여전히 Layla의 로컬 모델이 알맞은 선택입니다. 이와 같은 Agent는 특정 온라인 모델을 선호하고 연결과 비용을 감수할 수 있을 때의 선택지입니다.
 
